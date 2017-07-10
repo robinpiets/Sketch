@@ -1,4 +1,14 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
 body {
   font-family: Helvetica, Arial, sans-serif;
+  padding-bottom: 5rem;
   position: relative;
 }
