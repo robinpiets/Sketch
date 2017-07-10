@@ -18,6 +18,9 @@ const jshint = require("gulp-jshint");
 const url = require("url");
 const newer = require("gulp-newer");
 const lightspeedy = require("lightspeedy");
+const imagemin = require('gulp-imagemin');
+const cache = require('gulp-cache');
+
 
 const Config = require("./sketch.config.json");
 
@@ -77,6 +80,7 @@ gulp.task("watch", function() {
     ["sass"]
   );
   gulp.watch(Paths.sourceAsset + '/javascript/**/*.js', ['scripts']);
+  gulp.watch(Paths.sourceAsset + '/images/**/*', ['images']);
   gulp.watch(Paths.source + "/**/*.rain").on("change", browserSync.reload);
 });
 
@@ -114,6 +118,13 @@ gulp.task("scripts", function() {
     .src(Paths.sourceAsset + "/javascript/**/*.js")
     .pipe(flatten())
     .pipe(minify())
+    .pipe(gulp.dest(Paths.output + "/assets"))
+    .pipe(browserSync.stream());
+});
+
+gulp.task("images", function() {
+  return gulp.src(Paths.sourceAsset + "/images/**/*")
+    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest(Paths.output + "/assets"))
     .pipe(browserSync.stream());
 });
