@@ -13,8 +13,7 @@
 .burger-nav:hover .burger-nav__bar,
 .burger-nav:hover .burger-nav__bar:after,
 .burger-nav:hover .burger-nav__bar:before{
-  background: #95989A;
-  transition: .2s background;
+  // background: #95989A;
 }
 
 .burger-nav__bar {
@@ -25,28 +24,48 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: .2s background;
+  transition: background 0s 0.3s;
   width: 1.25em;
+
+  &:after,
+  &:before {
+    background: black;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    transition-property: top, transform;
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+    width: 1.25em;
+  }
+
+  &:after {
+    top: .375em;
+  }
+
+  &:before {
+    top: -.375em;
+  }
 }
 
-.burger-nav__bar:after {
-  background: black;
-  content: '';
-  display: inline-block;
-  height: 1px;
-  position: absolute;
-  top: .375em;
-  transition: .2s background;
-  width: 1.25em;
-}
+.burger-nav.is-active {
+  .burger-nav__bar {
+    background: transparent;
+  }
 
-.burger-nav__bar:before {
-  background: black;
-  content: '';
-  display: inline-block;
-  height: 1px;
-  position: absolute;
-  top: -.375em;
-  transition: .2s background;
-  width: 1.25em;
+  .burger-nav__bar:before,
+  .burger-nav__bar:after {
+    transition-delay: 0s, 0.3s;
+  }
+
+  .burger-nav__bar:before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .burger-nav__bar:after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
 }

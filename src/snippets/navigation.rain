@@ -1,4 +1,4 @@
-<div class="burger-nav">
+<div class="burger-nav" data-behavior="open-mobile-menu">
   <span class="burger-nav__bar">
   </span>
 </div>

@@ -5,4 +5,10 @@ $(document).ready(function(){
     var dropdown = $(this).children('.menu-dropdown');
     dropdown.slideToggle(500, "swing");
   });
+
+  $('[data-behavior~=open-mobile-menu]').click(function(e) {
+    e.preventDefault();
+    console.log("Burger menu clicked");
+    $(this).toggleClass('is-active');
+  });
 });
