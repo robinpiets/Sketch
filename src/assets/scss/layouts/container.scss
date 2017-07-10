@@ -1,7 +1,11 @@
 // Prefixing due to nameclash with bulma
 .damoy__container {
-  padding-top: 4.25rem;
+  padding-top: 1.6rem;
   height: 100%;
+
+  @media (min-width: $screen-sm) {
+    padding-top: 4.25rem;
+  }
 }
 
 .columns.damoy__container {

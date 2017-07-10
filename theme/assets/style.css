@@ -3,8 +3,11 @@ body {
   position: relative; }
 
 .damoy__container {
-  padding-top: 4.25rem;
+  padding-top: 1.6rem;
   height: 100%; }
+  @media (min-width: 576px) {
+    .damoy__container {
+      padding-top: 4.25rem; } }
 
 .columns.damoy__container {
   margin-bottom: 0; }
@@ -28,8 +31,11 @@ body {
   color: #95989A; }
 
 .sidebar {
-  padding-left: 5rem;
+  padding-left: 2rem;
   position: relative; }
+  @media (min-width: 576px) {
+    .sidebar {
+      padding-left: 5rem; } }
 
 .main-content {
   max-width: 110rem;
