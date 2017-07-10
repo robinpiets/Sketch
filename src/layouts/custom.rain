@@ -23,10 +23,14 @@
 	<script src="theme/assets/main-min.js"></script>
 </head>
 <body>
-	<section class="section">
-		{% include 'snippets/navigation.rain' %}
-	</section>
-	{% include template %}
+	<div class="columns">
+		<div class="column sidebar">
+			{% include 'snippets/navigation.rain' %}
+		</div>
+		<div class="column main-content">
+			{% include template %}
+		</div>
+	</div>
 	{% include 'snippets/footer.rain' %}
 
 	<script id="__bs_script__">//<![CDATA[

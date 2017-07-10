@@ -1,1 +1,2 @@
+
 <img src="{{ 'homepage-img.png' | url_asset }}" />
