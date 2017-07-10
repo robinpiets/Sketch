@@ -1,6 +1,11 @@
 .menu {
   font-size: .75em;
   position: absolute;
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+  }
 }
 
 .menu-link {

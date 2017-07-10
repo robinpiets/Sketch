@@ -1,3 +1,7 @@
+<div class="burger-nav">
+  <span class="burger-nav__bar">
+  </span>
+</div>
 <div class="menu">
   <div class="menu-group brand">
     <a href="/" class="menu-link brand-link">LA</a>

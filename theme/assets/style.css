@@ -29,11 +29,7 @@ body {
 
 .sidebar {
   padding-left: 5rem;
-  position: relative;
-  display: none; }
-  @media (min-width: 576px) {
-    .sidebar {
-      display: block; } }
+  position: relative; }
 
 .main-content {
   max-width: 110rem;
@@ -45,7 +41,11 @@ body {
 
 .menu {
   font-size: .75em;
-  position: absolute; }
+  position: absolute;
+  display: none; }
+  @media (min-width: 576px) {
+    .menu {
+      display: block; } }
 
 .menu-link {
   color: #95989A;
@@ -79,9 +79,11 @@ body {
   cursor: pointer;
   display: block;
   height: 2.5em;
-  margin: 2.75rem 0 2rem 3rem;
   position: relative;
   width: 2.5em; }
+  @media (min-width: 576px) {
+    .burger-nav {
+      display: none; } }
 
 .burger-nav:hover .burger-nav__bar,
 .burger-nav:hover .burger-nav__bar:after,

@@ -1,9 +1,4 @@
 .sidebar {
   padding-left: 5rem;
   position: relative;
-  display: none;
-  
-  @media (min-width: $screen-sm) {
-    display: block;
-  }
 }
