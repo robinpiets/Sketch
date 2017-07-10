@@ -19,8 +19,8 @@ body {
   color: #95989A; }
 
 .sidebar {
-  padding-left: 3rem;
-  padding-top: 3rem;
+  padding-left: 5rem;
+  padding-top: 5rem;
   position: relative; }
 
 .menu {
@@ -34,6 +34,10 @@ body {
   font-size: 1em;
   text-transform: uppercase;
   transition: .2s color; }
+
+.brand-link {
+  color: black;
+  font-size: 1.3em; }
 
 .menu-link:hover {
   color: black;
