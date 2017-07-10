@@ -1,3 +1,6 @@
 <div class="homepage-image image">
   <img src="{{ 'homepage-img.png' | url_asset }}" />
 </div>
+<div class="brand-name">
+La Collection
+</div>

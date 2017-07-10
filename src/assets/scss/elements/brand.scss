@@ -1,0 +1,14 @@
+.brand-name {
+  color: black;
+  display: block;
+  font-size: 1.18rem;
+  letter-spacing: .2rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (min-width: $screen-sm) {
+    display: none;
+  }
+}
