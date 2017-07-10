@@ -83,7 +83,7 @@ gulp.task("watch", function() {
 // Compile sass into CSS & auto-inject into browsers
 gulp.task("sass", function() {
   return gulp
-    .src(Paths.sourceAsset + "/scss/**/*.scss")
+    .src(Paths.sourceAsset + "/scss/style.scss")
     .pipe(flatten())
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest(Paths.output + "/assets"))
