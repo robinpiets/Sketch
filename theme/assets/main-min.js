@@ -1,1 +1,1 @@
-console.log("test12");
+$(document).ready(function(){$("[data-behavior~=trigger-menu-dropdown]").click(function(n){n.preventDefault(),console.log("Menu dropdown click"),$(this).children(".menu-dropdown").slideToggle(500,"swing")})});
