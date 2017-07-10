@@ -150,6 +150,9 @@ body {
       max-width: 21rem; } }
   @media (min-width: 768px) {
     .homepage-image {
+      max-width: 33.5rem; } }
+  @media (min-width: 992px) {
+    .homepage-image {
       max-width: 37.5rem; } }
 
 .brand-name {

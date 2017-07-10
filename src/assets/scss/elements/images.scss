@@ -7,6 +7,10 @@
   }
 
   @media (min-width: $screen-md) {
+    max-width: 33.5rem;
+  }
+
+  @media (min-width: $screen-lg) {
     max-width: 37.5rem;
   }
 }
