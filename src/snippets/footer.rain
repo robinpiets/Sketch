@@ -1,5 +1,11 @@
-<footer class="container">
-    <div class="row">
-        <div class="col-md-12">Footer Lightspeed --</div>
-    </div>
+{# snippets/footer.rain #}
+<footer class="footer">
+  <div class="container">
+    <p class="is-pulled-left">
+      © 2017 LA Collection
+    </p>
+    <p class="is-pulled-right footer__made-by">
+      Designed by Trashure
+    </p>
+  </div>
 </footer>
