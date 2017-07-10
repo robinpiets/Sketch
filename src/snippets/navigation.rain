@@ -13,26 +13,20 @@
 
   <div class="menu-group">
     <div class="menu-item">
-      <a href="#" class="menu-link">Cart (3)</a>
+      <a href="#" class="menu-link">About</a>
     </div>
-    <div class="menu-item">
-      <a href="#" class="menu-link">Login</a>
-    </div>
-    <div class="menu-item">
-      <a href="#" class="menu-link">Favourites</a>
-    </div>
-  </div>
-
-  <div class="menu-group">
     <div class="menu-item">
       <a href="#" class="menu-link">Lookbook</a>
     </div>
     <div class="menu-item">
-      <a href="#" class="menu-link">Assistenc</a>
+      <a href="#" class="menu-link">Assistence</a>
     </div>
-  </div>
-
-  <div class="menu-group">
+    <div class="menu-item">
+      <a href="#" class="menu-link">Blog</a>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Stores</a>
+    </div>
     <div class="menu-item" data-behavior="trigger-menu-dropdown">
       <a href="#" class="menu-link">Social</a>
 
@@ -49,10 +43,19 @@
       </div>
     </div>
     <div class="menu-item">
-      <a href="#" class="menu-link">Stores</a>
+      <a href="#" class="menu-link">Contact</a>
     </div>
     <div class="menu-item">
-      <a href="#" class="menu-link">Blog</a>
+      <a href="#" class="menu-link">Mailing List</a>
+    </div>
+  </div>
+
+  <div class="menu-group">
+    <div class="menu-item">
+      <a href="#" class="menu-link">Cart</a>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Login</a>
     </div>
   </div>
 </div>
