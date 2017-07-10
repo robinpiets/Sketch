@@ -1,56 +1,58 @@
-{# snippets/navigation.rain #}
-  <div class="menu">
-    <div class="menu-group">
+<div class="menu">
+  <div class="menu-group brand">
+    <a href="/" class="menu-link brand-link">LA</a>
+  </div>
+
+  <div class="menu-group">
+    {% for category in shop.categories %}
       <div class="menu-item">
-        <a href="/collection" class="menu-link">Dresses</a>
+        <a href="{{ category.url | url }}" class="menu-link">{{ category.title }}</a>
       </div>
-      <div class="menu-item">
-        <a href="#" class="menu-link">Blazers</a>
-      </div>
+    {% endfor %}
+  </div>
+
+  <div class="menu-group">
+    <div class="menu-item">
+      <a href="#" class="menu-link">Cart (3)</a>
     </div>
-
-    <div class="menu-group">
-      <div class="menu-item">
-        <a href="#" class="menu-link">Cart (3)</a>
-      </div>
-      <div class="menu-item">
-        <a href="#" class="menu-link">Login</a>
-      </div>
-      <div class="menu-item">
-        <a href="#" class="menu-link">Favourites</a>
-      </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Login</a>
     </div>
-
-    <div class="menu-group">
-      <div class="menu-item">
-        <a href="#" class="menu-link">Lookbook</a>
-      </div>
-      <div class="menu-item">
-        <a href="#" class="menu-link">Assistenc</a>
-      </div>
-    </div>
-
-    <div class="menu-group">
-      <div class="menu-item" data-behavior="trigger-menu-dropdown">
-        <a href="#" class="menu-link">Social</a>
-
-        <div class="menu-dropdown is-collapsed">
-          <div class="menu-item">
-            <a href="#" class="menu-link">Facebook</a>
-          </div>
-          <div class="menu-item">
-            <a href="#" class="menu-link">Twitter</a>
-          </div>
-          <div class="menu-item">
-            <a href="#" class="menu-link">Instagram</a>
-          </div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <a href="#" class="menu-link">Stores</a>
-      </div>
-      <div class="menu-item">
-        <a href="#" class="menu-link">Blog</a>
-      </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Favourites</a>
     </div>
   </div>
+
+  <div class="menu-group">
+    <div class="menu-item">
+      <a href="#" class="menu-link">Lookbook</a>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Assistenc</a>
+    </div>
+  </div>
+
+  <div class="menu-group">
+    <div class="menu-item" data-behavior="trigger-menu-dropdown">
+      <a href="#" class="menu-link">Social</a>
+
+      <div class="menu-dropdown is-collapsed">
+        <div class="menu-item">
+          <a href="#" class="menu-link">Facebook</a>
+        </div>
+        <div class="menu-item">
+          <a href="#" class="menu-link">Twitter</a>
+        </div>
+        <div class="menu-item">
+          <a href="#" class="menu-link">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Stores</a>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Blog</a>
+    </div>
+  </div>
+</div>
