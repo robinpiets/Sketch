@@ -1,4 +1,8 @@
-/**
- * Created by CTRL on 02-09-16.
- */
-console.log('test12');
+$(document).ready(function(){
+  $('[data-behavior~=trigger-menu-dropdown]').click(function(e){
+    e.preventDefault();
+    console.log("Menu dropdown click");
+    var dropdown = $(this).children('.menu-dropdown');
+    dropdown.slideToggle(500, "swing");
+  });
+});

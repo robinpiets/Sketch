@@ -76,7 +76,7 @@ gulp.task("watch", function() {
     [Paths.sourceAsset + "/scss/*.scss", Paths.sourceAsset + "/scss/**/*.scss"],
     ["sass"]
   );
-  // gulp.watch(Paths.sourceAsset + '/javascript/**/*.js', ['scripts']);
+  gulp.watch(Paths.sourceAsset + '/javascript/**/*.js', ['scripts']);
   gulp.watch(Paths.source + "/**/*.rain").on("change", browserSync.reload);
 });
 
