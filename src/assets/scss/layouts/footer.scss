@@ -1,21 +1,19 @@
 .footer {
   background: white;
-  bottom: 0;
-  display: none;
   padding: 3rem 0 0;
   position: relative;
   width: 100%;
-
-  @media (min-width: $screen-sm) {
-    display: block;
-  }
 }
 
 .footer p {
-  font-size: .8rem;
-  letter-spacing: .1rem;
+  font-size: .7rem;
   text-transform: uppercase;
   margin-bottom: 1.1rem;
+
+  @media (min-width: $screen-sm) {
+    font-size: .8rem;
+    letter-spacing: .1rem;
+  }
 }
 
 .footer__made-by {

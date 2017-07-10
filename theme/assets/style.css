@@ -3,27 +3,26 @@ body {
   position: relative; }
 
 .damoy__container {
-  padding-top: 4.25rem; }
+  padding-top: 4.25rem;
+  height: 100%; }
 
 .columns.damoy__container {
   margin-bottom: 0; }
 
 .footer {
   background: white;
-  bottom: 0;
-  display: none;
   padding: 3rem 0 0;
   position: relative;
   width: 100%; }
-  @media (min-width: 576px) {
-    .footer {
-      display: block; } }
 
 .footer p {
-  font-size: .8rem;
-  letter-spacing: .1rem;
+  font-size: .7rem;
   text-transform: uppercase;
   margin-bottom: 1.1rem; }
+  @media (min-width: 576px) {
+    .footer p {
+      font-size: .8rem;
+      letter-spacing: .1rem; } }
 
 .footer__made-by {
   color: #95989A; }
@@ -125,5 +124,8 @@ body {
   max-width: 14.7rem;
   margin-left: auto; }
   @media (min-width: 576px) {
+    .homepage-image {
+      max-width: 21rem; } }
+  @media (min-width: 768px) {
     .homepage-image {
       max-width: 37.5rem; } }

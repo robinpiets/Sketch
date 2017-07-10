@@ -3,6 +3,10 @@
   margin-left: auto;
 
   @media (min-width: $screen-sm) {
+    max-width: 21rem;
+  }
+
+  @media (min-width: $screen-md) {
     max-width: 37.5rem;
   }
 }
