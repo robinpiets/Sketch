@@ -1,0 +1,34 @@
+
+.menu {
+  font-size: .75em;
+}
+
+.menu-link {
+  color: #95989A;
+  letter-spacing: .1em;
+  line-height: 1.6;
+  font-size: 1em;
+  text-transform: uppercase;
+  transition: .2s color;
+}
+
+.menu-link:hover {
+  color: black;
+  transition: .2s color;
+}
+
+.menu-item {
+  margin-bottom: 1rem;
+}
+
+.menu-group {
+  margin-bottom: 3rem;
+}
+
+.menu-dropdown.is-collapsed {
+  display: none;
+}
+
+.menu-dropdown {
+  margin-top: 1rem;
+}
