@@ -3,18 +3,18 @@ body {
   position: relative; }
 
 .damoy__container {
+  margin-bottom: 0;
   padding-top: 1.6rem;
   height: 100%; }
   @media (min-width: 576px) {
     .damoy__container {
       padding-top: 4.25rem; } }
 
-.columns.damoy__container {
-  margin-bottom: 0; }
-
 .footer {
   background: white;
-  padding: 3rem 0 0;
+  padding: 3rem 2.5rem 0;
+  max-width: 110rem;
+  margin: 0 auto;
   position: relative;
   width: 100%; }
 
@@ -39,11 +39,14 @@ body {
 
 .main-content {
   max-width: 110rem;
-  margin: 0 auto;
+  margin: 2.1rem auto 0;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   position: relative;
   width: 100%; }
+  @media (min-width: 576px) {
+    .main-content {
+      margin-top: 0; } }
 
 .menu {
   font-size: .75em;
@@ -137,3 +140,16 @@ body {
   @media (min-width: 768px) {
     .homepage-image {
       max-width: 37.5rem; } }
+
+.brand-name {
+  color: black;
+  display: block;
+  font-size: 1.18rem;
+  letter-spacing: .2rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translateY(-50%); }
+  @media (min-width: 576px) {
+    .brand-name {
+      display: none; } }

@@ -29,10 +29,9 @@
 		</div>
 		<div class="main-content">
 			{% include template %}
-			{% include 'snippets/footer.rain' %}
 		</div>
 	</div>
-
+	{% include 'snippets/footer.rain' %}
 	<script id="__bs_script__">//<![CDATA[
 	  if (window.location.host.match('localhost')) {
 	    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));
