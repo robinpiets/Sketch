@@ -4,6 +4,7 @@
   height: 2.5em;
   position: relative;
   width: 2.5em;
+  z-index: $burger-nav-layer;
 
   @media (min-width: $screen-sm) {
     display: none;

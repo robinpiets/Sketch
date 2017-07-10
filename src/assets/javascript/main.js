@@ -10,5 +10,6 @@ $(document).ready(function(){
     e.preventDefault();
     console.log("Burger menu clicked");
     $(this).toggleClass('is-active');
+    $('.mobile-menu').toggleClass('is-active');
   });
 });

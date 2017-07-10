@@ -23,6 +23,7 @@
 	<script src="theme/assets/main-min.js"></script>
 </head>
 <body>
+	{% include 'snippets/mobile_menu.rain' %}
 	<div class="damoy__container">
 		<div class="sidebar">
 			{% include 'snippets/navigation.rain' %}

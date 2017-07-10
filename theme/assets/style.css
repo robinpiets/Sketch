@@ -95,12 +95,38 @@ body {
 .menu-dropdown {
   margin-top: 1rem; }
 
+.mobile-menu {
+  background: white;
+  font-size: .8em;
+  height: 100%;
+  left: 0;
+  overflow-y: hidden;
+  padding-left: 6.2rem;
+  padding-top: 6.2rem;
+  position: absolute;
+  top: -100%;
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  width: 100%;
+  z-index: 10; }
+  @media (min-width: 576px) {
+    .mobile-menu {
+      display: none; } }
+  .mobile-menu.is-active {
+    top: 0;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    z-index: 10; }
+
 .burger-nav {
   cursor: pointer;
   display: block;
   height: 2.5em;
   position: relative;
-  width: 2.5em; }
+  width: 2.5em;
+  z-index: 15; }
   @media (min-width: 576px) {
     .burger-nav {
       display: none; } }
