@@ -1,16 +1,132 @@
-/**
- * @package sketch
- * @author Willem Dumee
- * @version 0.1
- */
+/* TOC
+==================================================
+1. General
+2. Burger Nav
+3. Navigation Menu
+4. Footer
+/*
 
+/* 1. General
+================================================== */
+
+html,
 body {
-  font-size: 16px;
+  height: 100%;
 }
 
-.subnav {
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  position: relative;
+}
+
+/* 2. Burger Nav
+================================================== */
+
+.burger-nav {
+  cursor: pointer;
+  display: block;
+  height: 2.5em;
+  margin: 2.75rem 0 2rem 3rem;
+  position: relative;
+  width: 2.5em;
+}
+
+.burger-nav:hover .burger-nav__bar,
+.burger-nav:hover .burger-nav__bar:after,
+.burger-nav:hover .burger-nav__bar:before{
+  background: #95989A;
+  transition: .2s background;
+}
+
+.burger-nav__bar {
+  background: black;
+  display: inline-block;
+  left: 50%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: .2s background;
+  width: 1.25em;
+}
+
+.burger-nav__bar:after {
+  background: black;
+  content: '';
+  display: inline-block;
+  height: 1px;
+  position: absolute;
+  top: .375em;
+  transition: .2s background;
+  width: 1.25em;
+}
+
+.burger-nav__bar:before {
+  background: black;
+  content: '';
+  display: inline-block;
+  height: 1px;
+  position: absolute;
+  top: -.375em;
+  transition: .2s background;
+  width: 1.25em;
+}
+
+/* 3. Navigation Menu
+================================================== */
+
+.menu {
+  font-size: .75em;
+}
+
+.menu-link {
+  color: #95989A;
+  letter-spacing: .1em;
+  line-height: 1.6;
+  font-size: 1em;
+  text-transform: uppercase;
+  transition: .2s color;
+}
+
+.menu-link:hover {
+  color: black;
+  transition: .2s color;
+}
+
+.menu-item {
+  margin-bottom: 1rem;
+}
+
+.menu-group {
+  margin-bottom: 3rem;
+}
+
+.menu-dropdown.is-collapsed {
   display: none;
 }
 
+.menu-dropdown {
+  margin-top: 1rem;
+}
 
+/* 4. Footer
+================================================== */
 
+.footer {
+  background: white;
+  bottom: 0;
+  padding-top: 0;
+  padding-bottom: 1.25rem;
+  position: absolute;
+  width: 100%;
+}
+
+.footer p {
+  font-size: .8rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+}
+
+.footer__made-by {
+  color: #95989A;
+}
