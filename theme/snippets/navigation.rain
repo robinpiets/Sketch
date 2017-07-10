@@ -1,0 +1,65 @@
+<div class="burger-nav" data-behavior="open-mobile-menu">
+  <span class="burger-nav__bar">
+  </span>
+</div>
+<div class="menu">
+  <div class="menu-group brand">
+    <a href="/" class="menu-link brand-link">LA</a>
+  </div>
+
+  <div class="menu-group">
+    {% for category in shop.categories %}
+      <div class="menu-item">
+        <a href="{{ category.url | url }}" class="menu-link">{{ category.title }}</a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="menu-group">
+    <div class="menu-item">
+      <a href="#" class="menu-link">About</a>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Lookbook</a>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Assistence</a>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Blog</a>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Stores</a>
+    </div>
+    <div class="menu-item" data-behavior="trigger-menu-dropdown">
+      <a href="#" class="menu-link">Social</a>
+
+      <div class="menu-dropdown is-collapsed">
+        <div class="menu-item">
+          <a href="#" class="menu-link">Facebook</a>
+        </div>
+        <div class="menu-item">
+          <a href="#" class="menu-link">Twitter</a>
+        </div>
+        <div class="menu-item">
+          <a href="#" class="menu-link">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Contact</a>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Mailing List</a>
+    </div>
+  </div>
+
+  <div class="menu-group">
+    <div class="menu-item">
+      <a href="#" class="menu-link">Cart</a>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link">Login</a>
+    </div>
+  </div>
+</div>
