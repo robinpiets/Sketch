@@ -1,3 +1,8 @@
 .homepage-image {
-  max-width: 37.5rem;
+  max-width: 14.7rem;
+  margin-left: auto;
+
+  @media (min-width: $screen-sm) {
+    max-width: 37.5rem;
+  }
 }
