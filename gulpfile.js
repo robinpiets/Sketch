@@ -103,7 +103,7 @@ gulp.task("css", function() {
   gulp
     .src([
       Paths.output + "/assets/*.css",
-      "!" + Paths.output + "/assets/bootstrap-min.css"
+      "!" + Paths.output + "/assets/bulma.css"
     ])
     .pipe(csslint())
     .pipe(csslint.reporter());
