@@ -23,7 +23,7 @@
 	<script src="theme/assets/main-min.js"></script>
 </head>
 <body>
-	<div class="columns">
+	<div class="columns damoy__container">
 		<div class="column sidebar">
 			{% include 'snippets/navigation.rain' %}
 		</div>
