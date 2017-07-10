@@ -5,11 +5,14 @@ body {
 .damoy__container {
   padding-top: 4.25rem; }
 
+.columns.damoy__container {
+  margin-bottom: 0; }
+
 .footer {
   background: white;
   bottom: 0;
-  padding-top: 0;
-  padding-bottom: 1.25rem;
+  padding-top: 3rem;
+  padding-bottom: 1.1rem;
   position: absolute;
   width: 100%; }
 
@@ -101,3 +104,6 @@ body {
   top: -.375em;
   transition: .2s background;
   width: 1.25em; }
+
+.homepage-image {
+  max-width: 37.5rem; }

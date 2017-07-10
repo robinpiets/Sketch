@@ -1,2 +1,3 @@
-
-<img src="{{ 'homepage-img.png' | url_asset }}" />
+<div class="homepage-image image">
+  <img src="{{ 'homepage-img.png' | url_asset }}" />
+</div>
