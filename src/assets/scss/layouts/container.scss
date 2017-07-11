@@ -10,5 +10,9 @@
 }
 
 .container--collection {
-  text-align: right;
+  display: flex;
+  flex-direction: row;
+  max-width: 75rem;
+  margin-left: auto;
+  justify-content: flex-end;
 }

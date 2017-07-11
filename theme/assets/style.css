@@ -19,7 +19,11 @@ body {
       padding-top: 4.25rem; } }
 
 .container--collection {
-  text-align: right; }
+  display: flex;
+  flex-direction: row;
+  max-width: 75rem;
+  margin-left: auto;
+  justify-content: flex-end; }
 
 .footer {
   background: white;
@@ -124,6 +128,16 @@ body {
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     z-index: 10; }
 
+.product__columns {
+  flex: 1 1 auto; }
+
+.product__columns {
+  max-width: 20rem; }
+
+.product__columns--featured {
+  max-width: 25rem;
+  margin-right: 10rem; }
+
 .burger-nav {
   cursor: pointer;
   display: block;
@@ -187,6 +201,12 @@ body {
   @media (min-width: 992px) {
     .homepage-image {
       max-width: 37.5rem; } }
+
+.product-image {
+  max-width: 20rem; }
+  .product-image.product-image--large {
+    margin-bottom: 6.5rem;
+    max-width: 25rem; }
 
 .brand-name {
   color: black;

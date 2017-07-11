@@ -14,3 +14,12 @@
     max-width: 37.5rem;
   }
 }
+
+.product-image {
+  max-width: 20rem;
+
+  &.product-image--large {
+    margin-bottom: 6.5rem;
+    max-width: 25rem;
+  }
+}
