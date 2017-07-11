@@ -18,6 +18,9 @@ body {
     .damoy__container {
       padding-top: 4.25rem; } }
 
+.container--collection {
+  text-align: right; }
+
 .footer {
   background: white;
   padding: 0 2.5rem;

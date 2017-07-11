@@ -1,5 +1,18 @@
-<h2>collection</h2>
-
-<pre>
-    {{ dump(collection) }}
-</pre>
+<div class="columns container--collection">
+  <div class="column">
+    {% for product in collection.products %}
+      {% set index = loop.index %}
+      {% if (index < 3) %}
+        {% include 'snippets/product-item.rain' with {'class': 'large-items'} %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="column">
+    {% for product in collection.products %}
+      {% set index = loop.index %}
+      {% if (index > 2) %}
+        {% include 'snippets/product-item.rain' %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

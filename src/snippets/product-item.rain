@@ -1,0 +1,5 @@
+<div class="product-item {{class}}">
+  <a href="{{ product.url | url }}" title="{{ product.fulltitle }}">
+    <img src="{{ product.image | url_image('262x276x2', product.fulltitle) }}" width="262" height="276" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+  </a>
+</div>
