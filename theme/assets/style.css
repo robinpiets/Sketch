@@ -62,7 +62,8 @@ body {
 .menu {
   font-size: .75em;
   position: absolute;
-  display: none; }
+  display: none;
+  z-index: 10; }
   @media (min-width: 576px) {
     .menu {
       display: block; } }
