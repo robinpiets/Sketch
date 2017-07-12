@@ -252,6 +252,17 @@ body {
     .store__location {
       margin-bottom: 5rem; } }
 
+td {
+  padding: .1rem; }
+  td img {
+    vertical-align: bottom; }
+
+td:nth-child(odd) {
+  text-align: right; }
+
+td:nth-child(even) {
+  text-align: left; }
+
 .burger-nav {
   cursor: pointer;
   display: block;

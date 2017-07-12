@@ -1,0 +1,15 @@
+td {
+  padding: .1rem;
+
+  img {
+    vertical-align: bottom;
+  }
+}
+
+td:nth-child(odd) {
+  text-align: right;
+}
+
+td:nth-child(even) {
+  text-align: left;
+}

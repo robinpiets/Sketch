@@ -19,7 +19,7 @@
       <a href="{{ 'service/about' | url }}" class="menu-link">About</a>
     </div>
     <div class="menu-item">
-      <a href="#" class="menu-link">Lookbook</a>
+      <a href="{{'service/lookbook-1' | url}}" class="menu-link">Lookbook</a>
     </div>
     <div class="menu-item">
       <a href="{{ 'service/assistance' | url }}" class="menu-link">Assistence</a>
