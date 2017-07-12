@@ -2,12 +2,12 @@
   display: flex;
   flex: 1 1 auto;
   justify-content: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 1rem 1rem 0;
   position: relative;
 
   @media (min-width: $screen-sm) {
     margin-top: 0;
+    padding-top: 0;
   }
 }
 
