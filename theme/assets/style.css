@@ -50,7 +50,7 @@ body {
   color: #95989A; }
 
 .sidebar {
-  flex: initial;
+  flex: 0 1 auto;
   padding-left: 2rem;
   position: relative; }
   @media (min-width: 576px) {
@@ -58,7 +58,7 @@ body {
       padding-left: 5rem; } }
 
 .main-content {
-  flex: auto;
+  flex: 1 1 auto;
   margin: 2.1rem auto 0;
   padding-left: 2.5rem;
   padding-right: 2.5rem;

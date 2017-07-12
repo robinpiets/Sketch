@@ -1,11 +1,9 @@
 .main-content {
-  flex: auto;
-  // max-width: 110rem;  // 1760px
+  flex: 1 1 auto;
   margin: 2.1rem auto 0;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   position: relative;
-  // width: 100%;
 
   @media (min-width: $screen-sm) {
     margin-top: 0;
