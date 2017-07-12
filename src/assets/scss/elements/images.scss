@@ -17,10 +17,14 @@
 }
 
 .product-image {
+  display: inline-block;
   max-width: 20rem;
+  padding: .05rem;
+  width: 50%;
 
   &.product-image--large {
     margin-bottom: 6.5rem;
     max-width: 25rem;
+    width: 100%;
   }
 }

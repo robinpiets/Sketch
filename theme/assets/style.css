@@ -209,14 +209,8 @@ body {
     z-index: 10; }
 
 .product__columns {
-  flex: 1 1 auto; }
-
-.product__columns {
-  max-width: 20rem; }
-
-.product__columns--featured {
-  max-width: 25rem;
-  margin-right: 10rem; }
+  flex: 1 1 auto;
+  font-size: 0; }
 
 .assistance__columns {
   display: flex;
@@ -329,10 +323,14 @@ td:nth-child(even) {
       max-width: 37.5rem; } }
 
 .product-image {
-  max-width: 20rem; }
+  display: inline-block;
+  max-width: 20rem;
+  padding: .05rem;
+  width: 50%; }
   .product-image.product-image--large {
     margin-bottom: 6.5rem;
-    max-width: 25rem; }
+    max-width: 25rem;
+    width: 100%; }
 
 .brand-name {
   color: black;

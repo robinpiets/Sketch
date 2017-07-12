@@ -1,18 +1,16 @@
-<div class="container--collection">
-  <div class="product__columns product__columns--featured">
-    {% for product in collection.products %}
-      {% set index = loop.index %}
-      {% if (index < 3) %}
-        {% include 'snippets/product-item.rain' with {'class': 'product-image--large'} %}
-      {% endif %}
-    {% endfor %}
-  </div>
-  <div class="product__columns">
-    {% for product in collection.products %}
-      {% set index = loop.index %}
-      {% if (index > 2) %}
-        {% include 'snippets/product-item.rain' %}
-      {% endif %}
-    {% endfor %}
-  </div>
+<div class="product__columns product__columns--featured">
+  {% for product in collection.products %}
+    {% set index = loop.index %}
+    {% if (index < 3) %}
+      {% include 'snippets/product-item.rain' with {'class': 'product-image--large'} %}
+    {% endif %}
+  {% endfor %}
+</div>
+<div class="product__columns">
+  {% for product in collection.products %}
+    {% set index = loop.index %}
+    {% if (index > 2) %}
+      {% include 'snippets/product-item.rain' %}
+    {% endif %}
+  {% endfor %}
 </div>

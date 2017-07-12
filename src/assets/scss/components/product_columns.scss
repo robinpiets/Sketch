@@ -1,12 +1,4 @@
 .product__columns {
   flex: 1 1 auto;
-}
-
-.product__columns {
-  max-width: 20rem;
-}
-
-.product__columns--featured {
-  max-width: 25rem;
-  margin-right: 10rem;
+  font-size: 0;
 }
