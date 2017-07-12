@@ -57,8 +57,8 @@ body {
   flex: 1 1 auto;
   justify-content: center;
   margin: 2.1rem auto 0;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative; }
   @media (min-width: 576px) {
     .main-content {
@@ -69,14 +69,49 @@ body {
   font-size: .82rem;
   flex: 1 1 auto;
   align-self: center; }
+  .content__pages h1 {
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem; }
+  .content__pages p {
+    letter-spacing: .1em; }
+  .content__pages a {
+    color: #303030; }
 
 .pages--about {
   max-width: 42.5rem;
   width: 100%; }
-  .pages--about h1 {
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    margin-bottom: 1rem; }
+
+.pages--store {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  @media (min-width: 576px) {
+    .pages--store {
+      flex-direction: row; } }
+  @media (min-width: 768px) {
+    .pages--store .pages__column:first-of-type {
+      margin-right: 2rem; } }
+  @media (min-width: 992px) {
+    .pages--store .pages__column:first-of-type {
+      margin-right: 5rem; } }
+  @media (min-width: 1500px) {
+    .pages--store .pages__column:first-of-type {
+      margin-right: 11.25rem; } }
+  @media (min-width: 768px) {
+    .pages--store .pages__column:last-of-type {
+      margin-left: 2rem; } }
+  @media (min-width: 992px) {
+    .pages--store .pages__column:last-of-type {
+      margin-left: 5rem; } }
+  @media (min-width: 1500px) {
+    .pages--store .pages__column:last-of-type {
+      margin-left: 11.25rem; } }
+
+.pages__column {
+  flex: 0 1 auto;
+  padding-left: 1rem;
+  padding-right: 1rem; }
 
 .menu {
   font-size: .75em;
@@ -174,6 +209,15 @@ body {
     margin-bottom: 1rem; }
   .assistance__column h1 {
     text-transform: uppercase; }
+
+.store__location {
+  margin-bottom: 2.5rem; }
+  @media (min-width: 576px) {
+    .store__location {
+      margin-bottom: 3rem; } }
+  @media (min-width: 1500px) {
+    .store__location {
+      margin-bottom: 5rem; } }
 
 .burger-nav {
   cursor: pointer;

@@ -3,8 +3,8 @@
   flex: 1 1 auto;
   justify-content: center;
   margin: 2.1rem auto 0;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
 
   @media (min-width: $screen-sm) {
@@ -17,4 +17,18 @@
   font-size: .82rem;
   flex: 1 1 auto;
   align-self: center;
+
+  h1 {
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    letter-spacing: .1em;
+  }
+
+  a {
+    color: #303030;
+  }
 }
