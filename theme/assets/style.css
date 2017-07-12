@@ -209,8 +209,11 @@ body {
     z-index: 10; }
 
 .product__columns {
-  flex: 1 1 auto;
-  font-size: 0; }
+  flex: 0 1 auto;
+  font-size: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 40rem; }
 
 .assistance__columns {
   display: flex;
@@ -330,7 +333,8 @@ td:nth-child(even) {
   .product-image.product-image--large {
     margin-bottom: 6.5rem;
     max-width: 25rem;
-    width: 100%; }
+    width: 100%;
+    display: block; }
 
 .brand-name {
   color: black;
