@@ -11,6 +11,7 @@ body {
   position: relative; }
 
 .damoy__container {
+  display: flex;
   margin-bottom: 0;
   padding-top: 1.6rem;
   height: 100%; }
@@ -49,6 +50,7 @@ body {
   color: #95989A; }
 
 .sidebar {
+  flex: initial;
   padding-left: 2rem;
   position: relative; }
   @media (min-width: 576px) {
@@ -56,19 +58,18 @@ body {
       padding-left: 5rem; } }
 
 .main-content {
-  max-width: 110rem;
+  flex: auto;
   margin: 2.1rem auto 0;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-  position: relative;
-  width: 100%; }
+  position: relative; }
   @media (min-width: 576px) {
     .main-content {
       margin-top: 0; } }
 
 .menu {
   font-size: .75em;
-  position: absolute;
+  position: relative;
   display: none;
   z-index: 10; }
   @media (min-width: 576px) {
@@ -219,10 +220,10 @@ body {
   margin-left: auto; }
   @media (min-width: 576px) {
     .homepage-image {
-      max-width: 21rem; } }
+      max-width: 20rem; } }
   @media (min-width: 768px) {
     .homepage-image {
-      max-width: 33.5rem; } }
+      max-width: 30.5rem; } }
   @media (min-width: 992px) {
     .homepage-image {
       max-width: 37.5rem; } }
