@@ -1,5 +1,7 @@
 .main-content {
+  display: flex;
   flex: 1 1 auto;
+  justify-content: center;
   margin: 2.1rem auto 0;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -8,4 +10,11 @@
   @media (min-width: $screen-sm) {
     margin-top: 0;
   }
+}
+
+.content__pages {
+  color: #303030;
+  font-size: .82rem;
+  flex: 1 1 auto;
+  align-self: center;
 }
