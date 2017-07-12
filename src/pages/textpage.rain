@@ -1,5 +1,1 @@
-<h2>Textpage</h2>
-
-<pre>
-    {{ dump(textpage) }}
-</pre>
+{{ textpage.content | raw }}

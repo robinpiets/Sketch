@@ -138,6 +138,31 @@ body {
   max-width: 25rem;
   margin-right: 10rem; }
 
+.assistance__columns {
+  display: flex;
+  flex-direction: column;
+  max-width: 75rem;
+  margin-left: auto;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap; }
+  @media (min-width: 576px) {
+    .assistance__columns {
+      flex-direction: row; } }
+
+.assistance__column {
+  flex: 1 0 auto;
+  max-width: 18.75rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  width: 100%; }
+  .assistance__column h1,
+  .assistance__column p {
+    font-size: .82rem;
+    margin-bottom: 1rem; }
+  .assistance__column h1 {
+    text-transform: uppercase; }
+
 .burger-nav {
   cursor: pointer;
   display: block;

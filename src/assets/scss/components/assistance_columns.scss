@@ -1,0 +1,31 @@
+.assistance__columns {
+  display: flex;
+  flex-direction: column;
+  max-width: 75rem;
+  margin-left: auto;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: $screen-sm) {
+    flex-direction: row;
+  }
+}
+
+.assistance__column {
+  flex: 1 0 auto;
+  max-width: 18.75rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  width: 100%;
+
+  h1,
+  p {
+    font-size: .82rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    text-transform: uppercase;
+  }
+}
