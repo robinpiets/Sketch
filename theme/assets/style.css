@@ -56,7 +56,6 @@ body {
   display: flex;
   flex: 1 1 auto;
   justify-content: center;
-  margin: 2.1rem auto 0;
   padding-left: 1rem;
   padding-right: 1rem;
   position: relative; }
@@ -275,7 +274,8 @@ body {
   margin-left: auto; }
   @media (min-width: 576px) {
     .homepage-image {
-      max-width: 20rem; } }
+      max-width: 20rem;
+      margin-right: 1.5rem; } }
   @media (min-width: 768px) {
     .homepage-image {
       max-width: 30.5rem; } }
