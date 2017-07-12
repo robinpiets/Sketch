@@ -133,17 +133,15 @@ body {
   .pages--store .pages__column:last-of-type {
     margin-left: 11.25rem; } }
 
-.pages--assistance p {
-  margin-bottom: 1rem; }
-
-.pages--assistance h1 {
-  letter-spacing: .1em; }
-
-.pages--assistance .pages__column {
-  flex: 1 1 auto; }
+.pages--assistance {
+  flex-wrap: wrap; }
+  .pages--assistance p {
+    margin-bottom: 1rem; }
+  .pages--assistance h1 {
+    letter-spacing: .1em; }
   @media (min-width: 576px) {
     .pages--assistance .pages__column {
-      max-width: 13.75rem;
+      width: 13.75rem;
       margin-left: 1.5rem;
       margin-right: 1.5rem;
       padding: 0; } }
