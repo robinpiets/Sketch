@@ -1,5 +1,37 @@
-<h2>Product</h2>
+<div>
+  <div>
+    <img src="{{ product.image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+  </div>
+  <div>
+    {{ dump(product.images) }}
+  </div>
+</div>
+<div>
+  <h1>{{product.title}}</h1>
+  <h2>{{shop.currency2.symbol}}{{product.price.price}}</h2>
+  <p>
+    {{product.description}}
+  </p>
+  <p>
+    product specs:
+    {{ dump(product.specs)}}
+  </p>
+  <p>
+    Delivery:
+    {{ product.stock.delivery.title }}
+  </p>
+  <p>
+    Details
+    {{ product.content | raw }}
+  </p>
 
-<pre>
-    {{ dump(product) }}
-</pre>
+  <div style="border: 2px solid red;">
+    <form action="{{ ('cart/add/' ~ product.vid) | url }}" id=
+        "product_configure_form" method="post">
+      <a href="javascript:;" onclick="$('#product_configure_form').submit();" class="button is-primary" title="{{ 'Add to cart' | t }}" {% if shop.language == 'de' %}style="padding: 0px 10px;"{% endif %}>
+        <span>{{ 'Add to cart' | t }}</span>
+      </a>
+    </form>
+  </div>
+
+</div>
