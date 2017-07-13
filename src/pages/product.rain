@@ -3,7 +3,11 @@
     <img src="{{ product.image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
   </div>
   <div>
-    {{ dump(product.images) }}
+    {% for image in product.images %}
+      <div>
+        <img src="{{ image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+      </div>
+    {% endfor %}
   </div>
 </div>
 <div>
@@ -14,7 +18,9 @@
   </p>
   <p>
     product specs:
-    {{ dump(product.specs)}}
+    {% for spec in product.specs %}
+      {{spec.title}}: {{spec.value}}
+    {% endfor %}
   </p>
   <p>
     Delivery:
