@@ -365,6 +365,16 @@ body .eupopup-style-compact .eupopup-button {
 .product__container {
   max-width: 67.5rem;
   margin: 0 0 0 auto; }
+  .product__container.show-on-desktop {
+    display: none; }
+    @media (min-width: 576px) {
+      .product__container.show-on-desktop {
+        display: flex; } }
+  .product__container.show-on-mobile {
+    display: flex; }
+    @media (min-width: 576px) {
+      .product__container.show-on-mobile {
+        display: none; } }
 
 .product__element {
   padding: 0 2.5rem; }
