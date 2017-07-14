@@ -1,0 +1,32 @@
+.product__title {
+  font-size: 1.25rem;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+}
+
+.product__price,
+.product__description,
+.product__cart--btn {
+  font-size: .81rem;
+  letter-spacing: .1rem;
+}
+
+.product__price {
+  .currency-symbol {
+    padding-right: .4rem;
+  }
+}
+
+.button.product__cart--btn {
+  background: white;
+  border: 1px solid black;
+  border-radius: 0;
+  color: black;
+  max-width: 6.5rem;
+
+  &:hover {
+    background: white;
+    border-color: transparentize(black, .3);
+    color: transparentize(black, .3);
+  }
+}

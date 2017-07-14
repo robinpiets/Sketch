@@ -362,6 +362,31 @@ body .eupopup-style-compact .eupopup-buttons {
 body .eupopup-style-compact .eupopup-button {
   margin: 0 5px; }
 
+.product__title {
+  font-size: 1.25rem;
+  letter-spacing: .2rem;
+  text-transform: uppercase; }
+
+.product__price,
+.product__description,
+.product__cart--btn {
+  font-size: .81rem;
+  letter-spacing: .1rem; }
+
+.product__price .currency-symbol {
+  padding-right: .4rem; }
+
+.button.product__cart--btn {
+  background: white;
+  border: 1px solid black;
+  border-radius: 0;
+  color: black;
+  max-width: 6.5rem; }
+  .button.product__cart--btn:hover {
+    background: white;
+    border-color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.7); }
+
 .burger-nav {
   cursor: pointer;
   display: block;
