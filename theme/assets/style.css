@@ -374,7 +374,9 @@ body .eupopup-style-compact .eupopup-button {
     padding-right: 0; }
 
 .product__info {
+  margin-bottom: 5rem;
   max-width: 26.25rem;
+  min-height: 45rem;
   padding-top: 6.8rem; }
 
 .product__title {
@@ -397,6 +399,7 @@ body .eupopup-style-compact .eupopup-button {
   margin-bottom: 3.6rem; }
 
 .product__image--container {
+  margin-bottom: 5rem;
   max-height: 45rem;
   overflow: hidden; }
 

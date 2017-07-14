@@ -3,6 +3,13 @@
     <div class="product__image--container">
       <img src="{{ product.image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
     </div>
+    {% set image_array = product.images | slice(0, -1) | slice(1) %}
+    {% for image in image_array %}
+      <div class="product__image--container">
+        <img src="{{ image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+      </div>
+    {% endfor %}
+
   </div>
   <div class="product__element column">
     <div class="product__info">
@@ -35,13 +42,11 @@
         </form>
       </div>
     </div>
+    <div class="product__image--container">
+      <img src="{{ product.images|last | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+    </div>
   </div>
 
   <!--<div>
-    {% for image in product.images %}
-      <div>
-        <img src="{{ image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
-      </div>
-    {% endfor %}
   </div>-->
 </div>
