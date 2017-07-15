@@ -12,4 +12,9 @@ $(document).ready(function(){
     $(this).toggleClass('is-active');
     $('.mobile-menu').toggleClass('is-active');
   });
+
+  $('.product__image--carousel').slick({
+    prevArrow: "<div class='prev-arrow'><span class='arrow'><</span></div>",
+    nextArrow: "<div class='next-arrow'><span class='arrow'>></span></div>"
+  });
 });
