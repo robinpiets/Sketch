@@ -15,7 +15,7 @@
 
   &.show-on-mobile {
     display: flex;
-
+    flex-direction: column;
     @media (min-width: $screen-sm) {
       display: none;
     }
@@ -35,10 +35,15 @@
 }
 
 .product__info {
-  margin-bottom: 5rem;
-  max-width: 26.25rem;
-  min-height: 45rem;
-  padding-top: 6.8rem;
+  display: block;
+  flex: 1 1 auto;
+
+  @media (min-width: $screen-sm) {
+    margin-bottom: 5rem;
+    max-width: 26.25rem;
+    min-height: 45rem;
+    padding-top: 6.8rem;
+  }
 }
 
 .product__title {

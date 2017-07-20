@@ -373,7 +373,8 @@ body .eupopup-style-compact .eupopup-button {
       .product__container.show-on-desktop {
         display: flex; } }
   .product__container.show-on-mobile {
-    display: flex; }
+    display: flex;
+    flex-direction: column; }
     @media (min-width: 576px) {
       .product__container.show-on-mobile {
         display: none; } }
@@ -386,10 +387,14 @@ body .eupopup-style-compact .eupopup-button {
     padding-right: 0; }
 
 .product__info {
-  margin-bottom: 5rem;
-  max-width: 26.25rem;
-  min-height: 45rem;
-  padding-top: 6.8rem; }
+  display: block;
+  flex: 1 1 auto; }
+  @media (min-width: 576px) {
+    .product__info {
+      margin-bottom: 5rem;
+      max-width: 26.25rem;
+      min-height: 45rem;
+      padding-top: 6.8rem; } }
 
 .product__title {
   font-size: 1.25rem;
