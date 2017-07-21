@@ -22,12 +22,22 @@ body {
 
 .footer {
   background: white;
+  bottom: 0;
   display: flex;
   flex-direction: row;
   padding: 0 2.5rem 0;
-  position: relative;
+  position: absolute;
   margin-top: 3rem;
   width: 100%; }
+  @media (min-width: 576px) {
+    .footer {
+      position: relative; } }
+  .footer .eupopup-container-bottom {
+    bottom: 0;
+    top: inherit; }
+    @media (min-width: 576px) {
+      .footer .eupopup-container-bottom {
+        top: 0; } }
 
 .footer p {
   font-size: .7rem;
@@ -47,6 +57,15 @@ body {
 .footer__aligned--right {
   margin-left: auto; }
 
+.footer__aligned--left,
+.footer__aligned--right {
+  display: none; }
+
+@media (min-width: 576px) {
+  .footer__aligned--left,
+  .footer__aligned--right {
+    display: block; } }
+
 .sidebar {
   flex: 0 1 auto;
   padding-left: 2rem;
@@ -63,7 +82,7 @@ body {
   display: flex;
   flex: 1 1 auto;
   justify-content: center;
-  padding: 1rem 1rem 0;
+  padding: 2.2rem 2.5rem 0;
   position: relative; }
   @media (min-width: 576px) {
     .main-content {
@@ -552,6 +571,7 @@ body .eupopup-style-compact .eupopup-button {
   color: black;
   display: block;
   font-size: 1.18rem;
+  left: 2.5rem;
   letter-spacing: .2rem;
   position: absolute;
   text-transform: uppercase;
