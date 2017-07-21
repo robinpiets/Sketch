@@ -11,6 +11,8 @@
  	<title>{{ page.title }} - {{ shop.name }}</title>
 
 	<link rel="stylesheet" href="{{ 'bulma.css' | url_asset }}"/>
+	<link rel="stylesheet" href="{{ 'slick.css' | url_asset }}"/>
+	<!-- <link rel="stylesheet" href="{{ 'slick-theme.css' | url_asset }}"/> -->
   <link rel="stylesheet" href="{{ 'style.css' | url_asset }}"/>
 	<script
      src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -21,11 +23,16 @@
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
 	<script src="{{ 'main-min.js' | url_asset }}"></script>
+	<script src="{{ 'jquery_eu_cookie_law_popup-min.js' | url_asset }}"></script>
+	<script src="{{ 'slick-min.js' | url_asset }}"></script>
 </head>
 <body>
 	{% include 'snippets/mobile-menu.rain' %}
 	<div class="damoy__container">
 		<div class="sidebar">
+			{% if template == 'pages/collection.rain' %}
+				<div class="mobile-brand">LA</div>
+			{% endif %}
 			{% include 'snippets/navigation.rain' %}
 		</div>
 		<div class="main-content">

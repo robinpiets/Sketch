@@ -1,0 +1,27 @@
+<div class="product__container {{class}}">
+  <div class="product__image--carousel">
+    {% for image in product.images %}
+      <div>
+        <img src="{{ image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="product__info">
+    <h1 class="product__title">{{product.title}}</h1>
+    <h2 class="product__price"><span class="currency-symbol">{{shop.currency2.symbol}}</span>{{product.price.price}}</h2>
+    <p class="product__description">
+      {{product.description}}
+    </p>
+
+    <div>
+      <form action="{{ ('cart/add/' ~ product.vid) | url }}" id=
+          "product_configure_form" method="post">
+        <a href="javascript:;" onclick="$('#product_configure_form').submit();" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}" {% if shop.language == 'de' %}style="padding: 0px 10px;"{% endif %}>
+          <span>{{ 'Add to cart' | t }}</span>
+        </a>
+      </form>
+    </div>
+
+  </div>
+</div>

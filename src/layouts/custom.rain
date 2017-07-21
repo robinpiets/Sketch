@@ -12,7 +12,7 @@
 
 	<link rel="stylesheet" href="{{ 'bulma.css' | url_asset }}"/>
 	<link rel="stylesheet" href="{{ 'slick.css' | url_asset }}"/>
-	<link rel="stylesheet" href="{{ 'slick-theme.css' | url_asset }}"/>
+	<!-- <link rel="stylesheet" href="{{ 'slick-theme.css' | url_asset }}"/> -->
   <link rel="stylesheet" href="{{ 'style.css' | url_asset }}"/>
 	<script
      src="https://code.jquery.com/jquery-3.2.1.min.js"
