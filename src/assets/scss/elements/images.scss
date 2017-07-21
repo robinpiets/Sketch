@@ -17,15 +17,30 @@
 }
 
 .product-image {
-  display: inline-block;
-  max-width: 20rem;
-  padding: .05rem;
-  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-bottom: .625rem;
+  max-width: 14.7rem;
 
   &.product-image--large {
-    margin-bottom: 6.5rem;
-    max-width: 25rem;
-    width: 100%;
+    max-width: 14.7rem;
     display: block;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .product-image {
+    display: inline-block;
+    margin-left: 0;
+    margin-bottom: 0;
+    max-width: 20rem;
+    padding: .05rem;
+    width: 50%;
+
+    &.product-image--large {
+      margin-bottom: 6.5rem;
+      max-width: 25rem;
+      width: 100%;
+    }
   }
 }

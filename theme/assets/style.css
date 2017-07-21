@@ -81,11 +81,13 @@ body {
 .main-content {
   display: flex;
   flex: 1 1 auto;
+  flex-direction: column;
   justify-content: center;
   padding: 2.2rem 2.5rem 0;
   position: relative; }
   @media (min-width: 576px) {
     .main-content {
+      flex-direction: row;
       margin-top: 0;
       padding-top: 0; } }
 
@@ -234,8 +236,10 @@ body {
   flex: 0 1 auto;
   font-size: 0;
   padding-left: 1rem;
-  padding-right: 1rem;
   max-width: 40rem; }
+  @media (min-width: 576px) {
+    .product__columns {
+      padding-right: 1rem; } }
 
 .assistance__columns {
   display: flex;
@@ -557,15 +561,26 @@ body .eupopup-style-compact .eupopup-button {
       max-width: 37.5rem; } }
 
 .product-image {
-  display: inline-block;
-  max-width: 20rem;
-  padding: .05rem;
-  width: 50%; }
+  display: block;
+  margin-left: auto;
+  margin-bottom: .625rem;
+  max-width: 14.7rem; }
   .product-image.product-image--large {
-    margin-bottom: 6.5rem;
-    max-width: 25rem;
-    width: 100%;
+    max-width: 14.7rem;
     display: block; }
+
+@media (min-width: 576px) {
+  .product-image {
+    display: inline-block;
+    margin-left: 0;
+    margin-bottom: 0;
+    max-width: 20rem;
+    padding: .05rem;
+    width: 50%; }
+    .product-image.product-image--large {
+      margin-bottom: 6.5rem;
+      max-width: 25rem;
+      width: 100%; } }
 
 .brand-name {
   color: black;

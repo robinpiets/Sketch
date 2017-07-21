@@ -1,11 +1,13 @@
 .main-content {
   display: flex;
   flex: 1 1 auto;
+  flex-direction: column;
   justify-content: center;
   padding: 2.2rem 2.5rem 0;
   position: relative;
 
   @media (min-width: $screen-sm) {
+    flex-direction: row;
     margin-top: 0;
     padding-top: 0;
   }
