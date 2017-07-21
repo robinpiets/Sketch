@@ -30,6 +30,9 @@
 	{% include 'snippets/mobile-menu.rain' %}
 	<div class="damoy__container">
 		<div class="sidebar">
+			{% if template == 'pages/collection.rain' %}
+				<div class="mobile-brand">LA</div>
+			{% endif %}
 			{% include 'snippets/navigation.rain' %}
 		</div>
 		<div class="main-content">

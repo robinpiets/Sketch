@@ -8,8 +8,21 @@
   text-transform: uppercase;
   top: 50%;
   transform: translateY(-50%);
+}
 
-  @media (min-width: $screen-sm) {
+.mobile-brand {
+  display: block;
+  position: absolute;
+  letter-spacing: .2rem;
+  font-size: 1.2rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: $screen-sm) {
+  .mobile-brand,
+  .brand-name {
     display: none;
   }
 }
