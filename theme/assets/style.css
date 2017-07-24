@@ -33,6 +33,9 @@ body {
     @media (min-width: 576px) {
       .footer .eupopup-container-bottom {
         top: 0; } }
+  @media (min-width: 576px) {
+    .footer {
+      padding-top: 3em; } }
 
 .footer p {
   font-size: .7em;
@@ -120,10 +123,6 @@ body {
 
 .pages--store,
 .pages--assistance {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center; }
@@ -549,12 +548,16 @@ body .eupopup-style-compact .eupopup-button {
   transform: rotate(-45deg); }
 
 .homepage-image {
-  max-width: 14.7rem;
+  width: 14.7rem;
   margin-top: 5px;
   margin-left: auto; }
   @media (min-width: 576px) {
     .homepage-image {
-      max-width: 37.5em; } }
+      width: 41.5em;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding-right: 5em; } }
 
 .product-image {
   display: block;

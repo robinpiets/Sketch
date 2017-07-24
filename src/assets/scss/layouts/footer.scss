@@ -15,6 +15,10 @@
       top: 0;
     }
   }
+
+  @media (min-width: $screen-sm) {
+    padding-top: 3em;
+  }
 }
 
 .footer p {

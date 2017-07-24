@@ -1,19 +1,14 @@
 .homepage-image {
-  max-width: 14.7rem;
+  width: 14.7rem;
   margin-top: 5px;
   margin-left: auto;
 
   @media (min-width: $screen-sm) {
-    max-width: 37.5em;
-  //   max-width: 20rem;
-  //   margin-right: 1.5rem;
-  }
-  //
-  // @media (min-width: $screen-md) {
-  //   max-width: 30.5rem;
-  // }
-
-  @media (min-width: $screen-lg) {
+    width: 41.5em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 5em;
   }
 }
 
