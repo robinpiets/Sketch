@@ -1,4 +1,4 @@
-<footer class="footer eupopup eupopup-bottom"">
+<footer class="footer eupopup eupopup-bottom">
   <p class="footer__aligned footer__aligned--left">
     © 2017 LA Collection
   </p>
@@ -7,6 +7,6 @@
     <a href="#" data-behavior="accept-cookies" class="close-button">x</a>
   </p>
   <p class="footer__aligned footer__aligned--right footer__made-by">
-    Designed by Trashure
+    Design by Trashure
   </p>
 </footer>

@@ -11,7 +11,7 @@ body {
 .damoy__container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0;
+  padding-bottom: 7.4em;
   padding-top: 1.6em;
   height: 100%; }
   @media (min-width: 576px) {
@@ -26,11 +26,7 @@ body {
   flex-direction: row;
   padding: 0 5em 0;
   position: absolute;
-  margin-top: 4.8em;
   width: 100%; }
-  @media (min-width: 576px) {
-    .footer {
-      position: relative; } }
   .footer .eupopup-container-bottom {
     bottom: 0;
     top: inherit; }
@@ -92,7 +88,7 @@ body {
 
 .content__pages {
   color: #303030;
-  font-size: .82rem;
+  font-size: .82em;
   flex: 1 1 auto;
   align-self: center; }
   .content__pages h1 {
@@ -114,13 +110,20 @@ body {
       margin-bottom: 0; } }
 
 .pages--about {
-  max-width: 42.5rem;
+  max-width: 48.5em;
   width: 100%;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem; }
+  padding-left: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 .pages--store,
 .pages--assistance {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center; }
@@ -156,18 +159,18 @@ body {
   .pages--store .pages__column:last-of-type {
     margin-left: 11.25rem; } }
 
-.pages--assistance {
-  flex-wrap: wrap; }
-  .pages--assistance p {
-    margin-bottom: 1rem; }
-  .pages--assistance h1 {
-    letter-spacing: .1em; }
-  @media (min-width: 576px) {
-    .pages--assistance .pages__column {
-      width: 13.75rem;
-      margin-left: 1.5rem;
-      margin-right: 1.5rem;
-      padding: 0; } }
+.pages--assistance p {
+  margin-bottom: 1rem; }
+
+.pages--assistance h1 {
+  letter-spacing: .1em; }
+
+@media (min-width: 576px) {
+  .pages--assistance .pages__column {
+    width: 15em;
+    margin-left: 3em;
+    margin-right: 3em;
+    padding: 0; } }
 
 .menu {
   font-size: .75em;
