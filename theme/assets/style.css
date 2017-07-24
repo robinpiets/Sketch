@@ -3,31 +3,30 @@ html {
   height: 100%; }
 
 body {
-  min-height: 100%; }
-
-body {
   font-family: Helvetica, Arial, sans-serif;
-  position: relative; }
+  font-size: 12px;
+  position: relative;
+  min-height: 100%; }
 
 .damoy__container {
   display: flex;
   flex-direction: column;
   margin-bottom: 0;
-  padding-top: 1.6rem;
+  padding-top: 1.6em;
   height: 100%; }
   @media (min-width: 576px) {
     .damoy__container {
       flex-direction: row;
-      padding-top: 4.25rem; } }
+      padding-top: 4.7em; } }
 
 .footer {
   background: white;
   bottom: 0;
   display: flex;
   flex-direction: row;
-  padding: 0 2.5rem 0;
+  padding: 0 5em 0;
   position: absolute;
-  margin-top: 3rem;
+  margin-top: 4.8em;
   width: 100%; }
   @media (min-width: 576px) {
     .footer {
@@ -40,16 +39,16 @@ body {
         top: 0; } }
 
 .footer p {
-  font-size: .7rem;
+  font-size: .7em;
   text-transform: uppercase;
   margin-bottom: 1.1rem; }
   @media (min-width: 576px) {
     .footer p {
-      font-size: .8rem;
-      letter-spacing: .1rem; } }
+      font-size: .8em;
+      letter-spacing: .1em; } }
 
 .footer__made-by {
-  color: #95989A; }
+  color: rgba(0, 0, 0, 0.2); }
 
 .footer__aligned {
   flex: 0 1 auto; }
@@ -68,28 +67,28 @@ body {
 
 .sidebar {
   flex: 0 1 auto;
-  padding-left: 2rem;
+  padding-left: 2em;
   position: relative;
   white-space: nowrap; }
   @media (min-width: 576px) {
     .sidebar {
-      padding-left: 3rem; } }
+      padding-left: 3em; } }
   @media (min-width: 768px) {
     .sidebar {
-      padding-left: 5rem; } }
+      padding-left: 5em; } }
 
 .main-content {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
-  padding: 2.2rem 2.5rem 0;
+  padding-right: 5em;
+  padding-left: 1em;
   position: relative; }
   @media (min-width: 576px) {
     .main-content {
       flex-direction: row;
-      margin-top: 0;
-      padding-top: 0; } }
+      margin-top: 0; } }
 
 .content__pages {
   color: #303030;
@@ -189,17 +188,17 @@ body {
 
 .brand-link {
   color: black;
-  font-size: 1.3em; }
+  font-size: 1.5em; }
 
 .menu-link:hover {
   color: black;
   transition: .2s color; }
 
 .menu-item {
-  margin-bottom: 1rem; }
+  margin-bottom: .8em; }
 
 .menu-group {
-  margin-bottom: 3rem; }
+  margin-bottom: 5.9em; }
 
 .menu-dropdown.is-collapsed {
   display: none; }
@@ -548,17 +547,11 @@ body .eupopup-style-compact .eupopup-button {
 
 .homepage-image {
   max-width: 14.7rem;
+  margin-top: 5px;
   margin-left: auto; }
   @media (min-width: 576px) {
     .homepage-image {
-      max-width: 20rem;
-      margin-right: 1.5rem; } }
-  @media (min-width: 768px) {
-    .homepage-image {
-      max-width: 30.5rem; } }
-  @media (min-width: 992px) {
-    .homepage-image {
-      max-width: 37.5rem; } }
+      max-width: 37.5em; } }
 
 .product-image {
   display: block;

@@ -14,13 +14,14 @@
   letter-spacing: .1em;
   line-height: 1.6;
   font-size: 1em;
+  // font-size: 9px;
   text-transform: uppercase;
   transition: .2s color;
 }
 
 .brand-link {
   color: black;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 .menu-link:hover {
@@ -29,11 +30,12 @@
 }
 
 .menu-item {
-  margin-bottom: 1rem;
+  margin-bottom: .8em;
+  // margin-bottom: 2px;
 }
 
 .menu-group {
-  margin-bottom: 3rem;
+  margin-bottom: 5.9em;
 }
 
 .menu-dropdown.is-collapsed {

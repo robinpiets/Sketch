@@ -1,14 +1,14 @@
 .sidebar {
   flex: 0 1 auto;
-  padding-left: 2rem;
+  padding-left: 2em;
   position: relative;
   white-space: nowrap;
 
   @media (min-width: $screen-sm) {
-    padding-left: 3rem;
+    padding-left: 3em;
   }
 
   @media (min-width: $screen-md) {
-    padding-left: 5rem;
+    padding-left: 5em;
   }
 }
