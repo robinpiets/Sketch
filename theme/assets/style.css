@@ -12,19 +12,22 @@ body {
   display: flex;
   flex-direction: column;
   padding-bottom: 7.4em;
-  padding-top: 1.6em;
-  height: 100%; }
+  padding-top: 1.6em; }
+  .damoy__container.index-page {
+    overflow-y: hidden; }
   @media (min-width: 576px) {
     .damoy__container {
       flex-direction: row;
-      padding-top: 4.7em; } }
+      padding-top: 4.7em;
+      padding-bottom: 0;
+      height: 100vh; } }
 
 .footer {
   background: white;
   bottom: 0;
   display: flex;
   flex-direction: row;
-  padding: 0 5em 0;
+  padding: 0 5em 1.1em;
   position: absolute;
   width: 100%; }
   .footer .eupopup-container-bottom {
@@ -39,8 +42,7 @@ body {
 
 .footer p {
   font-size: .7em;
-  text-transform: uppercase;
-  margin-bottom: 1.1rem; }
+  text-transform: uppercase; }
   @media (min-width: 576px) {
     .footer p {
       font-size: .8em;
@@ -87,7 +89,8 @@ body {
   @media (min-width: 576px) {
     .main-content {
       flex-direction: row;
-      margin-top: 0; } }
+      margin-top: 0;
+      height: 100%; } }
 
 .content__pages {
   color: #303030;
@@ -548,16 +551,19 @@ body .eupopup-style-compact .eupopup-button {
   transform: rotate(-45deg); }
 
 .homepage-image {
-  width: 14.7rem;
   margin-top: 5px;
   margin-left: auto; }
   @media (min-width: 576px) {
     .homepage-image {
-      width: 41.5em;
+      height: 100%;
       position: absolute;
       right: 0;
       top: 0;
-      padding-right: 5em; } }
+      padding-right: 5em;
+      text-align: right; } }
+  .homepage-image img {
+    height: 100%;
+    width: auto; }
 
 .product-image {
   display: block;

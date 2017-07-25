@@ -28,7 +28,11 @@
 </head>
 <body>
 	{% include 'snippets/mobile-menu.rain' %}
+	{% if template == 'pages/index.rain' %}
+	<div class="damoy__container index-page">
+	{% else %}
 	<div class="damoy__container">
+	{% endif %}
 		<div class="sidebar">
 			{% if template == 'pages/collection.rain' %}
 				<div class="mobile-brand">LA</div>

@@ -1,14 +1,20 @@
 .homepage-image {
-  width: 14.7rem;
   margin-top: 5px;
   margin-left: auto;
 
   @media (min-width: $screen-sm) {
-    width: 41.5em;
+    // width: 41.5em;
+    height: 100%;
     position: absolute;
     right: 0;
     top: 0;
     padding-right: 5em;
+    text-align: right;
+  }
+
+  img {
+    height: 100%;
+    width: auto;
   }
 }
 
