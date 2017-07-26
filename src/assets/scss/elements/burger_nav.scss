@@ -1,9 +1,9 @@
 .burger-nav {
   cursor: pointer;
   display: block;
-  height: 2.5em;
+  height: 40px;
   position: relative;
-  width: 2.5em;
+  width: 40px;
   z-index: $burger-nav-layer;
 
   @media (min-width: $screen-sm) {
@@ -26,7 +26,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   transition: background 0s 0.3s;
-  width: 1.25em;
+  width: 20px;
 
   &:after,
   &:before {
@@ -38,15 +38,15 @@
     transition-property: top, transform;
     transition-duration: 0.3s, 0.3s;
     transition-delay: 0.3s, 0s;
-    width: 1.25em;
+    width: 20px;
   }
 
   &:after {
-    top: .375em;
+    top: 6px;
   }
 
   &:before {
-    top: -.375em;
+    top: -6px;
   }
 }
 

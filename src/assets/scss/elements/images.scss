@@ -1,9 +1,9 @@
 .homepage-image {
-  margin-top: 5px;
   margin-left: auto;
+  max-width: 235px;
 
   @media (min-width: $screen-sm) {
-    // width: 41.5em;
+    margin-top: 5px;
     height: 100%;
     position: absolute;
     right: 0;
@@ -13,8 +13,13 @@
   }
 
   img {
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
+
+    @media (min-width: $screen-sm) {
+      height: 100%;
+      width: auto;
+    }
   }
 }
 

@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-bottom: 7.4em;
-  padding-top: 1.6em; }
+  padding-top: 2.1em; }
   .damoy__container.index-page {
     overflow-y: hidden; }
   @media (min-width: 576px) {
@@ -68,13 +68,10 @@ body {
 
 .sidebar {
   flex: 0 1 auto;
-  padding-left: 2em;
+  padding-left: 2.4em;
   position: relative;
   white-space: nowrap; }
   @media (min-width: 576px) {
-    .sidebar {
-      padding-left: 3em; } }
-  @media (min-width: 768px) {
     .sidebar {
       padding-left: 5em; } }
 
@@ -83,14 +80,15 @@ body {
   flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
-  padding-right: 5em;
-  padding-left: 1em;
+  padding: 2.9em 3.2em 0 1em;
   position: relative; }
   @media (min-width: 576px) {
     .main-content {
       flex-direction: row;
       margin-top: 0;
-      height: 100%; } }
+      height: 100%;
+      padding-right: 5em;
+      padding-top: 0; } }
 
 .content__pages {
   color: #303030;
@@ -502,9 +500,9 @@ body .eupopup-style-compact .eupopup-button {
 .burger-nav {
   cursor: pointer;
   display: block;
-  height: 2.5em;
+  height: 40px;
   position: relative;
-  width: 2.5em;
+  width: 40px;
   z-index: 15; }
   @media (min-width: 576px) {
     .burger-nav {
@@ -519,7 +517,7 @@ body .eupopup-style-compact .eupopup-button {
   top: 50%;
   transform: translate(-50%, -50%);
   transition: background 0s 0.3s;
-  width: 1.25em; }
+  width: 20px; }
   .burger-nav__bar:after, .burger-nav__bar:before {
     background: black;
     content: '';
@@ -529,11 +527,11 @@ body .eupopup-style-compact .eupopup-button {
     transition-property: top, transform;
     transition-duration: 0.3s, 0.3s;
     transition-delay: 0.3s, 0s;
-    width: 1.25em; }
+    width: 20px; }
   .burger-nav__bar:after {
-    top: .375em; }
+    top: 6px; }
   .burger-nav__bar:before {
-    top: -.375em; }
+    top: -6px; }
 
 .burger-nav.is-active .burger-nav__bar {
   background: transparent; }
@@ -551,10 +549,11 @@ body .eupopup-style-compact .eupopup-button {
   transform: rotate(-45deg); }
 
 .homepage-image {
-  margin-top: 5px;
-  margin-left: auto; }
+  margin-left: auto;
+  max-width: 235px; }
   @media (min-width: 576px) {
     .homepage-image {
+      margin-top: 5px;
       height: 100%;
       position: absolute;
       right: 0;
@@ -562,8 +561,12 @@ body .eupopup-style-compact .eupopup-button {
       padding-right: 5em;
       text-align: right; } }
   .homepage-image img {
-    height: 100%;
-    width: auto; }
+    height: auto;
+    width: 100%; }
+    @media (min-width: 576px) {
+      .homepage-image img {
+        height: 100%;
+        width: auto; } }
 
 .product-image {
   display: block;
