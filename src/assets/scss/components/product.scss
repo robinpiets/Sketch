@@ -14,8 +14,11 @@
   }
 
   &.show-on-mobile {
+    padding-right: 30px;
+    padding-left: 30px;
     display: flex;
     flex-direction: column;
+
     @media (min-width: $screen-sm) {
       display: none;
     }
@@ -79,16 +82,38 @@
 
 .button.product__cart--btn {
   background: white;
-  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,.5);
   border-radius: 0;
-  color: black;
-  max-width: 6.5rem;
+  color: #303030;
+  height: 40px;
+  font-size: 13px;
+  width: 100%;
+  flex: 0 1 auto;
+  max-width: 130px;
+
+  @media (min-width: $screen-sm) {
+    max-width: 6.5rem;
+  }
 
   &:hover {
     background: white;
     border-color: transparentize(black, .3);
     color: transparentize(black, .3);
   }
+
+  &:active {
+    background: white;
+    border-color: transparentize(black, .3);
+    color: transparentize(black, .3);
+  }
+
+  &:last-of-type {
+    margin-left: auto;
+  }
+}
+
+.add-cart-form {
+  display: flex;
 }
 
 .product__image--carousel {
