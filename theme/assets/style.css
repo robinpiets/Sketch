@@ -80,7 +80,7 @@ body {
   flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
-  padding: 2.9em 3.2em 0 1em;
+  padding: 2.9em 1em 0;
   position: relative; }
   @media (min-width: 576px) {
     .main-content {
@@ -96,31 +96,44 @@ body {
   flex: 1 1 auto;
   align-self: center; }
   .content__pages h1 {
+    font-size: 13px;
     letter-spacing: .2em;
     text-transform: uppercase;
-    margin-bottom: 1rem; }
+    margin-bottom: 1.7em; }
+    @media (min-width: 576px) {
+      .content__pages h1 {
+        font-size: .82em;
+        margin-bottom: 1rem; } }
   .content__pages p {
-    letter-spacing: .1em; }
+    letter-spacing: .1em;
+    line-height: 1.2;
+    font-size: 12px; }
+    @media (min-width: 576px) {
+      .content__pages p {
+        font-size: .82em; } }
   .content__pages a {
     color: #303030; }
 
 .pages__column {
   flex: 0 1 auto;
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem; }
+  margin-bottom: 1rem; }
   @media (min-width: 576px) {
     .pages__column {
       margin-bottom: 0; } }
 
 .pages--about {
-  max-width: 48.5em;
-  width: 100%;
-  padding-left: 1.5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+  margin-top: -5px;
+  max-width: 180px;
+  width: 100%; }
+  @media (min-width: 576px) {
+    .pages--about {
+      margin-top: 0;
+      max-width: 48.5em;
+      padding-left: 1.5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); } }
 
 .pages--store,
 .pages--assistance {
@@ -133,7 +146,11 @@ body {
       flex-direction: row; } }
 
 .pages--store .pages__column {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  width: 180px; }
+  @media (min-width: 576px) {
+    .pages--store .pages__column {
+      width: initial; } }
 
 @media (min-width: 768px) {
   .pages--store .pages__column:first-of-type {
@@ -165,12 +182,14 @@ body {
 .pages--assistance h1 {
   letter-spacing: .1em; }
 
-@media (min-width: 576px) {
-  .pages--assistance .pages__column {
-    width: 15em;
-    margin-left: 3em;
-    margin-right: 3em;
-    padding: 0; } }
+.pages--assistance .pages__column {
+  width: 180px; }
+  @media (min-width: 576px) {
+    .pages--assistance .pages__column {
+      width: 15em;
+      margin-left: 3em;
+      margin-right: 3em;
+      padding: 0; } }
 
 .menu {
   font-size: .75em;
@@ -550,9 +569,11 @@ body .eupopup-style-compact .eupopup-button {
 
 .homepage-image {
   margin-left: auto;
+  margin-right: 2.2em;
   max-width: 235px; }
   @media (min-width: 576px) {
     .homepage-image {
+      margin-right: 0;
       margin-top: 5px;
       height: 100%;
       position: absolute;

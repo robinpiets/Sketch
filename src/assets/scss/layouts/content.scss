@@ -3,7 +3,7 @@
   flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
-  padding: 2.9em 3.2em 0 1em;
+  padding: 2.9em 1em 0;
   position: relative;
 
   @media (min-width: $screen-sm) {
@@ -22,13 +22,25 @@
   align-self: center;
 
   h1 {
+    font-size: 13px;
     letter-spacing: .2em;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 1.7em;
+
+    @media (min-width: $screen-sm) {
+      font-size: .82em;
+      margin-bottom: 1rem;
+    }
   }
 
   p {
     letter-spacing: .1em;
+    line-height: 1.2;
+    font-size: 12px;
+
+    @media (min-width: $screen-sm) {
+      font-size: .82em;
+    }
   }
 
   a {

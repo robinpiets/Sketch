@@ -1,8 +1,6 @@
 .pages__column {
   flex: 0 1 auto;
   margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 
   @media (min-width: $screen-sm) {
     margin-bottom: 0;
@@ -10,13 +8,19 @@
 }
 
 .pages--about {
-  max-width: 48.5em;
+  margin-top: -5px;
+  max-width: 180px;
   width: 100%;
-  padding-left: 1.5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+  @media (min-width: $screen-sm) {
+    margin-top: 0;
+    max-width: 48.5em;
+    padding-left: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .pages--store,
@@ -37,6 +41,11 @@
 .pages--store {
   .pages__column {
     margin-bottom: 0;
+    width: 180px;
+
+    @media (min-width: $screen-sm) {
+      width: initial;
+    }
   }
 
   .pages__column:first-of-type {
@@ -78,6 +87,8 @@
   }
 
   .pages__column {
+    width: 180px;
+
     @media (min-width: $screen-sm) {
       width: 15em;
       margin-left: 3em;
