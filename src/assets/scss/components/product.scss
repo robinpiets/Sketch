@@ -169,3 +169,39 @@
     left: 0;
   }
 }
+
+.product__details {
+  display: none;
+  text-align: center;
+
+  &.show {
+    display: block;
+  }
+
+  p {
+    line-height: 2;
+  }
+}
+
+.product-info__menu {
+  border-bottom: 1px solid #95989A;
+  display: flex;
+  padding: 10px 0;
+  margin-bottom: 24.5px;
+}
+
+.product-info__menu-item {
+  color: transparentize(#303030, .5);
+  flex: 1 1 auto;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-align: center;
+
+  &:hover {
+    color: #303030;
+  }
+
+  &.active {
+    color: #303030;
+  }
+}

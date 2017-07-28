@@ -534,6 +534,31 @@ body .eupopup-style-compact .eupopup-button {
     position: absolute;
     left: 0; }
 
+.product__details {
+  display: none;
+  text-align: center; }
+  .product__details.show {
+    display: block; }
+  .product__details p {
+    line-height: 2; }
+
+.product-info__menu {
+  border-bottom: 1px solid #95989A;
+  display: flex;
+  padding: 10px 0;
+  margin-bottom: 24.5px; }
+
+.product-info__menu-item {
+  color: rgba(48, 48, 48, 0.5);
+  flex: 1 1 auto;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-align: center; }
+  .product-info__menu-item:hover {
+    color: #303030; }
+  .product-info__menu-item.active {
+    color: #303030; }
+
 .burger-nav {
   cursor: pointer;
   display: block;
@@ -598,7 +623,8 @@ body .eupopup-style-compact .eupopup-button {
       right: 0;
       top: 0;
       padding-right: 5em;
-      text-align: right; } }
+      text-align: right;
+      max-width: 100%; } }
   .homepage-image img {
     height: auto;
     width: 100%; }

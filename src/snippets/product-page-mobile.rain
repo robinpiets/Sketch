@@ -26,5 +26,29 @@
       </form>
     </div>
 
+    <div class="product__extra-info">
+      <div class="product-info__menu">
+        <a href="#" class="product-info__menu-item active" data-behavior="openProductDetails">details</a>
+        <a href="#" class="product-info__menu-item" data-behavior="openFitAndSize">fit & size</a>
+        <a href="#" class="product-info__menu-item" data-behavior="openShipping">shipping</a>
+        <a href="#" class="product-info__menu-item">share</a>
+      </div>
+      <div class="product__details show" id="productDetails">
+        <p>100% pure gold</p>
+        <p>authentic rust</p>
+        <p>including certificate</p>
+        <p>official heritage</p>
+        <p>200 years old</p>
+      </div>
+      <div class="product__details" id="fitAndSize">
+        <p>model is wearing a size 13</p>
+        <p>loose fit</p>
+      </div>
+      <div class="product__details" id="shipping">
+        <p>this product qualifies for free shipping</p>
+        <p>see assistance for more information</p>
+        <p>returns within 14 days</p>
+      </div>
+    </div>
   </div>
 </div>
