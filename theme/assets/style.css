@@ -546,7 +546,7 @@ body .eupopup-style-compact .eupopup-button {
   border-bottom: 1px solid #95989A;
   display: flex;
   padding: 10px 0;
-  margin-bottom: 10px; }
+  margin: 30px 0 10px; }
 
 .product-info__menu-item {
   color: rgba(48, 48, 48, 0.5);
