@@ -41,4 +41,13 @@ $(document).ready(function(){
     $('#shipping').addClass('show');
     $(this).addClass('active');
   });
+
+  $('[data-behavior~=openShare]').click(function(e){
+    e.preventDefault();
+    $('.product-info__menu-item').removeClass('active');
+    $('.product__details').removeClass('show');
+    $('#share').addClass('show');
+    $(this).addClass('active');
+  });
+
 });
