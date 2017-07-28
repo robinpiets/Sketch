@@ -195,7 +195,7 @@ body {
   font-size: .75em;
   position: relative;
   display: none;
-  z-index: 10; }
+  z-index: 120; }
   @media (min-width: 576px) {
     .menu {
       display: block; } }
@@ -242,7 +242,7 @@ body {
   transition-duration: .5s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
   width: 100%;
-  z-index: 10; }
+  z-index: 120; }
   @media (min-width: 576px) {
     .mobile-menu {
       display: none; } }
@@ -251,7 +251,7 @@ body {
     transition-property: all;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    z-index: 10; }
+    z-index: 120; }
 
 .product__columns {
   flex: 0 1 auto;
@@ -565,7 +565,7 @@ body .eupopup-style-compact .eupopup-button {
   height: 40px;
   position: relative;
   width: 40px;
-  z-index: 15; }
+  z-index: 130; }
   @media (min-width: 576px) {
     .burger-nav {
       display: none; } }
