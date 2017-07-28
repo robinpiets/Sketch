@@ -17,4 +17,28 @@ $(document).ready(function(){
     prevArrow: "<div class='prev-arrow'><span class='arrow'><</span></div>",
     nextArrow: "<div class='next-arrow'><span class='arrow'>></span></div>"
   });
+
+  $('[data-behavior~=openProductDetails]').click(function(e){
+    e.preventDefault();
+    $('.product-info__menu-item').removeClass('active');
+    $('.product__details').removeClass('show');
+    $('#productDetails').addClass('show');
+    $(this).addClass('active');
+  });
+
+  $('[data-behavior~=openFitAndSize]').click(function(e){
+    e.preventDefault();
+    $('.product-info__menu-item').removeClass('active');
+    $('.product__details').removeClass('show');
+    $('#fitAndSize').addClass('show');
+    $(this).addClass('active');
+  });
+
+  $('[data-behavior~=openShipping]').click(function(e){
+    e.preventDefault();
+    $('.product-info__menu-item').removeClass('active');
+    $('.product__details').removeClass('show');
+    $('#shipping').addClass('show');
+    $(this).addClass('active');
+  });
 });
