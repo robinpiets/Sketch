@@ -50,4 +50,26 @@ $(document).ready(function(){
     $(this).addClass('active');
   });
 
+  $('#openCartModal').click(function(e){
+    $('#cartModal').css({"opacity": "1", "z-index":"99999"});
+    $('body').addClass("modal-open");
+  });
+
+  $('#openFavModal').click(function(e){
+    e.preventDefault();
+    $('#favModal').css({"opacity": "1", "z-index":"99999"});
+    $('body').addClass("modal-open");
+  });
+
+  $('#closeFavModal').click(function(e){
+    e.preventDefault();
+    $('#favModal').css({"opacity": "", "z-index":""});
+    $('body').removeClass("modal-open");
+  });
+
+  $('#closeCartModal').click(function(e){
+    e.preventDefault();
+    $('#cartModal').css({"opacity": "", "z-index":""});
+    $('body').removeClass("modal-open");
+  });
 });
