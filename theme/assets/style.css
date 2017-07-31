@@ -20,7 +20,7 @@ body {
       flex-direction: row;
       padding-top: 4.7em;
       padding-bottom: 0;
-      height: 100vh; } }
+      height: 100%; } }
 
 .footer {
   background: white;
