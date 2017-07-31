@@ -191,6 +191,20 @@ body {
       margin-right: 3em;
       padding: 0; } }
 
+.pages--lookbook {
+  display: flex;
+  flex-direction: column;
+  margin-left: -1em;
+  margin-right: -1em; }
+  .pages--lookbook img {
+    flex: 0 1 auto;
+    display: block; }
+  .pages--lookbook img:nth-child(4n), .pages--lookbook img:nth-child(4n-1) {
+    width: 37%; }
+  .pages--lookbook img:nth-child(4n-2), .pages--lookbook img:nth-child(4n-3) {
+    width: 63%;
+    margin-left: auto; }
+
 .menu {
   font-size: .75em;
   position: relative;

@@ -97,3 +97,24 @@
     }
   }
 }
+
+.pages--lookbook {
+  display: flex;
+  flex-direction: column;
+  margin-left: -1em;
+  margin-right: -1em;
+
+  img {
+    flex: 0 1 auto;
+    display: block;
+  }
+
+  img:nth-child(4n), img:nth-child(4n-1) {
+    width: 37%;
+  }
+
+  img:nth-child(4n-2), img:nth-child(4n-3) {
+    width: 63%;
+    margin-left: auto;
+  }
+}
