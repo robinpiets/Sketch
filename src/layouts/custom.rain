@@ -30,6 +30,8 @@
 	{% include 'snippets/mobile-menu.rain' %}
 	{% if template == 'pages/index.rain' %}
 	<div class="damoy__container index-page">
+	{% elseif template == 'pages/cart.rain' %}
+		{% include 'snippets/cart-page.rain' %}
 	{% else %}
 	<div class="damoy__container">
 	{% endif %}
