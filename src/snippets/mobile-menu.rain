@@ -61,7 +61,7 @@
       <a href="{{ 'cart' | url }}" class="menu-link">Cart (<span id="numCartItems" data-num-items="{{page.cart.products|length}}">{{page.cart.products|length}}</span>)</a>
     </div>
     <div class="menu-item">
-      <a href="#" class="menu-link">Login</a>
+      <a href="{{ 'account' | url }}" class="menu-link">Login</a>
     </div>
   </div>
 </div>
