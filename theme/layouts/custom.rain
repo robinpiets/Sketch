@@ -23,13 +23,15 @@
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
 	<script src="{{ 'main-min.js' | url_asset }}"></script>
-	<script src="{{ 'jquery_eu_cookie_law_popup-min.js' | url_asset }}"></script>
+	<script src="{{ 'jquery-eu-cookie-law-popup-min.js' | url_asset }}"></script>
 	<script src="{{ 'slick-min.js' | url_asset }}"></script>
 </head>
 <body>
 	{% include 'snippets/mobile-menu.rain' %}
 	{% if template == 'pages/index.rain' %}
 	<div class="damoy__container index-page">
+	{% elseif template == 'pages/cart.rain' %}
+		{% include 'snippets/cart-page.rain' %}
 	{% else %}
 	<div class="damoy__container">
 	{% endif %}

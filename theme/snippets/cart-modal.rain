@@ -1,0 +1,10 @@
+<div id="cartModal" class="modalDialog">
+  <div>
+    <p class="modal__text">
+      This item has been
+      added to your cart
+    </p>
+    <a href="#close" id="closeCartModal" class="button is-primary modal--btn close">continue shopping</a>
+    <a href="#" class="button is-primary modal--btn">go to cart</a>
+  </div>
+</div>
