@@ -29,11 +29,13 @@
           </a>
         </form>
       </div>
-      <div>
-        <a href="#">details</a>
-        <a href="#">shipping</a>
-        <a href="#">fit & size</a>
-        <a href="#">share</a>
+      <div class="product__extra-info">
+        <div class="product-info__menu">
+          <a href="#productExtraInfo" class="product-info__menu-item">details</a>
+          <a href="#productExtraInfo" class="product-info__menu-item">shipping</a>
+          <a href="#productExtraInfo" class="product-info__menu-item">fit & size</a>
+          <a href="#productExtraInfo" class="product-info__menu-item">share</a>
+        </div>
       </div>
 
       <!-- <p>
@@ -54,8 +56,8 @@
     <div class="product__image--container">
       <img src="{{ product.images|last | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
     </div>
-    <div class="product__info product__info--desktop">
-      <div class="product__extra-info">
+    <div class="product__info product__info--extra-info">
+      <div class="product__extra-info" id="productExtraInfo">
         <div class="product-info__menu">
           <a href="#" class="product-info__menu-item active" data-behavior="openProductDetails">details</a>
           <a href="#" class="product-info__menu-item" data-behavior="openFitAndSize">fit & size</a>

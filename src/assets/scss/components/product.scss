@@ -51,8 +51,13 @@
     max-width: 26.25rem;
     max-height: 45rem;
     padding-top: 6.8rem;
+
+    &.product__info--extra-info {
+      padding-top: 0;
+    }
   }
 }
+
 
 .product__title {
   font-size: 1.25rem;
@@ -210,6 +215,12 @@
   display: flex;
   padding: 10px 0;
   margin: 30px 0 10px;
+
+  @media (min-width: $screen-sm) {
+    border-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
 }
 
 .product-info__menu-item {
@@ -218,6 +229,20 @@
   font-size: 12px;
   letter-spacing: .1em;
   text-align: center;
+
+  @media (min-width: $screen-sm) {
+    flex: 0 1 auto;
+    margin-left: 11px;
+    margin-right: 11px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
 
   &:hover {
     color: #303030;

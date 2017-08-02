@@ -486,7 +486,9 @@ body .eupopup-style-compact .eupopup-button {
       margin-bottom: 5rem;
       max-width: 26.25rem;
       max-height: 45rem;
-      padding-top: 6.8rem; } }
+      padding-top: 6.8rem; }
+      .product__info.product__info--extra-info {
+        padding-top: 0; } }
 
 .product__title {
   font-size: 1.25rem;
@@ -605,6 +607,11 @@ body .eupopup-style-compact .eupopup-button {
   display: flex;
   padding: 10px 0;
   margin: 30px 0 10px; }
+  @media (min-width: 576px) {
+    .product-info__menu {
+      border-bottom: 0;
+      margin-top: 0;
+      padding-top: 0; } }
 
 .product-info__menu-item {
   color: rgba(48, 48, 48, 0.5);
@@ -612,6 +619,15 @@ body .eupopup-style-compact .eupopup-button {
   font-size: 12px;
   letter-spacing: .1em;
   text-align: center; }
+  @media (min-width: 576px) {
+    .product-info__menu-item {
+      flex: 0 1 auto;
+      margin-left: 11px;
+      margin-right: 11px; }
+      .product-info__menu-item:first-of-type {
+        margin-left: 0; }
+      .product-info__menu-item:last-of-type {
+        margin-right: 0; } }
   .product-info__menu-item:hover {
     color: #303030; }
   .product-info__menu-item.active {
