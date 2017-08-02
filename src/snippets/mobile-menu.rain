@@ -12,8 +12,17 @@
     <div class="menu-item">
       <a href="{{ 'service/about' | url }}" class="menu-link">About</a>
     </div>
-    <div class="menu-item">
-      <a href="{{'service/lookbook-1' | url}}" class="menu-link">Lookbook</a>
+    <div class="menu-item" data-behavior="trigger-menu-dropdown">
+      <a href="#" class="menu-link">Lookbook</a>
+      <div class="menu-dropdown is-collapsed">
+        {% for link in shop.links.lookbooks %}
+          <div class="menu-item">
+            <a href="{{ link.url | url }}" title="{{ link.title }}" class="menu-link">
+              {{ link.title }}
+            </a>
+          </div>
+        {% endfor %}
+      </div>
     </div>
     <div class="menu-item">
       <a href="{{ 'service/assistance' | url }}" class="menu-link">Assistence</a>

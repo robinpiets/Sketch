@@ -36,7 +36,7 @@
 	<div class="damoy__container">
 	{% endif %}
 		<div class="sidebar">
-			{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') %}
+			{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') or (template == 'pages/textpage.rain')%}
 				<div class="mobile-brand">LA</div>
 			{% endif %}
 			{% include 'snippets/navigation.rain' %}
