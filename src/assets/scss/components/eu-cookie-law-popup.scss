@@ -55,6 +55,13 @@
 
 .eupopup-head {
 	color: black;
+
+	@media (min-width: $screen-sm) {
+		position: absolute;
+		bottom: 12px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
 
 .eupopup-body {
