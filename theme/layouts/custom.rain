@@ -11,6 +11,7 @@
  	<title>{{ page.title }} - {{ shop.name }}</title>
 
 	<link rel="stylesheet" href="{{ 'bulma.css' | url_asset }}"/>
+	<link rel="stylesheet" href="{{ 'icons.css' | url_asset }}"/>
 	<link rel="stylesheet" href="{{ 'slick.css' | url_asset }}"/>
 	<!-- <link rel="stylesheet" href="{{ 'slick-theme.css' | url_asset }}"/> -->
   <link rel="stylesheet" href="{{ 'style.css' | url_asset }}"/>
@@ -36,9 +37,16 @@
 	<div class="damoy__container">
 	{% endif %}
 		<div class="sidebar">
-			{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') %}
-				<div class="mobile-brand">LA</div>
+			{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') or (template == 'pages/textpage.rain')%}
+				<a href="/" class="mobile-brand"><span class="icon-damoy_final_logo"></span></a>
 			{% endif %}
+			<!--<a href="#">
+				<span class="icon-Cart-Icon">
+					<span class="path1"></span>
+					<span class="path2"></span>
+					<span class="path3"></span>
+				</span>
+			</a>-->
 			{% include 'snippets/navigation.rain' %}
 		</div>
 		<div class="main-content">
