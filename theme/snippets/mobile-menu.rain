@@ -49,7 +49,7 @@
 
   <div class="menu-group">
     <div class="menu-item">
-      <a href="#" class="menu-link">Cart</a>
+      <a href="{{ 'cart' | url }}" class="menu-link">Cart ({{page.cart.products|length}})</a>
     </div>
     <div class="menu-item">
       <a href="#" class="menu-link">Login</a>

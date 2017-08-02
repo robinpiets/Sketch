@@ -17,10 +17,10 @@
     <div>
       <form action="{{ ('cart/add/' ~ product.vid) | url }}" id=
           "product_configure_form" method="post" class="add-cart-form">
-        <a href="javascript:;" onclick="$('#product_configure_form').submit();" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}" {% if shop.language == 'de' %}style="padding: 0px 10px;"{% endif %}>
+        <a href="javascript:;" onclick="$('#product_configure_form').submit();" id="openCartModal" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}">
           <span>{{ 'add to cart' | t }}</span>
         </a>
-        <a href="#" class="button is-primary product__cart--btn" title="{{ 'Add to fav' | t }}" {% if shop.language == 'de' %}style="padding: 0px 10px;"{% endif %}>
+        <a href="#" id="openFavModal" class="button is-primary product__cart--btn" title="{{ 'Add to fav' | t }}">
           <span>{{ 'add to fav' | t }}</span>
         </a>
       </form>
@@ -31,7 +31,7 @@
         <a href="#" class="product-info__menu-item active" data-behavior="openProductDetails">details</a>
         <a href="#" class="product-info__menu-item" data-behavior="openFitAndSize">fit & size</a>
         <a href="#" class="product-info__menu-item" data-behavior="openShipping">shipping</a>
-        <a href="#" class="product-info__menu-item">share</a>
+        <a href="#" class="product-info__menu-item" data-behavior="openShare">share</a>
       </div>
       <div class="product__details show" id="productDetails">
         <p>100% pure gold</p>
@@ -48,6 +48,11 @@
         <p>this product qualifies for free shipping</p>
         <p>see assistance for more information</p>
         <p>returns within 14 days</p>
+      </div>
+      <div class="product__details" id="share">
+        <p><a href="#">Instagram</a></p>
+        <p><a href="#">Facebook</a></p>
+        <p><a href="#">Twitter</a></p>
       </div>
     </div>
   </div>
