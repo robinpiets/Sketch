@@ -12,12 +12,12 @@
     <div class="menu-item">
       <a href="{{ 'service/about' | url }}" class="menu-link">About</a>
     </div>
-    <div class="menu-item" data-behavior="trigger-menu-dropdown">
-      <a href="#" class="menu-link">Lookbook</a>
+    <div class="menu-item">
+      <a href="#" class="menu-link" data-behavior="trigger-menu-dropdown">Lookbook</a>
       <div class="menu-dropdown is-collapsed">
         {% for link in shop.links.lookbooks %}
           <div class="menu-item">
-            <a href="{{ link.url | url }}" title="{{ link.title }}" class="menu-link">
+            <a href="{{ link.url | url }}" title="{{ link.title }}" class="menu-link lookbook-link">
               {{ link.title }}
             </a>
           </div>
@@ -33,8 +33,8 @@
     <div class="menu-item">
       <a href="{{ 'service/stores' | url }}" class="menu-link">Stores</a>
     </div>
-    <div class="menu-item" data-behavior="trigger-menu-dropdown">
-      <a href="#" class="menu-link">Social</a>
+    <div class="menu-item">
+      <a href="#" class="menu-link"  data-behavior="trigger-menu-dropdown">Social</a>
 
       <div class="menu-dropdown is-collapsed">
         <div class="menu-item">

@@ -1,16 +1,19 @@
 $(document).ready(function(){
   $('[data-behavior~=trigger-menu-dropdown]').click(function(e){
     e.preventDefault();
-    console.log("Menu dropdown click");
-    var dropdown = $(this).children('.menu-dropdown');
+    var parent = $(this).parent();
+    var dropdown = parent.children('.menu-dropdown');
     dropdown.slideToggle(500, "swing");
   });
 
   $('[data-behavior~=open-mobile-menu]').click(function(e) {
     e.preventDefault();
-    console.log("Burger menu clicked");
     $(this).toggleClass('is-active');
     $('.mobile-menu').toggleClass('is-active');
+  });
+
+  $('.lookbook-link').click(function(){
+    console.log("Lookbook link clicked");
   });
 
   $('.product__image--carousel').slick({
