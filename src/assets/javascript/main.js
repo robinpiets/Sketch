@@ -68,6 +68,9 @@ $(document).ready(function(){
       url: postUrl,
       success: function() {
         console.log("product successfully added");
+        var numItems = $('#numCartItems').data("num-items");
+        numItems = numItems + 1;
+        $('#numCartItems').text(numItems);
       }
     });
     return false;
