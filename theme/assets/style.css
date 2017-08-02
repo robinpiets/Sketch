@@ -636,6 +636,32 @@ body.modal-open {
   overflow: hidden;
   position: fixed; }
 
+.cart-content {
+  padding-left: 3.2em;
+  padding-right: 3.2em; }
+
+.gui-page-title {
+  display: none; }
+
+.gui a {
+  margin-right: 15px; }
+
+.gui a.gui-button-large.gui-button-action {
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  color: black;
+  font-size: 12px;
+  height: 40px;
+  line-height: 40px;
+  letter-spacing: .1em; }
+
+.gui-table {
+  border: none; }
+
+.gui-progressbar ul {
+  background: white; }
+
 .burger-nav {
   cursor: pointer;
   display: block;
