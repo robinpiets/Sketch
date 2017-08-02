@@ -28,6 +28,11 @@
 .product__element {
   padding: 0 2.5rem;
 
+  @media (min-width: $screen-sm) {
+    display: flex;
+    flex-direction: column;
+  }
+
   &:first-of-type {
     padding-left: 0;
   }
@@ -44,7 +49,7 @@
   @media (min-width: $screen-sm) {
     margin-bottom: 5rem;
     max-width: 26.25rem;
-    min-height: 45rem;
+    max-height: 45rem;
     padding-top: 6.8rem;
   }
 }
@@ -75,6 +80,7 @@
 }
 
 .product__image--container {
+  flex: 1 1 auto;
   margin-bottom: 5rem;
   max-height: 45rem;
   overflow: hidden;
@@ -93,6 +99,7 @@
 
   @media (min-width: $screen-sm) {
     max-width: 6.5rem;
+    height: 30px;
   }
 
   &:hover {
@@ -109,6 +116,10 @@
 
   &:last-of-type {
     margin-left: auto;
+
+    @media (min-width: $screen-sm) {
+      margin-left: 20px;
+    }
   }
 }
 

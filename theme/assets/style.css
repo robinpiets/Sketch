@@ -441,6 +441,10 @@ body .eupopup-style-compact .eupopup-button {
 
 .product__element {
   padding: 0 2.5rem; }
+  @media (min-width: 576px) {
+    .product__element {
+      display: flex;
+      flex-direction: column; } }
   .product__element:first-of-type {
     padding-left: 0; }
   .product__element:last-of-type {
@@ -453,7 +457,7 @@ body .eupopup-style-compact .eupopup-button {
     .product__info {
       margin-bottom: 5rem;
       max-width: 26.25rem;
-      min-height: 45rem;
+      max-height: 45rem;
       padding-top: 6.8rem; } }
 
 .product__title {
@@ -476,6 +480,7 @@ body .eupopup-style-compact .eupopup-button {
   margin-bottom: 3.6rem; }
 
 .product__image--container {
+  flex: 1 1 auto;
   margin-bottom: 5rem;
   max-height: 45rem;
   overflow: hidden; }
@@ -492,7 +497,8 @@ body .eupopup-style-compact .eupopup-button {
   max-width: 130px; }
   @media (min-width: 576px) {
     .button.product__cart--btn {
-      max-width: 6.5rem; } }
+      max-width: 6.5rem;
+      height: 30px; } }
   .button.product__cart--btn:hover {
     background: white;
     border-color: rgba(0, 0, 0, 0.7);
@@ -503,6 +509,9 @@ body .eupopup-style-compact .eupopup-button {
     color: rgba(0, 0, 0, 0.7); }
   .button.product__cart--btn:last-of-type {
     margin-left: auto; }
+    @media (min-width: 576px) {
+      .button.product__cart--btn:last-of-type {
+        margin-left: 20px; } }
 
 .add-cart-form {
   display: flex; }
