@@ -65,11 +65,17 @@
           <a href="#" class="product-info__menu-item" data-behavior="openShare">share</a>
         </div>
         <div class="product__details show" id="productDetails">
-          <p>100% pure gold</p>
-          <p>authentic rust</p>
-          <p>including certificate</p>
-          <p>official heritage</p>
-          <p>200 years old</p>
+          <p>50% linen<br/>50% wool</p>
+          <p>
+            This fabric is a soft combination of linnen and wool and has been
+            exclusively designed and created for our collection. The highest quality
+            wool comes from merino sheep in New Zealand where as the linnen comes
+            from a organic farm in Australia.
+          </p>
+          <p>
+            To ensure the quality of this garment, please wash according instructions.
+            Feel free to contact us to hear more about our sourcing.
+          </p>
         </div>
         <div class="product__details" id="fitAndSize">
           <p>model is wearing a size 13</p>

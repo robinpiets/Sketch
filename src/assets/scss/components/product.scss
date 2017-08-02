@@ -190,6 +190,11 @@
   display: none;
   text-align: center;
 
+  @media (min-width: $screen-sm) {
+    text-align: left;
+    padding-top: 25px;
+  }
+
   &.show {
     display: block;
   }
@@ -197,6 +202,11 @@
   p {
     line-height: 2;
     letter-spacing: .1em;
+
+    @media (min-width: $screen-sm) {
+      line-height: normal;
+      margin-bottom: 16px;
+    }
   }
 
   a {

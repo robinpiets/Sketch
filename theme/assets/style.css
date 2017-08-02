@@ -590,11 +590,19 @@ body .eupopup-style-compact .eupopup-button {
 .product__details {
   display: none;
   text-align: center; }
+  @media (min-width: 576px) {
+    .product__details {
+      text-align: left;
+      padding-top: 25px; } }
   .product__details.show {
     display: block; }
   .product__details p {
     line-height: 2;
     letter-spacing: .1em; }
+    @media (min-width: 576px) {
+      .product__details p {
+        line-height: normal;
+        margin-bottom: 16px; } }
   .product__details a {
     color: #303030;
     display: inline-block;
