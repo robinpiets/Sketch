@@ -393,7 +393,8 @@ td:nth-child(even) {
   text-decoration: none; }
 
 .eupopup-head {
-  color: black; }
+  color: black;
+  font-size: 12px; }
   @media (min-width: 576px) {
     .eupopup-head {
       position: absolute;
