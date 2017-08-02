@@ -196,14 +196,34 @@ body {
   flex-direction: column;
   margin-left: -1em;
   margin-right: -1em; }
-  .pages--lookbook img {
+  @media (min-width: 576px) {
+    .pages--lookbook {
+      margin-left: 0;
+      margin-right: 0;
+      margin: 3px 0 75px;
+      max-width: 480px;
+      flex-direction: row;
+      flex-wrap: wrap; } }
+  .pages--lookbook div {
     flex: 0 1 auto;
     display: block; }
-  .pages--lookbook img:nth-child(4n), .pages--lookbook img:nth-child(4n-1) {
+  .pages--lookbook div:nth-child(4n), .pages--lookbook div:nth-child(4n-1) {
     width: 37%; }
-  .pages--lookbook img:nth-child(4n-2), .pages--lookbook img:nth-child(4n-3) {
+  .pages--lookbook div:nth-child(4n-2), .pages--lookbook div:nth-child(4n-3) {
     width: 63%;
     margin-left: auto; }
+  @media (min-width: 576px) {
+    .pages--lookbook div:nth-child(4n), .pages--lookbook div:nth-child(4n-1) {
+      width: 50%; }
+    .pages--lookbook div:nth-child(4n-2), .pages--lookbook div:nth-child(4n-3) {
+      width: 50%;
+      margin-left: 0; }
+    .pages--lookbook div {
+      margin-top: -3px; }
+    .pages--lookbook div:nth-child(odd) {
+      padding-right: 1px; }
+    .pages--lookbook div:nth-child(even) {
+      padding-left: 1px; } }
 
 .menu {
   font-size: .75em;
