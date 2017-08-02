@@ -240,7 +240,7 @@ body {
   display: none; }
 
 .menu-dropdown {
-  margin-top: 1rem; }
+  margin-top: .8em; }
 
 .mobile-menu {
   background: white;
@@ -772,10 +772,11 @@ body.modal-open {
   transform: translateY(-50%); }
 
 .mobile-brand {
+  color: black;
   display: block;
   position: absolute;
   letter-spacing: .2rem;
-  font-size: 1.2rem;
+  font-size: 16px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%); }
