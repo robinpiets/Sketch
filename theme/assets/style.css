@@ -486,7 +486,8 @@ body .eupopup-style-compact .eupopup-button {
       margin-bottom: 5rem;
       max-width: 26.25rem;
       max-height: 45rem;
-      padding-top: 6.8rem; }
+      padding-top: 6.8rem;
+      position: relative; }
       .product__info.product__info--extra-info {
         padding-top: 0; } }
 
@@ -653,6 +654,13 @@ body .eupopup-style-compact .eupopup-button {
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in; }
+  @media (min-width: 576px) {
+    .modalDialog.show-on-mobile {
+      display: none; } }
+  .modalDialog.show-on-desktop {
+    position: absolute;
+    height: 100%;
+    width: 100%; }
 
 .modalDialog:target {
   opacity: 1;
@@ -696,6 +704,10 @@ body .eupopup-style-compact .eupopup-button {
 body.modal-open {
   overflow: hidden;
   position: fixed; }
+  @media (min-width: 576px) {
+    body.modal-open {
+      position: relative;
+      overflow: auto; } }
 
 .cart-content {
   padding-left: 3.2em;

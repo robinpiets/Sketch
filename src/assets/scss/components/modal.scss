@@ -10,6 +10,18 @@
 	-webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
 	transition: opacity 400ms ease-in;
+
+	&.show-on-mobile {
+		@media (min-width: $screen-sm) {
+			display: none;
+		}
+	}
+
+	&.show-on-desktop {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
 }
 
 .modalDialog:target {
@@ -62,4 +74,9 @@
 body.modal-open {
   overflow: hidden;
   position: fixed;
+
+	@media  (min-width: $screen-sm) {
+		position: relative;
+		overflow: auto;
+	}
 }

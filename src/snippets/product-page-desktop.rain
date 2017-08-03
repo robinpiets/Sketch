@@ -13,6 +13,9 @@
   </div>
   <div class="product__element column">
     <div class="product__info product__info--desktop">
+      {% include 'snippets/cart-modal.rain' with {'class': 'show-on-desktop'} %}
+      {% include 'snippets/fav-modal.rain' with {'class': 'show-on-desktop'} %}
+
       <h1 class="product__title">{{product.title}}</h1>
       <h2 class="product__price"><span class="currency-symbol">{{shop.currency2.symbol}}</span>{{product.price.price}}</h2>
       <p class="product__description">
