@@ -34,7 +34,14 @@
           <a href="#productExtraInfo" class="product-info__menu-item">details</a>
           <a href="#productExtraInfo" class="product-info__menu-item">shipping</a>
           <a href="#productExtraInfo" class="product-info__menu-item">fit & size</a>
-          <a href="#productExtraInfo" class="product-info__menu-item">share</a>
+          <div class="share-dropdown-container">
+            <a href="#" class="product-info__menu-item" data-behavior="toggle-share-dropdown">share</a>
+            <div class="share-dropdown">
+              <a href="#" class="share-dropdown__item">Instagram</a>
+              <a href="#" class="share-dropdown__item">Facebook</a>
+              <a href="#" class="share-dropdown__item">Twitter</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -62,7 +69,14 @@
           <a href="#" class="product-info__menu-item active" data-behavior="openProductDetails">details</a>
           <a href="#" class="product-info__menu-item" data-behavior="openFitAndSize">fit & size</a>
           <a href="#" class="product-info__menu-item" data-behavior="openShipping">shipping</a>
-          <a href="#" class="product-info__menu-item" data-behavior="openShare">share</a>
+          <div class="share-dropdown-container">
+            <a href="#" class="product-info__menu-item" data-behavior="toggle-share-dropdown">share</a>
+            <div class="share-dropdown">
+              <a href="#" class="share-dropdown__item">Instagram</a>
+              <a href="#" class="share-dropdown__item">Facebook</a>
+              <a href="#" class="share-dropdown__item">Twitter</a>
+            </div>
+          </div>
         </div>
         <div class="product__details show" id="productDetails">
           <p>50% linen<br/>50% wool</p>

@@ -6,6 +6,13 @@ $(document).ready(function(){
     dropdown.slideToggle(500, "swing");
   });
 
+  $('[data-behavior~=toggle-share-dropdown]').click(function(e){
+    e.preventDefault();
+    var parent = $(this).parent();
+    var dropdown = parent.children('.share-dropdown');
+    dropdown.slideToggle(500, "swing");
+  });
+
   $('[data-behavior~=open-mobile-menu]').click(function(e) {
     e.preventDefault();
     $(this).toggleClass('is-active');

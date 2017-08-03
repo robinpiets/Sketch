@@ -1,0 +1,16 @@
+.share-dropdown-container {
+  display: inline-block;
+  margin-left: 22px;
+  position: relative;
+}
+
+.share-dropdown {
+  margin-top: 10px;
+  position: absolute;
+  display: none;
+
+  a {
+    color: black;
+    letter-spacing: .1em;
+  }
+}
