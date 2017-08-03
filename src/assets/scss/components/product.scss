@@ -108,13 +108,9 @@
     height: 30px;
   }
 
-  &:hover {
-    background: white;
-    border-color: transparentize(black, .3);
-    color: transparentize(black, .3);
-  }
-
-  &:active {
+  &:hover,
+  &:active,
+  &:focus {
     background: white;
     border-color: transparentize(black, .3);
     color: transparentize(black, .3);
