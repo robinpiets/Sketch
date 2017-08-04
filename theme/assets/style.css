@@ -91,6 +91,10 @@ body {
       padding-right: 5em;
       padding-top: 0; } }
 
+@media (min-width: 576px) {
+  .textpage-content {
+    height: 80vh; } }
+
 .content__pages {
   color: #303030;
   font-size: .82em;
@@ -103,7 +107,7 @@ body {
     margin-bottom: 1.7em; }
     @media (min-width: 576px) {
       .content__pages h1 {
-        font-size: .82em;
+        font-size: 12px;
         margin-bottom: 1rem; } }
   .content__pages p {
     letter-spacing: .1em;
@@ -111,7 +115,7 @@ body {
     font-size: 12px; }
     @media (min-width: 576px) {
       .content__pages p {
-        font-size: .82em; } }
+        font-size: 11px; } }
   .content__pages a {
     color: #303030; }
 
