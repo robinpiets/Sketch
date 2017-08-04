@@ -49,7 +49,7 @@
 			</a>-->
 			{% include 'snippets/navigation.rain' %}
 		</div>
-		<div class="main-content">
+		<div class="main-content {% if (template == 'pages/textpage.rain') %}textpage-content{% endif %}">
 			{% include template %}
 		</div>
 	</div>
