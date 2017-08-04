@@ -233,7 +233,9 @@ body {
   z-index: 120; }
   @media (min-width: 576px) {
     .menu {
-      display: block; } }
+      display: block; }
+      .menu.desktop-menu {
+        position: fixed; } }
 
 .menu-link {
   color: #95989A;
