@@ -1,4 +1,4 @@
 {% include 'snippets/product-page-desktop.rain' with {'class': 'show-on-desktop'} %}
 {% include 'snippets/product-page-mobile.rain' with {'class': 'show-on-mobile'} %}
-{% include 'snippets/cart-modal.rain' %}
-{% include 'snippets/fav-modal.rain' %}
+{% include 'snippets/cart-modal.rain' with {'class': 'show-on-mobile'} %}
+{% include 'snippets/fav-modal.rain'  with {'class': 'show-on-mobile'} %}

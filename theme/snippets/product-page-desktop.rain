@@ -13,6 +13,9 @@
   </div>
   <div class="product__element column">
     <div class="product__info product__info--desktop">
+      {% include 'snippets/cart-modal.rain' with {'class': 'show-on-desktop'} %}
+      {% include 'snippets/fav-modal.rain' with {'class': 'show-on-desktop'} %}
+
       <h1 class="product__title">{{product.title}}</h1>
       <h2 class="product__price"><span class="currency-symbol">{{shop.currency2.symbol}}</span>{{product.price.price}}</h2>
       <p class="product__description">
@@ -29,11 +32,20 @@
           </a>
         </form>
       </div>
-      <div>
-        <a href="#">details</a>
-        <a href="#">shipping</a>
-        <a href="#">fit & size</a>
-        <a href="#">share</a>
+      <div class="product__extra-info">
+        <div class="product-info__menu">
+          <a href="#productExtraInfo" class="product-info__menu-item">details</a>
+          <a href="#productExtraInfo" class="product-info__menu-item">shipping</a>
+          <a href="#productExtraInfo" class="product-info__menu-item">fit & size</a>
+          <div class="share-dropdown-container">
+            <a href="#" class="product-info__menu-item" data-behavior="toggle-share-dropdown">share</a>
+            <div class="share-dropdown">
+              <a href="#" class="share-dropdown__item">Instagram</a>
+              <a href="#" class="share-dropdown__item">Facebook</a>
+              <a href="#" class="share-dropdown__item">Twitter</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- <p>
@@ -54,20 +66,33 @@
     <div class="product__image--container">
       <img src="{{ product.images|last | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
     </div>
-    <div class="product__info product__info--desktop">
-      <div class="product__extra-info">
+    <div class="product__info product__info--extra-info">
+      <div class="product__extra-info" id="productExtraInfo">
         <div class="product-info__menu">
           <a href="#" class="product-info__menu-item active" data-behavior="openProductDetails">details</a>
           <a href="#" class="product-info__menu-item" data-behavior="openFitAndSize">fit & size</a>
           <a href="#" class="product-info__menu-item" data-behavior="openShipping">shipping</a>
-          <a href="#" class="product-info__menu-item" data-behavior="openShare">share</a>
+          <div class="share-dropdown-container">
+            <a href="#" class="product-info__menu-item" data-behavior="toggle-share-dropdown">share</a>
+            <div class="share-dropdown">
+              <a href="#" class="share-dropdown__item">Instagram</a>
+              <a href="#" class="share-dropdown__item">Facebook</a>
+              <a href="#" class="share-dropdown__item">Twitter</a>
+            </div>
+          </div>
         </div>
         <div class="product__details show" id="productDetails">
-          <p>100% pure gold</p>
-          <p>authentic rust</p>
-          <p>including certificate</p>
-          <p>official heritage</p>
-          <p>200 years old</p>
+          <p>50% linen<br/>50% wool</p>
+          <p>
+            This fabric is a soft combination of linnen and wool and has been
+            exclusively designed and created for our collection. The highest quality
+            wool comes from merino sheep in New Zealand where as the linnen comes
+            from a organic farm in Australia.
+          </p>
+          <p>
+            To ensure the quality of this garment, please wash according instructions.
+            Feel free to contact us to hear more about our sourcing.
+          </p>
         </div>
         <div class="product__details" id="fitAndSize">
           <p>model is wearing a size 13</p>

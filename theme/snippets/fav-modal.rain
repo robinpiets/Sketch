@@ -1,4 +1,4 @@
-<div id="favModal" class="modalDialog">
+<div id="favModal" class="modalDialog {{class}}">
   <div>
     <p class="modal__text">
       This item has been

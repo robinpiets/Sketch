@@ -2,7 +2,7 @@
   <span class="burger-nav__bar">
   </span>
 </div>
-<div class="menu">
+<div class="menu desktop-menu">
   <div class="menu-group brand">
     <a href="/" class="menu-link brand-link"><span class="icon-damoy_final_logo"></span></a>
   </div>
