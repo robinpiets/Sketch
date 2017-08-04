@@ -47,21 +47,9 @@
           </div>
         </div>
       </div>
-
-      <!-- <p>
-        product specs:
-        {# for spec in product.specs #}
-          {{spec.title}}: {{spec.value}}
-        {# endfor #}
-      </p> -->
-      <!--<p>
-        Delivery:
-        {{ product.stock.delivery.title }}
-      </p>
-      <p>
-        Details
-        {{ product.content | raw }}
-      </p>-->
+      <div>
+        {{product.variants}}
+      </div>
     </div>
     <div class="product__image--container">
       <img src="{{ product.images|last | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
@@ -82,17 +70,7 @@
           </div>
         </div>
         <div class="product__details show" id="productDetails">
-          <p>50% linen<br/>50% wool</p>
-          <p>
-            This fabric is a soft combination of linnen and wool and has been
-            exclusively designed and created for our collection. The highest quality
-            wool comes from merino sheep in New Zealand where as the linnen comes
-            from a organic farm in Australia.
-          </p>
-          <p>
-            To ensure the quality of this garment, please wash according instructions.
-            Feel free to contact us to hear more about our sourcing.
-          </p>
+          {{ product.content | raw }}
         </div>
         <div class="product__details" id="fitAndSize">
           <p>model is wearing a size 13</p>
