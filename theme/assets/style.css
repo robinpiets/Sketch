@@ -295,7 +295,10 @@ body {
   max-width: 40rem; }
   @media (min-width: 576px) {
     .product__columns {
-      padding-right: 1rem; } }
+      position: relative;
+      height: inherit;
+      margin-bottom: 70px;
+      z-index: 10; } }
 
 .assistance__columns {
   display: flex;
@@ -744,6 +747,24 @@ body.modal-open {
   .share-dropdown a {
     color: black;
     letter-spacing: .1em; }
+
+@media (min-width: 576px) {
+  .pager {
+    bottom: -25px;
+    color: black;
+    letter-spacing: .1em;
+    font-size: 11px;
+    position: absolute;
+    right: 0;
+    z-index: 10; }
+    .pager div {
+      display: inline-block;
+      font-size: 10px; }
+    .pager a {
+      color: black;
+      font-size: 10px; }
+    .pager .disabled {
+      display: none; } }
 
 .burger-nav {
   cursor: pointer;
