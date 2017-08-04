@@ -7,7 +7,20 @@
   @media (min-width: $screen-sm) {
     position: relative;
     height: inherit;
-    margin-bottom: 70px;
     z-index: 10;
+    margin-left: 7.5rem;
+    padding-left: 0;
+
+    &.grid-layout {
+      display: flex;
+      max-width: 30rem;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.product__columns--featured {
+  @media (min-width: $screen-sm) {
+    margin-left: auto;
   }
 }
