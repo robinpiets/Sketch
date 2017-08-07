@@ -20,10 +20,20 @@
       <h2 class="product__price"><span class="currency-symbol">{{shop.currency2.symbol}}</span>{{product.price.price}}</h2>
       <p class="product__description">
         {{product.description}}
+        {{dump(product.variants)}}
       </p>
       <div>
         <form action="{{ ('cart/add/' ~ product.vid) | url }}" id=
             "product_configure_form" method="post" class="add-cart-form">
+          {% if product.options or product.variants or product.custom %}
+          <div class="product-option row">
+            <div class="col-md-12">
+              {{ product | html_product_configure | raw }}
+            </div>
+          </div>
+          {% else %}
+            <input type="hidden" name="bundle_id" id="product_configure_bundle_id" value="">
+          {% endif %}
           <a href="javascript:;" onclick="$('#product_configure_form').submit();" id="openCartModal" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}">
             <span>{{ 'add to cart' | t }}</span>
           </a>
@@ -46,9 +56,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        {{product.variants}}
       </div>
     </div>
     <div class="product__image--container">
@@ -89,7 +96,4 @@
       </div>
     </div>
   </div>
-
-  <!--<div>
-  </div>-->
 </div>

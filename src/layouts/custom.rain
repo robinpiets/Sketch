@@ -26,6 +26,8 @@
 	<script src="{{ 'main-min.js' | url_asset }}"></script>
 	<script src="{{ 'jquery-eu-cookie-law-popup-min.js' | url_asset }}"></script>
 	<script src="{{ 'slick-min.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'gui.js' | url_core }}"></script>
+	<script type="text/javascript" src="{{ 'gui-responsive-2-0.js' | url_core }}"></script>
 </head>
 <body>
 	{% include 'snippets/mobile-menu.rain' %}
@@ -49,7 +51,7 @@
 			</a>-->
 			{% include 'snippets/navigation.rain' %}
 		</div>
-		<div class="main-content {% if (template == 'pages/textpage.rain') %}textpage-content{% endif %}">
+		<div class="main-content">
 			{% include template %}
 		</div>
 	</div>
