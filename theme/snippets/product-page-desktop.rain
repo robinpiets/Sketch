@@ -24,6 +24,15 @@
       <div>
         <form action="{{ ('cart/add/' ~ product.vid) | url }}" id=
             "product_configure_form" method="post" class="add-cart-form">
+          <!--{% if product.options or product.variants or product.custom %}
+          <div class="product-option row">
+            <div class="col-md-12">
+              {# product | html_product_configure | raw #}
+            </div>
+          </div>
+          {% else %}
+            <input type="hidden" name="bundle_id" id="product_configure_bundle_id" value="">
+          {% endif %} -->
           <a href="javascript:;" onclick="$('#product_configure_form').submit();" id="openCartModal" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}">
             <span>{{ 'add to cart' | t }}</span>
           </a>
@@ -47,21 +56,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <p>
-        product specs:
-        {# for spec in product.specs #}
-          {{spec.title}}: {{spec.value}}
-        {# endfor #}
-      </p> -->
-      <!--<p>
-        Delivery:
-        {{ product.stock.delivery.title }}
-      </p>
-      <p>
-        Details
-        {{ product.content | raw }}
-      </p>-->
     </div>
     <div class="product__image--container">
       <img src="{{ product.images|last | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
@@ -82,17 +76,7 @@
           </div>
         </div>
         <div class="product__details show" id="productDetails">
-          <p>50% linen<br/>50% wool</p>
-          <p>
-            This fabric is a soft combination of linnen and wool and has been
-            exclusively designed and created for our collection. The highest quality
-            wool comes from merino sheep in New Zealand where as the linnen comes
-            from a organic farm in Australia.
-          </p>
-          <p>
-            To ensure the quality of this garment, please wash according instructions.
-            Feel free to contact us to hear more about our sourcing.
-          </p>
+          {{ product.content | raw }}
         </div>
         <div class="product__details" id="fitAndSize">
           <p>model is wearing a size 13</p>
@@ -111,7 +95,4 @@
       </div>
     </div>
   </div>
-
-  <!--<div>
-  </div>-->
 </div>

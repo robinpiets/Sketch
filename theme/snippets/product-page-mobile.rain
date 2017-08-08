@@ -34,11 +34,7 @@
         <a href="#" class="product-info__menu-item" data-behavior="openShare">share</a>
       </div>
       <div class="product__details show" id="productDetails">
-        <p>100% pure gold</p>
-        <p>authentic rust</p>
-        <p>including certificate</p>
-        <p>official heritage</p>
-        <p>200 years old</p>
+        {{ product.content | raw }}
       </div>
       <div class="product__details" id="fitAndSize">
         <p>model is wearing a size 13</p>
