@@ -936,3 +936,17 @@ body.modal-open {
   margin-right: auto; }
   .cookie-terms .close-button {
     padding-left: 1rem; }
+
+.cart-icon-link {
+  color: black;
+  font-size: 18px;
+  position: absolute;
+  right: 30px;
+  padding: 5px 10px;
+  top: 50%;
+  transform: translateY(-50%); }
+  @media (min-width: 576px) {
+    .cart-icon-link {
+      display: none; } }
+  .cart-icon-link.hidden {
+    display: none; }

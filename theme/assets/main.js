@@ -73,6 +73,7 @@ $(document).ready(function(){
         var numItems = $('#numCartItems').data("num-items");
         numItems = numItems + 1;
         $('#numCartItems').text(numItems);
+        $('.cart-icon-link').removeClass('hidden');
       }
     });
     return false;
@@ -95,12 +96,4 @@ $(document).ready(function(){
     $('#cartModal').css({"opacity": "", "z-index":""});
     $('body').removeClass("modal-open");
   });
-
-  // var imageHeight = $('.product__image').height();
-  // $('.product__info--desktop').height(imageHeight);
 });
-
-// $(window).resize(function() {
-//   var imageHeight = $('.product__image').height();
-//   $('.product__info--desktop').height(imageHeight);
-// });

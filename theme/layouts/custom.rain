@@ -40,15 +40,9 @@
 	{% endif %}
 		<div class="sidebar">
 			{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') or (template == 'pages/textpage.rain')%}
-				<a href="/" class="mobile-brand"><span class="icon-damoy_final_logo"></span></a>
+				<a href="/" class="mobile-brand"><span class="icon-damoy-logo"></span></a>
 			{% endif %}
-			<!--<a href="#">
-				<span class="icon-Cart-Icon">
-					<span class="path1"></span>
-					<span class="path2"></span>
-					<span class="path3"></span>
-				</span>
-			</a>-->
+			<a href="#" class="cart-icon-link {% if page.cart.products|length > 1 %}visible{% else %}hidden{% endif %}"><span class="icon-cart-icon"></span></a>
 			{% include 'snippets/navigation.rain' %}
 		</div>
 		<div class="main-content">

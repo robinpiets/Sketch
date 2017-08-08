@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?6dqka2');
-  src:  url('fonts/icomoon.eot?6dqka2#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?6dqka2') format('truetype'),
-    url('fonts/icomoon.woff?6dqka2') format('woff'),
-    url('fonts/icomoon.svg?6dqka2#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?z7h8k8');
+  src:  url('fonts/icomoon.eot?z7h8k8#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?z7h8k8') format('truetype'),
+    url('fonts/icomoon.woff?z7h8k8') format('woff'),
+    url('fonts/icomoon.svg?z7h8k8#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,23 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Cart-Icon .path1:before {
-  content: "\e902";
-  color: rgb(0, 0, 0);
-}
-.icon-Cart-Icon .path2:before {
-  content: "\e903";
-  margin-left: -0.671875em;
-  color: rgb(255, 255, 255);
-}
-.icon-Cart-Icon .path3:before {
-  content: "\e904";
-  margin-left: -0.671875em;
-  color: rgb(0, 0, 0);
-}
-.icon-La-Collection-LogoArtboard-1:before {
-  content: "\e900";
-}
-.icon-damoy_final_logo:before {
+.icon-la-collection-logo:before {
   content: "\e901";
+}
+.icon-damoy-logo:before {
+  content: "\e902";
+}
+.icon-cart-icon:before {
+  content: "\e900";
 }
