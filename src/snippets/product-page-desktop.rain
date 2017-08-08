@@ -86,7 +86,7 @@
         <div class="product__details" id="shipping">
           <p>this product qualifies for free shipping</p>
           <p>see assistance for more information</p>
-          <p>returns within 14 days</p>
+          <p>returns within {{product.stock.delivery.title}}</p>
         </div>
         <div class="product__details" id="share">
           <p><a href="#">Instagram</a></p>
