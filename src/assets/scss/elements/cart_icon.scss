@@ -1,0 +1,17 @@
+.cart-icon-link {
+  color: black;
+  font-size: 18px;
+  position: absolute;
+  right: 30px;
+  padding: 5px 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (min-width: $screen-sm) {
+    display: none;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
