@@ -1,11 +1,16 @@
 
 <div class="mobile-menu">
   <div class="menu-group">
-    {% for category in shop.categories %}
-      <div class="menu-item">
-        <a href="{{ category.url | url }}" class="menu-link">{{ category.title }}</a>
+    <div class="menu-item">
+      <a href="#" class="menu-link" data-behavior="trigger-menu-dropdown">Brands</a>
+      <div class="menu-dropdown is-collapsed">
+        {% for brand in shop.brands %}
+          <div class="menu-item">
+            <a href="{{ brand.url | url }}" class="menu-link">{{ brand.title }}</a>
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
+    </div>
   </div>
 
   <div class="menu-group">
