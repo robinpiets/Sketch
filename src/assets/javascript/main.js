@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $('[data-behavior~=trigger-menu-dropdown]').click(function(e){
     e.preventDefault();
+    $(this).toggleClass('active');
     var parent = $(this).parent();
     var dropdown = parent.children('.menu-dropdown');
     dropdown.slideToggle(500, "swing");

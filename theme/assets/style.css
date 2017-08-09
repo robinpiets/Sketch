@@ -248,6 +248,8 @@ body {
   font-size: 1em;
   text-transform: uppercase;
   transition: .2s color; }
+  .menu-link.active {
+    color: #303030; }
 
 .brand-link {
   color: black;
