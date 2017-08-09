@@ -125,10 +125,6 @@
     margin-right: 5px;
   }
 
-  &:last-of-type {
-    margin-left: 5px;
-  }
-
   @media (min-width: $screen-sm) {
     max-width: 5rem;
     height: 25px;
@@ -145,7 +141,11 @@
   }
 
   &:last-of-type {
-    margin-left: auto;
+    margin-left: 5px;
+
+    @media (min-width: 350px) {
+      margin-left: auto;
+    }
 
     @media (min-width: $screen-sm) {
       margin-left: 20px;
@@ -153,7 +153,7 @@
   }
 }
 
-.add-cart-form {
+.cart-button-container {
   display: flex;
 }
 

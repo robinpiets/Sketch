@@ -8,12 +8,6 @@
   </div>
 
   <div class="menu-group">
-    {# for category in shop.categories #}
-      <!-- FOR LA COLLECTION
-      <div class="menu-item">
-        <a href="{{ category.url | url }}" class="menu-link">{{ category.title }}</a>
-      </div>-->
-    {# endfor #}
     <div class="menu-item">
       <a href="#" class="menu-link" data-behavior="trigger-menu-dropdown">Brands</a>
       <div class="menu-dropdown is-collapsed">
