@@ -587,7 +587,6 @@ body .eupopup-style-compact .eupopup-button {
   display: flex; }
 
 .product__image--carousel {
-  max-width: 18.4rem;
   margin: 20px auto;
   text-align: center;
   position: relative;
@@ -597,7 +596,7 @@ body .eupopup-style-compact .eupopup-button {
   align-items: center;
   flex: 1 100%;
   flex-wrap: wrap;
-  height: 25rem;
+  height: auto;
   overflow: hidden;
   width: 100%; }
   .product__image--carousel .slide {
