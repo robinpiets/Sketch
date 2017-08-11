@@ -7,6 +7,6 @@
     <a href="#" data-behavior="accept-cookies" class="close-button">x</a>
   </p>
   <p class="footer__aligned footer__aligned--right footer__made-by">
-    Design by Trashure
+    <a href="www.trashureagency.com" target="_blank">Design by Trashure</a>
   </p>
 </footer>
