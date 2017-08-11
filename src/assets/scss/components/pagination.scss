@@ -1,25 +1,29 @@
-@media (min-width: $screen-sm) {
-  .pager {
+.pager {
+  font-size: 11px;
+  color: black;
+  text-align: right;
+  margin-right: 1.7rem;
+
+  div {
+    display: inline-block;
+    font-size: 10px;
+  }
+
+  a {
+    color: black;
+    font-size: 10px;
+  }
+
+  .disabled {
+    display: none;
+  }
+
+  @media (min-width: $screen-sm) {
     bottom: -25px;
     color: black;
     letter-spacing: .1em;
-    font-size: 11px;
     position: absolute;
     right: 0;
     z-index: 10;
-
-    div {
-      display: inline-block;
-      font-size: 10px;
-    }
-
-    a {
-      color: black;
-      font-size: 10px;
-    }
-
-    .disabled {
-      display: none;
-    }
   }
 }

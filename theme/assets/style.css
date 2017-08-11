@@ -127,7 +127,7 @@ body {
       margin-bottom: 0; } }
 
 .pages--about {
-  margin-top: -5px;
+  margin: 5px auto;
   max-width: 180px;
   width: 100%; }
   @media (min-width: 576px) {
@@ -151,8 +151,8 @@ body {
       flex-direction: row; } }
 
 .pages--store .pages__column {
-  margin-bottom: 0;
-  width: 180px; }
+  width: 180px;
+  margin: 0 auto; }
   @media (min-width: 576px) {
     .pages--store .pages__column {
       width: initial; } }
@@ -500,10 +500,12 @@ body .eupopup-style-compact .eupopup-button {
 
 .product__info {
   display: block;
-  flex: 1 1 auto; }
+  flex: 1 1 auto;
+  margin-top: 65px; }
   @media (min-width: 576px) {
     .product__info {
       margin-bottom: 3.3rem;
+      margin-top: 0;
       max-width: 23.5rem;
       max-height: 34rem;
       padding-top: 5.6rem;
@@ -792,23 +794,27 @@ body.modal-open {
     color: black;
     letter-spacing: .1em; }
 
-@media (min-width: 576px) {
-  .pager {
-    bottom: -25px;
+.pager {
+  font-size: 11px;
+  color: black;
+  text-align: right;
+  margin-right: 1.7rem; }
+  .pager div {
+    display: inline-block;
+    font-size: 10px; }
+  .pager a {
     color: black;
-    letter-spacing: .1em;
-    font-size: 11px;
-    position: absolute;
-    right: 0;
-    z-index: 10; }
-    .pager div {
-      display: inline-block;
-      font-size: 10px; }
-    .pager a {
+    font-size: 10px; }
+  .pager .disabled {
+    display: none; }
+  @media (min-width: 576px) {
+    .pager {
+      bottom: -25px;
       color: black;
-      font-size: 10px; }
-    .pager .disabled {
-      display: none; } }
+      letter-spacing: .1em;
+      position: absolute;
+      right: 0;
+      z-index: 10; } }
 
 .burger-nav {
   cursor: pointer;

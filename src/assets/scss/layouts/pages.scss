@@ -40,8 +40,8 @@
 
 .pages--store {
   .pages__column {
-    margin-bottom: 0;
     width: 180px;
+    margin: 0 auto;
 
     @media (min-width: $screen-sm) {
       width: initial;

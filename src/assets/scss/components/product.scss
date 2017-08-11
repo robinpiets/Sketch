@@ -45,9 +45,11 @@
 .product__info {
   display: block;
   flex: 1 1 auto;
+  margin-top: 65px;
 
   @media (min-width: $screen-sm) {
     margin-bottom: 3.3rem;
+    margin-top: 0;
     max-width: 23.5rem;
     max-height: 34rem;
     padding-top: 5.6rem;
