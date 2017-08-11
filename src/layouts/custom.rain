@@ -39,7 +39,7 @@
 	<div class="damoy__container">
 	{% endif %}
 		<div class="sidebar">
-			{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') or (template == 'pages/textpage.rain')%}
+			{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') or (page.title != 'About') %}
 				<a href="/" class="mobile-brand"><span class="icon-damoy-logo"></span></a>
 			{% endif %}
 			<a href="#" class="cart-icon-link {% if page.cart.products|length > 1 %}visible{% else %}hidden{% endif %}"><span class="icon-cart-icon"></span></a>
