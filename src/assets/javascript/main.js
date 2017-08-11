@@ -97,6 +97,8 @@ $(document).ready(function(){
     $('body').removeClass("modal-open");
   });
 
+  $('select').niceSelect();
+
   // var imageHeight = $('.product__image').height();
   // $('.product__info--desktop').height(imageHeight);
 });

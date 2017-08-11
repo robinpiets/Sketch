@@ -33,12 +33,14 @@
           {% else %}
             <input type="hidden" name="bundle_id" id="product_configure_bundle_id" value="">
           {% endif %} -->
-          <a href="javascript:;" onclick="$('#product_configure_form').submit();" id="openCartModal" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}">
-            <span>{{ 'add to cart' | t }}</span>
-          </a>
-          <a href="#" id="openFavModal" class="button is-primary product__cart--btn" title="{{ 'Add to fav' | t }}">
-            <span>{{ 'add to fav' | t }}</span>
-          </a>
+          <div class="button-row">
+            <a href="javascript:;" onclick="$('#product_configure_form').submit();" id="openCartModal" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}">
+              <span>{{ 'add to cart' | t }}</span>
+            </a>
+            <a href="#" id="openFavModal" class="button is-primary product__cart--btn" title="{{ 'Add to fav' | t }}">
+              <span>{{ 'add to fav' | t }}</span>
+            </a>
+          </div>
         </form>
       </div>
       <div class="product__extra-info">

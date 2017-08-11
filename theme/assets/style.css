@@ -413,7 +413,8 @@ td:nth-child(even) {
   padding: 0 1rem; }
 
 .eupopup-closebutton:hover,
-.eupopup-closebutton:active {
+.eupopup-closebutton:active,
+.eupopup-closebutton.nice-select.open {
   color: black;
   text-decoration: none; }
 
@@ -578,7 +579,7 @@ body .eupopup-style-compact .eupopup-button {
       height: 25px;
       line-height: 25px;
       font-size: 10px; } }
-  .button.product__cart--btn:hover, .button.product__cart--btn:active, .button.product__cart--btn:focus {
+  .button.product__cart--btn:hover, .button.product__cart--btn:active, .button.product__cart--btn.nice-select.open, .button.product__cart--btn:focus {
     background: white;
     border-color: rgba(0, 0, 0, 0.7);
     color: rgba(0, 0, 0, 0.7); }
@@ -740,7 +741,7 @@ body .eupopup-style-compact .eupopup-button {
     background: white;
     border-color: rgba(0, 0, 0, 0.7);
     color: rgba(0, 0, 0, 0.7); }
-  .button.modal--btn:active {
+  .button.modal--btn:active, .button.modal--btn.nice-select.open {
     background: white;
     border-color: rgba(0, 0, 0, 0.7);
     color: rgba(0, 0, 0, 0.7); }
@@ -973,3 +974,109 @@ body.modal-open {
 
 .product-configure-variants label {
   display: none; }
+
+.product-configure-options-option label {
+  display: none; }
+
+.button-row {
+  display: block;
+  margin-top: 50px; }
+
+.nice-select {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+  border-radius: 0;
+  border: none;
+  box-sizing: border-box;
+  clear: both;
+  cursor: pointer;
+  display: block;
+  float: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: normal;
+  height: 50px;
+  line-height: 48px;
+  outline: none;
+  padding-left: 0;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+  width: 25%;
+  margin-bottom: 10px; }
+  .nice-select:hover {
+    border-color: #dbdbdb; }
+  .nice-select:active, .nice-select.open, .nice-select:focus {
+    border-color: #999; }
+  .nice-select:after {
+    border-bottom: 2px solid #999;
+    border-right: 2px solid #999;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform-origin: 66% 66%;
+    transform: rotate(45deg);
+    transition: all 0.15s ease-in-out;
+    width: 5px; }
+  .nice-select.open:after {
+    transform: rotate(-135deg); }
+  .nice-select.open .list {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1) translateY(0); }
+  .nice-select.disabled {
+    border-color: #ededed;
+    color: #999;
+    pointer-events: none; }
+    .nice-select.disabled:after {
+      border-color: #cccccc; }
+  .nice-select .list {
+    background-color: #fff;
+    border-radius: 0;
+    box-sizing: border-box;
+    margin-top: 4px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform-origin: 50% 0;
+    transform: scale(0.75) translateY(-25px);
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    z-index: 9;
+    width: 100%; }
+    .nice-select .list:hover .option:not(:hover) {
+      background-color: transparent !important; }
+  .nice-select .option {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 48px;
+    list-style: none;
+    min-height: 48px;
+    outline: none;
+    padding-left: 0;
+    padding-right: 29px;
+    text-align: left;
+    transition: all 0.2s; }
+    .nice-select .option.selected {
+      font-weight: bold; }
+    .nice-select .option.disabled {
+      background-color: transparent;
+      color: #999;
+      cursor: default; }
+
+.no-csspointerevents .nice-select .list {
+  display: none; }
+
+.no-csspointerevents .nice-select.open .list {
+  display: block; }
