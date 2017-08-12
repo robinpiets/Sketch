@@ -31,10 +31,16 @@
   margin-right: 1.7rem;
   margin-bottom: .625rem;
   max-width: 14.7rem;
+  transition: opacity .2s;
 
   &.product-image--large {
     max-width: 14.7rem;
     display: block;
+  }
+
+  &:hover {
+    opacity: .7;
+    transition: opacity .2s;
   }
 }
 

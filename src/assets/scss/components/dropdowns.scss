@@ -13,7 +13,13 @@
   display: none;
 
   a {
-    color: black;
+    color: transparentize(#303030, .5);
     letter-spacing: .1em;
+    transition: color .2s;
+
+    &:hover {
+      color: black;
+      transition: color .2s;
+    }
   }
 }

@@ -797,8 +797,12 @@ body.modal-open {
   position: absolute;
   display: none; }
   .share-dropdown a {
-    color: black;
-    letter-spacing: .1em; }
+    color: rgba(48, 48, 48, 0.5);
+    letter-spacing: .1em;
+    transition: color .2s; }
+    .share-dropdown a:hover {
+      color: black;
+      transition: color .2s; }
 
 .pager {
   font-size: 11px;
@@ -901,10 +905,14 @@ body.modal-open {
   margin-left: auto;
   margin-right: 1.7rem;
   margin-bottom: .625rem;
-  max-width: 14.7rem; }
+  max-width: 14.7rem;
+  transition: opacity .2s; }
   .product-image.product-image--large {
     max-width: 14.7rem;
     display: block; }
+  .product-image:hover {
+    opacity: .7;
+    transition: opacity .2s; }
 
 @media (min-width: 576px) {
   .product-image {
