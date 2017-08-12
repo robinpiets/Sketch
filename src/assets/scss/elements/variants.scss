@@ -62,8 +62,8 @@ $arrow_color: $gray !default;
   }
   // Arrow
   &:after {
-    border-bottom: 2px solid $arrow_color;
-    border-right: 2px solid $arrow_color;
+    border-bottom: 1px solid $arrow_color;
+    border-right: 1px solid $arrow_color;
     content: '';
     display: block;
     height: 5px;

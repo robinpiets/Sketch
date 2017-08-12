@@ -819,6 +819,7 @@ body.modal-open {
       color: black;
       letter-spacing: .1em;
       position: absolute;
+      margin-right: 0;
       right: 0;
       z-index: 10; } }
 
@@ -1012,8 +1013,8 @@ body.modal-open {
   .nice-select:active, .nice-select.open, .nice-select:focus {
     border-color: #999; }
   .nice-select:after {
-    border-bottom: 2px solid #999;
-    border-right: 2px solid #999;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
     content: '';
     display: block;
     height: 5px;
