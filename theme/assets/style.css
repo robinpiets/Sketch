@@ -576,7 +576,7 @@ body .eupopup-style-compact .eupopup-button {
       margin-right: 5px; } }
   @media (min-width: 350px) {
     .button.product__cart--btn {
-      max-width: 130px; } }
+      max-width: 125px; } }
   @media (min-width: 576px) {
     .button.product__cart--btn {
       max-width: 5rem;
