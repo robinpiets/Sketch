@@ -27,6 +27,7 @@
 	<script type="text/javascript" src="{{ 'jquery-eu-cookie-law-popup-min.js' | url_asset }}"></script>
 	<script type="text/javascript" src="{{ 'slick-min.js' | url_asset }}"></script>
 	<script type="text/javascript" src="{{ 'jquery.smooth-scroll.min.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'jquery.nice-select.min.js' | url_asset }}"></script>
 	<script type="text/javascript" src="{{ 'gui.js' | url_core }}"></script>
 	<script type="text/javascript" src="{{ 'gui-responsive-2-0.js' | url_core }}"></script>
 </head>
