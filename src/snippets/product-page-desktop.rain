@@ -82,12 +82,11 @@
         </div>
         <div class="product__details" id="fitAndSize">
           <p>model is wearing a size 13</p>
-          <p>loose fit</p>
         </div>
         <div class="product__details" id="shipping">
-          <p>this product qualifies for free shipping</p>
-          <p>see assistance for more information</p>
-          <p>returns within {{product.stock.delivery.title}}</p>
+          <p>this product qualifies for free shipping
+          see assistance for more information
+          returns within {{product.stock.delivery.title}}</p>
         </div>
         <div class="product__details" id="share">
           <p><a href="#">Instagram</a></p>

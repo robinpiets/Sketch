@@ -653,7 +653,8 @@ body .eupopup-style-compact .eupopup-button {
     @media (min-width: 576px) {
       .product__details p {
         line-height: normal;
-        margin-bottom: 16px; } }
+        margin-bottom: 16px;
+        font-size: 11px; } }
   .product__details a {
     color: #303030;
     display: inline-block;
