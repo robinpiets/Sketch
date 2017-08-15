@@ -740,6 +740,14 @@ body .eupopup-style-compact .eupopup-button {
   width: 100%;
   max-width: 178px;
   margin-bottom: 40px; }
+  @media (min-width: 576px) {
+    .button.modal--btn {
+      font-size: 10px;
+      max-width: 138px;
+      height: 30px;
+      line-height: 2.1;
+      margin-left: auto;
+      margin-right: auto; } }
   .button.modal--btn:hover {
     background: white;
     border-color: rgba(0, 0, 0, 0.7);
@@ -753,6 +761,11 @@ body .eupopup-style-compact .eupopup-button {
   text-align: center;
   letter-spacing: .1em;
   margin-bottom: 40px; }
+  @media (min-width: 576px) {
+    .modal__text {
+      font-size: 11px;
+      padding-left: 15px;
+      padding-right: 15px; } }
 
 body.modal-open {
   overflow: hidden;
