@@ -99,6 +99,7 @@ $(document).ready(function(){
 
   $('select').niceSelect();
 
+  $('.product-info__menu-item').smoothScroll();
   // var imageHeight = $('.product__image').height();
   // $('.product__info--desktop').height(imageHeight);
 });

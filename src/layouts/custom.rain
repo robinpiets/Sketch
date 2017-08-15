@@ -23,9 +23,10 @@
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
-	<script src="{{ 'main-min.js' | url_asset }}"></script>
-	<script src="{{ 'jquery-eu-cookie-law-popup-min.js' | url_asset }}"></script>
-	<script src="{{ 'slick-min.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'main-min.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'jquery-eu-cookie-law-popup-min.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'slick-min.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'jquery.smooth-scroll.min.js' | url_asset }}"></script>
 	<script type="text/javascript" src="{{ 'gui.js' | url_core }}"></script>
 	<script type="text/javascript" src="{{ 'gui-responsive-2-0.js' | url_core }}"></script>
 </head>
