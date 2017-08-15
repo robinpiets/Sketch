@@ -570,9 +570,13 @@ body .eupopup-style-compact .eupopup-button {
   font-size: 13px;
   width: 100%;
   flex: 0 1 auto;
-  max-width: 130px; }
-  .button.product__cart--btn:first-of-type {
-    margin-right: 5px; }
+  max-width: 110px; }
+  @media (min-width: 350px) {
+    .button.product__cart--btn:first-of-type {
+      margin-right: 5px; } }
+  @media (min-width: 350px) {
+    .button.product__cart--btn {
+      max-width: 130px; } }
   @media (min-width: 576px) {
     .button.product__cart--btn {
       max-width: 5rem;
@@ -584,13 +588,11 @@ body .eupopup-style-compact .eupopup-button {
     border-color: rgba(0, 0, 0, 0.7);
     color: rgba(0, 0, 0, 0.7); }
   .button.product__cart--btn:last-of-type {
-    margin-left: 5px; }
-    @media (min-width: 350px) {
-      .button.product__cart--btn:last-of-type {
-        margin-left: auto; } }
+    float: right; }
     @media (min-width: 576px) {
       .button.product__cart--btn:last-of-type {
-        margin-left: 20px; } }
+        margin-left: 20px;
+        float: none; } }
 
 .cart-button-container {
   display: flex; }

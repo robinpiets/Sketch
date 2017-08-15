@@ -120,10 +120,16 @@
   font-size: 13px;
   width: 100%;
   flex: 0 1 auto;
-  max-width: 130px;
+  max-width: 110px;
 
   &:first-of-type {
-    margin-right: 5px;
+    @media (min-width: 350px) {
+      margin-right: 5px;
+    }
+  }
+
+  @media (min-width: 350px) {
+    max-width: 130px;
   }
 
   @media (min-width: $screen-sm) {
@@ -142,14 +148,11 @@
   }
 
   &:last-of-type {
-    margin-left: 5px;
-
-    @media (min-width: 350px) {
-      margin-left: auto;
-    }
+    float: right;
 
     @media (min-width: $screen-sm) {
       margin-left: 20px;
+      float: none;
     }
   }
 }
