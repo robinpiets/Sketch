@@ -17,7 +17,7 @@ const csslint = require("gulp-csslint");
 const jshint = require("gulp-jshint");
 const url = require("url");
 const newer = require("gulp-newer");
-const lightspeedy = require("lightspeedy");
+// const lightspeedy = require("lightspeedy");
 const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 
@@ -34,20 +34,20 @@ gulp.task("lq", () => {
   gulp.watch(Paths.source + "/**/*.rain", ["upload", "cp"]);
 });
 
-gulp.task("upload", () => {
-  return gulp
-    .src([Paths.source + "/**/*.rain"])
-    .pipe(newer(Paths.output))
-    .pipe(
-      lightspeedy({
-        storeUrl: Config.lightspeedUrl,
-        themeId: Config.themeId,
-        email: Config.emailAddress,
-        password: Config.password
-      })
-    )
-    .pipe(gulp.dest(Paths.output));
-});
+// gulp.task("upload", () => {
+//   return gulp
+//     .src([Paths.source + "/**/*.rain"])
+//     .pipe(newer(Paths.output))
+//     .pipe(
+//       lightspeedy({
+//         storeUrl: Config.lightspeedUrl,
+//         themeId: Config.themeId,
+//         email: Config.emailAddress,
+//         password: Config.password
+//       })
+//     )
+//     .pipe(gulp.dest(Paths.output));
+// });
 
 gulp.task("cp", () => {
   return gulp
