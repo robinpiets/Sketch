@@ -1,0 +1,84 @@
+.menu {
+  font-size: .75em;
+  position: relative;
+  display: none;
+  z-index: $menu-layer;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+
+    &.desktop-menu {
+      position: fixed;
+    }
+  }
+}
+
+.menu-link {
+  color: #95989A;
+  letter-spacing: .1em;
+  line-height: 1.6;
+  font-size: 1em;
+  // font-size: 9px;
+  text-transform: uppercase;
+  transition: .2s color;
+
+  &.active {
+    color: #303030;
+  }
+}
+
+.brand-link {
+  color: black;
+  font-size: 1.5em;
+}
+
+.menu-link:hover {
+  color: black;
+  transition: .2s color;
+}
+
+.menu-item {
+  margin-bottom: .8em;
+  // margin-bottom: 2px;
+}
+
+.menu-group {
+  margin-bottom: 5.9em;
+}
+
+.menu-dropdown.is-collapsed {
+  display: none;
+}
+
+.menu-dropdown {
+  margin-top: .8em;
+}
+
+.mobile-menu {
+  background: white;
+  font-size: 12px;
+  height: 100%;
+  left: 0;
+  overflow-y: hidden;
+  padding-left: 6.2rem;
+  padding-top: 6.2rem;
+  position: absolute;
+  top: -100%;
+  transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  width: 100%;
+  z-index: $menu-layer;
+
+  @media (min-width: $screen-sm) {
+    display: none;
+  }
+
+  &.is-active {
+    top: 0;
+    transition-property: all;
+  	transition-duration: .5s;
+  	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    z-index: $menu-layer;
+  }
+}

@@ -1,0 +1,98 @@
+.modalDialog {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: transparentize(white, .2);
+	z-index: -1;
+	opacity: 0;
+	-webkit-transition: opacity 400ms ease-in, z-index 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in, z-index 400ms ease-in;
+	transition: opacity 400ms ease-in, z-index 400ms ease-in;
+
+	&.show-on-mobile {
+		@media (min-width: $screen-sm) {
+			display: none;
+		}
+	}
+
+	&.show-on-desktop {
+		background: transparentize(white, .1);
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 180px;
+	position: absolute;
+	left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+	background: transparent;
+}
+
+.button.modal--btn {
+  background: white;
+  border: 1px solid rgba(0,0,0,.5);
+  border-radius: 0;
+  color: #303030;
+  display: block;
+  height: 40px;
+  line-height: 2.5;
+  letter-spacing: .1em;
+  font-size: 12px;
+  width: 100%;
+  max-width: 178px;
+  margin-bottom: 40px;
+
+	@media (min-width: $screen-sm) {
+		font-size: 10px;
+		max-width: 138px;
+		height: 30px;
+		line-height: 2.1;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+  &:hover {
+    background: white;
+    border-color: transparentize(black, .3);
+    color: transparentize(black, .3);
+  }
+
+  &:active {
+    background: white;
+    border-color: transparentize(black, .3);
+    color: transparentize(black, .3);
+  }
+}
+
+.modal__text {
+  text-align: center;
+  letter-spacing: .1em;
+  margin-bottom: 40px;
+
+	@media (min-width: $screen-sm) {
+		font-size: 11px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+
+	@media  (min-width: $screen-sm) {
+		position: relative;
+		overflow: auto;
+	}
+}

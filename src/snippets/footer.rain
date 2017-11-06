@@ -1,0 +1,12 @@
+<footer class="footer eupopup eupopup-bottom">
+  <p class="footer__aligned footer__aligned--left">
+    © 2017 LA Collection
+  </p>
+  <p class="footer__aligned footer__aligned--center cookie-terms">
+    This website uses cookies to increase your experience. Close to accept
+    <a href="#" data-behavior="accept-cookies" class="close-button">x</a>
+  </p>
+  <p class="footer__aligned footer__aligned--right footer__made-by">
+    <a href="www.trashureagency.com" target="_blank">Design by Trashure</a>
+  </p>
+</footer>

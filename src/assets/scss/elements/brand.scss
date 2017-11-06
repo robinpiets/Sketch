@@ -1,0 +1,29 @@
+.brand-name {
+  color: black;
+  display: block;
+  font-size: 1.18rem;
+  left: 2.5rem;
+  letter-spacing: .2rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mobile-brand {
+  color: black;
+  display: block;
+  position: absolute;
+  letter-spacing: .2rem;
+  font-size: 16px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: $screen-sm) {
+  .mobile-brand,
+  .brand-name {
+    display: none;
+  }
+}

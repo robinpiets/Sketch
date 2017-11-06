@@ -1,0 +1,55 @@
+<div class="product__container {{class}}">
+  <div class="product__image--carousel">
+    {% for image in product.images %}
+      <div>
+        <img src="{{ image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="product__info">
+    <h1 class="product__title">{{product.title}}</h1>
+    <h2 class="product__price"><span class="currency-symbol">{{shop.currency2.symbol}}</span>{{product.price.price}}</h2>
+    <p class="product__description">
+      {{product.description}}
+    </p>
+
+    <div>
+      <form action="{{ ('cart/add/' ~ product.vid) | url }}" id=
+          "product_configure_form" method="post" class="add-cart-form">
+        <a href="javascript:;" onclick="$('#product_configure_form').submit();" id="openCartModal" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}">
+          <span>{{ 'add to cart' | t }}</span>
+        </a>
+        <a href="#" id="openFavModal" class="button is-primary product__cart--btn" title="{{ 'Add to fav' | t }}">
+          <span>{{ 'add to fav' | t }}</span>
+        </a>
+      </form>
+    </div>
+
+    <div class="product__extra-info">
+      <div class="product-info__menu">
+        <a href="#" class="product-info__menu-item active" data-behavior="openProductDetails">details</a>
+        <a href="#" class="product-info__menu-item" data-behavior="openFitAndSize">fit & size</a>
+        <a href="#" class="product-info__menu-item" data-behavior="openShipping">shipping</a>
+        <a href="#" class="product-info__menu-item" data-behavior="openShare">share</a>
+      </div>
+      <div class="product__details show" id="productDetails">
+        {{ product.content | raw }}
+      </div>
+      <div class="product__details" id="fitAndSize">
+        <p>model is wearing a size 13</p>
+        <p>loose fit</p>
+      </div>
+      <div class="product__details" id="shipping">
+        <p>this product qualifies for free shipping</p>
+        <p>see assistance for more information</p>
+        <p>returns within 14 days</p>
+      </div>
+      <div class="product__details" id="share">
+        <p><a href="#">Instagram</a></p>
+        <p><a href="#">Facebook</a></p>
+        <p><a href="#">Twitter</a></p>
+      </div>
+    </div>
+  </div>
+</div>

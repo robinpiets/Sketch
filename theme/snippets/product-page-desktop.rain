@@ -1,0 +1,99 @@
+<div class="product__container columns {{class}}">
+  <div class="product__element column">
+    <div class="product__image--container">
+      <img src="{{ product.image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" class="product__image" />
+    </div>
+    {% set image_array = product.images | slice(0, -1) | slice(1) %}
+    {% for image in image_array %}
+      <div class="product__image--container">
+        <img src="{{ image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+      </div>
+    {% endfor %}
+
+  </div>
+  <div class="product__element column">
+    <div class="product__info product__info--desktop">
+      {% include 'snippets/cart-modal.rain' with {'class': 'show-on-desktop'} %}
+      {% include 'snippets/fav-modal.rain' with {'class': 'show-on-desktop'} %}
+
+      <h1 class="product__title">{{product.title}}</h1>
+      <h2 class="product__price"><span class="currency-symbol">{{shop.currency2.symbol}}</span>{{product.price.price}}</h2>
+      <p class="product__description">
+        {{product.description}}
+      </p>
+      <div>
+        <form action="{{ ('cart/add/' ~ product.vid) | url }}" id=
+            "product_configure_form" method="post" class="add-cart-form">
+          <!--{% if product.options or product.variants or product.custom %}
+          <div class="product-option row">
+            <div class="col-md-12">
+              {# product | html_product_configure | raw #}
+            </div>
+          </div>
+          {% else %}
+            <input type="hidden" name="bundle_id" id="product_configure_bundle_id" value="">
+          {% endif %} -->
+          <div class="button-row">
+            <a href="javascript:;" onclick="$('#product_configure_form').submit();" id="openCartModal" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}">
+              <span>{{ 'add to cart' | t }}</span>
+            </a>
+            <a href="#" id="openFavModal" class="button is-primary product__cart--btn" title="{{ 'Add to fav' | t }}">
+              <span>{{ 'add to fav' | t }}</span>
+            </a>
+          </div>
+        </form>
+      </div>
+      <div class="product__extra-info">
+        <div class="product-info__menu">
+          <a href="#productExtraInfo" class="product-info__menu-item">details</a>
+          <a href="#productExtraInfo" class="product-info__menu-item">shipping</a>
+          <a href="#productExtraInfo" class="product-info__menu-item">fit & size</a>
+          <div class="share-dropdown-container">
+            <a href="#" class="product-info__menu-item" data-behavior="toggle-share-dropdown">share</a>
+            <div class="share-dropdown">
+              <a href="#" class="share-dropdown__item">Instagram</a>
+              <a href="#" class="share-dropdown__item">Facebook</a>
+              <a href="#" class="share-dropdown__item">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product__image--container">
+      <img src="{{ product.images|last | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+    </div>
+    <div class="product__info product__info--extra-info">
+      <div class="product__extra-info" id="productExtraInfo">
+        <div class="product-info__menu">
+          <a href="#" class="product-info__menu-item active" data-behavior="openProductDetails">details</a>
+          <a href="#" class="product-info__menu-item" data-behavior="openFitAndSize">fit & size</a>
+          <a href="#" class="product-info__menu-item" data-behavior="openShipping">shipping</a>
+          <div class="share-dropdown-container">
+            <a href="#" class="product-info__menu-item" data-behavior="toggle-share-dropdown">share</a>
+            <div class="share-dropdown">
+              <a href="#" class="share-dropdown__item">Instagram</a>
+              <a href="#" class="share-dropdown__item">Facebook</a>
+              <a href="#" class="share-dropdown__item">Twitter</a>
+            </div>
+          </div>
+        </div>
+        <div class="product__details show" id="productDetails">
+          {{ product.content | raw }}
+        </div>
+        <div class="product__details" id="fitAndSize">
+          <p>model is wearing a size 13</p>
+        </div>
+        <div class="product__details" id="shipping">
+          <p>this product qualifies for free shipping
+          see assistance for more information
+          returns within {{product.stock.delivery.title}}</p>
+        </div>
+        <div class="product__details" id="share">
+          <p><a href="#">Instagram</a></p>
+          <p><a href="#">Facebook</a></p>
+          <p><a href="#">Twitter</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

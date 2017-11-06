@@ -1,0 +1,6 @@
+<div class="homepage-image">
+  <img src="{{ 'homepage-img.png' | url_asset }}" />
+</div>
+<div class="brand-name">
+<span class="icon-damoy-logo"></span>
+</div>

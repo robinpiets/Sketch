@@ -1,0 +1,56 @@
+.footer {
+  background: white;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 0 5em 1.1em;
+  position: absolute;
+  width: 100%;
+
+  .eupopup-container-bottom {
+    bottom: 0;
+    top: inherit;
+
+    @media (min-width: $screen-sm) {
+      top: 0;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    padding-top: 3em;
+  }
+}
+
+.footer p {
+  font-size: .7em;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-sm) {
+    font-size: .8em;
+    letter-spacing: .1em;
+  }
+}
+
+.footer__made-by a {
+  color: transparentize(black, .8);
+}
+
+.footer__aligned {
+  flex: 0 1 auto;
+}
+
+.footer__aligned--right {
+  margin-left: auto;
+}
+
+.footer__aligned--left,
+.footer__aligned--right {
+  display: none;
+}
+
+@media (min-width: $screen-sm) {
+  .footer__aligned--left,
+  .footer__aligned--right {
+    display: block;
+  }
+}
