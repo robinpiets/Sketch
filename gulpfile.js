@@ -34,20 +34,20 @@ gulp.task("lq", () => {
   gulp.watch(Paths.source + "/**/*.rain", ["upload", "cp"]);
 });
 
-// gulp.task("upload", () => {
-//   return gulp
-//     .src([Paths.source + "/**/*.rain"])
-//     .pipe(newer(Paths.output))
-//     .pipe(
-//       lightspeedy({
-//         storeUrl: Config.lightspeedUrl,
-//         themeId: Config.themeId,
-//         email: Config.emailAddress,
-//         password: Config.password
-//       })
-//     )
-//     .pipe(gulp.dest(Paths.output));
-// });
+gulp.task("upload", () => {
+  return gulp
+    .src([Paths.source + "/**/*.rain"])
+    .pipe(newer(Paths.output))
+    .pipe(
+      lightspeedy({
+        storeUrl: Config.lightspeedUrl,
+        themeId: Config.themeId,
+        email: Config.emailAddress,
+        password: Config.password
+      })
+    )
+    .pipe(gulp.dest(Paths.output));
+});
 
 gulp.task("cp", () => {
   return gulp
@@ -68,7 +68,8 @@ gulp.task("php", function() {
     () => {
       browserSync.init({
         proxy: Config.localUrl,
-        port: 3001
+        port: 3001,
+        open: false
       });
     }
   );
