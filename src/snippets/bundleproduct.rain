@@ -1,0 +1,98 @@
+{# snippet 'snippets/bundleproduct.rain' #}
+{% if product.bundles %}
+
+  {% for bundle in product.bundles %}
+  <form id="bundle_configure_form_{{ bundle.id }}">
+  <input name="main_product_variant" value="{{ product.vid }}" type="hidden">
+    <div class="products row bundle-actions" >
+
+      <div class="col-md-10 col-sm-12">
+        <div class="product col-xs-6 col-sm-3 col-md-2">
+          <div class="image-wrap">
+            <a href="{{ product.url | url }}" title="{{ product.fulltitle }}">
+              {% if product.image %}
+                {% if theme.product_image_fit %}
+                  <img src="{{ product.image | url_image('210x210x1', product.fulltitle) }}" height="210" width="210" alt="{{ product.fulltitle }}" />
+                  {% else %}
+                  <img src="{{ product.image | url_image('210x210x2', product.fulltitle) }}" height="210" width="210" alt="{{ product.fulltitle }}" />
+                {% endif %}
+                {% else %}
+                <img src="{{ 'blank.gif' | url_asset }}" height="135px" width="135px" alt="{{ product.title }}" title="{{ product.title }}"/>
+              {% endif %}
+            </div>
+            <div class="bundleproductinfo info{% if shop.settings.legal.mode == 'strict' %} strict{% endif %}">
+              <a href="{{ product.url | url }}" title="{{ product.fulltitle }}" class="title no-underline">
+                <h3> {{ product.title }}</h3>
+
+              </a>
+            </div>
+          </div>
+
+          {% for bundleProduct in bundle.products %}
+
+            <div class="product col-xs-6 col-sm-3 col-md-2">
+              <span class="glyphicon glyphicon-plus glyph-bundle"></span>
+
+              <div class="image-wrap">
+                <a href="{{ bundleProduct.url | url }}" title="{{ bundleProduct.fulltitle }}">
+                  {% if product.image %}
+                    {% if theme.product_image_fit %}
+                      <img src="{{ bundleProduct.image | url_image('210x210x1', product.fulltitle) }}" height="210" width="210" alt="{{ product.fulltitle }}" />
+                      {% else %}
+                      <img src="{{ bundleProduct.image | url_image('210x210x2', product.fulltitle) }}" height="210" width="210" alt="{{ product.fulltitle }}" />
+                    {% endif %}
+                    {% else %}
+                    <img src="{{ 'blank.gif' | url_asset }}" height="135px" width="135px" alt="{{ product.title }}" title="{{ product.title }}"/>
+                  {% endif %}
+                  </a>
+                </div>
+
+                <div class="bundleproductinfo info{% if shop.settings.legal.mode == 'strict' %} strict{% endif %}" style="height: auto; width: auto;">
+                  <a href="{{ product.url | url }}" title="{{ product.fulltitle }}" class="title no-underline">
+                    {% if bundleProduct.quantity > 1 %} {{ bundleProduct.quantity }}x {% endif %} {{ bundleProduct.title }}</h3>
+                    </a>
+                  {% if bundleProduct.variant %}
+                    <p>{{ bundleProduct.variant }} </p>
+                  {% endif %}
+                    <p>{{ bundleProduct | html_bundle_item_configure(product, bundle) | raw }} </p>
+                  </div>
+
+                </div>
+                {% if loop.index is divisibleby(5) %}
+                <div class="clearfix hidden-xs hidden-sm"></div>
+                {% endif %}
+                {% if loop.index is divisibleby(3) and loop.index is not divisibleby(6) %}
+                <div class="clearfix hidden-xs hidden-md hidden-lg"></div>
+                {% endif %}
+              {% endfor %}
+
+
+
+
+  <div class="col-md-2 col-sm-3 col-xs-6">
+                <div class="product-details">
+                  <div class="discount title">
+                    <h3>{{ bundle.title | t }}</h3>
+
+                    {% if bundle.percentage %}
+                      {{ bundle.percentage | percentage }} {{ 'Discount' | t }}
+                    {% endif %}
+                  </div>
+                  {% if bundle.price.price_old != bundle.price.price %}
+                    <div class="old-price line-through">{{ bundle.price.price_old | money }}{% if shop.settings.legal.mode == 'strict' %} <small>*</small>{% endif %} </div>
+                  {% endif %}
+                  <div class="price total">{{ bundle.price.price | money }}{% if shop.settings.legal.mode == 'strict' %} <small>*</small>{% endif %} </div>
+                  <div class="cart">
+                    <a href="#" class="btn add-bundle-btn {% if not bundle.stock.available %}disabled{% endif %}"
+                              onclick="javascript: add_product_bundle('{{ bundle.id }}'); return false;">
+                              {% if not bundle.stock.available %}{{ 'Out of stock' | t }}{% else %}{{ 'Add to cart' | t }}{% endif %}
+                            </a>
+                  </span>
+                </div>
+              </div>
+            </div>          </div></div><br />
+<hr>
+                  <div class="clearfix"></div>
+    </form>
+{% endfor %}
+{% endif %}
