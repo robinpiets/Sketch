@@ -6,30 +6,34 @@
     {% endif %}
   {% endfor %}
 </div>
+{% if collection.products | length > 2 %}
 <div class="product__columns grid-layout">
+{% else %}
+<div class="product__columns grid-layout" style="margin-left: 0">
+{% endif %}
   {% for product in collection.products %}
     {% set index = loop.index %}
     {% if (index > 2) %}
       {% include 'snippets/product-item.rain' %}
     {% endif %}
   {% endfor %}
-
-  {% set pagination = collection | paginate %}
-  {% set currentPage = collection.page %}
-  {% set totalPages = collection.pages %}
-  {% if collection.pages > 1 %}
-  <div class="pager">
-    <span class="prev{% if currentPage == 1 %} disabled{% else %} enabled{% endif %}">
-      <a href="{{ pagination.previous.url | url }}" title="{{ 'Previous page' | t }}">
-        <
-      </a>
-    </span>
-    <div>{{currentPage}}/{{totalPages}}</div>
-    <span class="next{% if currentPage == totalPages %} disabled{% else %} enabled{% endif %}">
-      <a href="{{ pagination.next.url | url }}" title="{{ 'Next page' | t }}">
-        >
-      </a>
-    </span>
-  </div>
-  {% endif %}
 </div>
+
+{% set pagination = collection | paginate %}
+{% set currentPage = collection.page %}
+{% set totalPages = collection.pages %}
+{% if collection.pages > 1 %}
+<div class="pager">
+  <span class="prev{% if currentPage == 1 %} disabled{% else %} enabled{% endif %}">
+    <a href="{{ pagination.previous.url | url }}" title="{{ 'Previous page' | t }}">
+      < previous
+    </a>
+  </span>
+  <div>{{currentPage}}/{{totalPages}}</div>
+  <span class="next{% if currentPage == totalPages %} disabled{% else %} enabled{% endif %}">
+    <a href="{{ pagination.next.url | url }}" title="{{ 'Next page' | t }}">
+      next >
+    </a>
+  </span>
+</div>
+{% endif %}

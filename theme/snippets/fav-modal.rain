@@ -4,7 +4,7 @@
       This item has been
       added to your favourites
     </p>
-    <a href="#close" id="closeFavModal" class="button is-primary modal--btn close">continue shopping</a>
+    <a href="#close" id="closeFavModal" data-behavior="close-fav-modal" class="button is-primary modal--btn close">continue shopping</a>
     <a href="{{ ('account/wishlistAdd/' ~ product.id ~ '?variant_id=' ~ product.vid) | url }}" class="button is-primary modal--btn">go to favourites</a>
   </div>
 </div>
