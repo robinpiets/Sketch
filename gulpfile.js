@@ -69,7 +69,8 @@ gulp.task("php", function() {
       browserSync.init({
         proxy: Config.localUrl,
         port: 3001,
-        open: false
+        open: false,
+		logging: false
       });
     }
   );
