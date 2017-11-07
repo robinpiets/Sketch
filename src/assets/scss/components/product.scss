@@ -8,6 +8,7 @@
 		display: none;
 		@media (min-width: $screen-sm) {
 			display: flex;
+			background: green;
 		}
 	}
 
@@ -288,7 +289,17 @@
 	}
 }
 
-.product__available {
-	position: relative;
-	width: 100%;
+.product__separator {
+	display: flex;
+	width: 90vw;
+	flex-direction: column;
+	padding: 50px 0;
+	background-color: pink;
+}
+
+.dynamic-content.main-content {
+	background-color: green;
+	@media (min-width: $screen-sm) {
+		padding-right: 0;
+	}
 }

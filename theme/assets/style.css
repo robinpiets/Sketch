@@ -84,6 +84,7 @@ body {
   flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 2.9em 1em 0;
   position: relative; }
   @media (min-width: 576px) {
@@ -497,7 +498,8 @@ body .eupopup-style-compact .eupopup-button {
     display: none; }
     @media (min-width: 576px) {
       .product__container.show-on-desktop {
-        display: flex; } }
+        display: flex;
+        background: green; } }
   .product__container.show-on-mobile {
     padding-right: 30px;
     padding-left: 30px;
@@ -714,9 +716,18 @@ body .eupopup-style-compact .eupopup-button {
   .product-info__menu-item.active {
     color: #303030; }
 
-.product__available {
-  position: relative;
-  width: 100%; }
+.product__separator {
+  display: flex;
+  width: 90vw;
+  flex-direction: column;
+  padding: 50px 0;
+  background-color: pink; }
+
+.dynamic-content.main-content {
+  background-color: green; }
+  @media (min-width: 576px) {
+    .dynamic-content.main-content {
+      padding-right: 0; } }
 
 .modalDialog {
   position: fixed;

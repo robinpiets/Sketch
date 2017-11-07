@@ -29,18 +29,29 @@
 </head>
 
 <body>
-	{% include 'snippets/mobile-menu.rain' %} {% if template == 'pages/index.rain' %}
-	<div class="damoy__container index-page">
+	{% include 'snippets/mobile-menu.rain' %}
+		{% if template == 'pages/index.rain' %}
+		<div class="damoy__container index-page">
 		{% elseif template == 'pages/cart.rain' %} {% include 'snippets/cart-page.rain' %} {% else %}
 		<div class="damoy__container">
-			{% endif %}
+		{% endif %}
 			<div class="sidebar">
 				{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') or (template == 'pages/textpage.rain') %}
-				<a href="/" class="mobile-brand"><span class="icon-damoy-logo"></span></a> {% endif %}
+				<a href="/" class="mobile-brand"><span class="icon-damoy-logo"></span></a>
+				{% endif %}
 				<a href="#" class="cart-icon-link {% if page.cart.products|length > 1 %}visible{% else %}hidden{% endif %}"><span class="icon-cart-icon"></span></a> {% include 'snippets/navigation.rain' %}
 			</div>
 			<div class="main-content">
 				{% include template %}
+
+				<div class="product__separator">
+					<span class="product__available">also available</span>
+				</div>
+				<div class="dynamic-content main-content">
+				<!-- <div class="extra-content"> -->
+
+					<!-- </div> -->
+				</div>
 			</div>
 		</div>
 		{% include 'snippets/footer.rain' %}
