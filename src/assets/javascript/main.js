@@ -128,10 +128,9 @@ $(document).ready(function() {
             console.log("mobile width");
         if ($('.product__container.show-on-desktop').length > 0) {
             PRODUCT_CONTENT_DESKTOP = $('.product__container.show-on-desktop').detach();
-            if (log)
-                console.log(PRODUCT_CONTENT_DESKTOP);
-            }
+            if (log) console.log(PRODUCT_CONTENT_DESKTOP);
         }
+    }
 
     // $.ajax({url: "test.html", context: document.body})
 	// 	.done(function() {
@@ -144,44 +143,63 @@ $(document).ready(function() {
 	// 	    	console.log("fail");
 	// 	})
 
-    // $( ".dynamic-content" ).load( "ajax/test.html" );
+
+	// Load more products on product-page
 	var activeLink = $('.menu.desktop-menu .menu-dropdown .menu-link.active')
 	if ( activeLink.length ) {
 		var href = activeLink.attr('href')
 		if (href) {
-			// if (log) console.log('href: ',href);
+			var allProductsFirst = [],
+				allProductsTotal = [],
+				loadingProduct = false;
 			// First Ajax call to get all products
-			// $.ajax({url: href, context: $('.product__columns')})
-			var allProductsFirst = [];
-			var allProductsTotal = [];
-			$.ajax({url: href})
-				.done(function(e) {
-			        // Get all products from current category
-					var firstArray = true;
-					$(e).find('.product__columns .product-image').each(function(index, el) {
-						var productHrefOriginal = $(this).attr('href');
-						var productHref = productHrefOriginal.replace( window.location.protocol + '//', '' );
-						productHref = productHref.split( '/' );
-						productHref = '/' + productHref[1];
-						if ( productHref == window.location.pathname ) {
-							if (log) console.log('SAME: ', productHref);
-							firstArray = false;
-						} else {
-							if (log) console.log( productHref );
-							if ( firstArray ) allProductsFirst.push(productHref)
-							else allProductsTotal.push(productHref)
-						}
-					});
-					// Merging both arrays
-					allProductsTotal = $.merge(allProductsTotal, allProductsFirst)
+			$.ajax({url: href}).done(function(e) {
+		        // Get all products from current category
+				var firstArray = true;
+				$(e).find('.product__columns .product-image').each(function(index, el) {
+					var productHrefOriginal = $(this).attr('href');
+					var productHref = productHrefOriginal.replace( window.location.protocol + '//', '' );
+					productHref = productHref.split( '/' );
+					productHref = '/' + productHref[1];
+					if ( productHref == window.location.pathname ) {
+						// if (log) console.log('SAME: ', productHref);
+						firstArray = false;
+					} else {
+						// if (log) console.log( productHref );
+						if ( firstArray ) allProductsFirst.push(productHref)
+						else allProductsTotal.push(productHref)
+					}
+				});
+				// Merging both arrays
+				allProductsTotal = $.merge(allProductsTotal, allProductsFirst)
+				if (allProductsTotal.length) {
 					if (log) console.log( allProductsTotal );
-		    	})
-				.fail(function() {
-					if (log)
-				    	console.log("fail");
-				})
-		}
 
+				}
+	    	})
+			.fail(function() {
+				if (log)
+			    	console.log("fail");
+			});
+
+			function loadNewProduct() {
+				loadingProduct = true;
+				// console.log("Loading new product");
+
+				setTimeout(function () {
+					loadingProduct = false;
+				}, 2000);
+			}
+
+			$(window).scroll(function() {
+				var buffer = 200;
+				if ( $(window).scrollTop() >= $(document).height() - $(window).height() - buffer ) {
+					// ajax call get data from server and append to the div
+					// console.log('nu');
+					if (!loadingProduct) loadNewProduct();
+				}
+			});
+		}
 	}
 });
 
