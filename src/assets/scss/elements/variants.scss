@@ -52,8 +52,12 @@ $arrow_color: $gray !default;
   transition: all 0.2s ease-in-out;
   user-select: none;
   white-space: nowrap;
-  width: 25%;
+  width: 40%;
   margin-bottom: 10px;
+
+  @media (min-width: $screen-sm) {
+    width: 30%;
+  }
   &:hover {
     border-color: darken($gray_light, 5%);
   }

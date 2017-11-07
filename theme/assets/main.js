@@ -1,3 +1,6 @@
+// SHAME: terrible global - client wanted project out the door
+var PRODUCT_CONTENT_DESKTOP;
+
 $(document).ready(function(){
   $('[data-behavior~=trigger-menu-dropdown]').click(function(e){
     e.preventDefault();
@@ -24,11 +27,6 @@ $(document).ready(function(){
     console.log("Lookbook link clicked");
   });
 
-  $('.product__image--carousel').slick({
-    prevArrow: "<div class='prev-arrow'><span class='arrow'><</span></div>",
-    nextArrow: "<div class='next-arrow'><span class='arrow'>></span></div>"
-  });
-
   $('[data-behavior~=openProductDetails]').click(function(e){
     e.preventDefault();
     $('.product-info__menu-item').removeClass('active');
@@ -38,6 +36,7 @@ $(document).ready(function(){
   });
 
   $('[data-behavior~=openFitAndSize]').click(function(e){
+    console.log("open fit and size");
     e.preventDefault();
     $('.product-info__menu-item').removeClass('active');
     $('.product__details').removeClass('show');
@@ -61,9 +60,9 @@ $(document).ready(function(){
     $(this).addClass('active');
   });
 
-  $('#product_configure_form').on("submit", function() {
+  $('.add-cart-form').on("submit", function() {
     console.log("on submit");
-    $('#cartModal').css({"opacity": "1", "z-index":"99999"});
+    $('.cart-modal').css({"opacity": "1", "z-index":"99999"});
     $('body').addClass("modal-open");
     $form = $(this);
     postUrl = $form.attr('action');
@@ -79,19 +78,32 @@ $(document).ready(function(){
     return false;
   });
 
-  $('#openFavModal').click(function(e){
+  $('[data-behavior~=open-fav-modal]').click(function(e){
+    console.log("open fav modal");
     e.preventDefault();
     $('#favModal').css({"opacity": "1", "z-index":"99999"});
     $('body').addClass("modal-open");
   });
 
-  $('#closeFavModal').click(function(e){
+  $('[data-behavior~=open-newsletter-modal]').click(function(e){
+    e.preventDefault();
+    $('#newsletterModal').css({"opacity": "1", "z-index":"99999"});
+    $('body').addClass("modal-open");
+  });
+
+  $('[data-behavior~=close-newsletter-modal]').click(function(e){
+    e.preventDefault();
+    $('#newsletterModal').css({"opacity": "", "z-index":""});
+    $('body').removeClass("modal-open");
+  });
+
+  $('[data-behavior~=close-fav-modal]').click(function(e){
     e.preventDefault();
     $('#favModal').css({"opacity": "", "z-index":""});
     $('body').removeClass("modal-open");
   });
 
-  $('#closeCartModal').click(function(e){
+  $('[data-behavior~=close-cart-modal]').click(function(e){
     e.preventDefault();
     $('#cartModal').css({"opacity": "", "z-index":""});
     $('body').removeClass("modal-open");
@@ -100,11 +112,30 @@ $(document).ready(function(){
   $('select').niceSelect();
 
   $('.product-info__menu-item').smoothScroll({offset: -50});
-  // var imageHeight = $('.product__image').height();
-  // $('.product__info--desktop').height(imageHeight);
+
+  if ( $(window).width() < 576) {
+    console.log("mobile width");
+    if ($('.product__container.show-on-desktop').length > 0) {
+      PRODUCT_CONTENT_DESKTOP = $('.product__container.show-on-desktop').detach();
+      console.log(PRODUCT_CONTENT_DESKTOP);
+    }
+  }
 });
 
-// $(window).resize(function() {
-//   var imageHeight = $('.product__image').height();
-//   $('.product__info--desktop').height(imageHeight);
-// });
+$( window ).resize(function() {
+  if ( $(window).width() < 576) {
+    console.log("mobile width");
+    if ($('.product__container.show-on-desktop').length > 0) {
+      PRODUCT_CONTENT_DESKTOP = $('.product__container.show-on-desktop').detach();
+      console.log(PRODUCT_CONTENT_DESKTOP);
+    }
+  } else {
+    console.log("desktop width");
+    console.log(PRODUCT_CONTENT_DESKTOP);
+    if (PRODUCT_CONTENT_DESKTOP) {
+      console.log("append pc");
+      PRODUCT_CONTENT_DESKTOP.appendTo('.main-content');
+      PRODUCT_CONTENT_DESKTOP = null;
+    }
+  }
+});
