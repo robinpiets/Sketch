@@ -190,6 +190,12 @@ $(document).ready(function() {
 				allProductsTotal.splice(0, 1);
 
 				if (log) console.log("Loading new product: ", newProduct);
+				// Load product info from product url
+				$.ajax({url: newProduct}).done(function(e) {
+					// var productContent = $(e).find('.damoy__container .main-content')
+					// console.log( $(e).find('.main-content').not('.dynamic-content').html() );
+					$('.dynamic-content.main-content').html( $('.dynamic-content.main-content').html() + $(e).find('.main-content').not('.dynamic-content').html() )
+				});
 
 				setTimeout(function () {
 					loadingProduct = false;
