@@ -149,15 +149,22 @@ $(document).ready(function() {
 	if ( activeLink.length ) {
 		var href = activeLink.attr('href')
 		if (href) {
-			if (log) console.log('href: ',href);
+			// if (log) console.log('href: ',href);
 			// First Ajax call to get all products
 			// $.ajax({url: href, context: $('.product__columns')})
 			$.ajax({url: href})
 				.done(function(e) {
-			        // Get all products from current category 
-					if (log)
-			            console.log( $(e).find('.product__columns .product-image') );
-
+			        // Get all products from current category
+					// if (log) console.log( $(e).find('.product__columns .product-image') );
+					console.log( window.location.pathname );
+					$(e).find('.product__columns .product-image').each(function(index, el) {
+						var productHrefOriginal = $(this).attr('href');
+						var productHref = productHrefOriginal.replace( window.location.protocol + '//', '' );
+						productHref = productHref.split( '/' );
+						productHref = '/' + productHref[1];
+						if ( productHref == window.location.pathname ) console.log('SAME:');
+						console.log( productHref );
+					});
 		    	})
 				.fail(function() {
 					if (log)
