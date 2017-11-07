@@ -151,7 +151,9 @@ $(document).ready(function() {
 		if (href) {
 			var allProductsFirst = [],
 				allProductsTotal = [],
-				loadingProduct = false;
+				loadingProduct = false,
+				finishedLoadingProducts = false;
+
 			// First Ajax call to get all products
 			$.ajax({url: href}).done(function(e) {
 		        // Get all products from current category
@@ -184,19 +186,25 @@ $(document).ready(function() {
 
 			function loadNewProduct() {
 				loadingProduct = true;
-				// console.log("Loading new product");
+				var newProduct = allProductsTotal[0];
+				allProductsTotal.splice(0, 1);
+
+				if (log) console.log("Loading new product: ", newProduct);
 
 				setTimeout(function () {
 					loadingProduct = false;
-				}, 2000);
+				}, 1000);
+			}
+			function allProductsLoaded() {
+				finishedLoadingProducts = true;
+				if (log) console.log('Finished loading products');
 			}
 
 			$(window).scroll(function() {
 				var buffer = 200;
 				if ( $(window).scrollTop() >= $(document).height() - $(window).height() - buffer ) {
-					// ajax call get data from server and append to the div
-					// console.log('nu');
-					if (!loadingProduct) loadNewProduct();
+					if (!loadingProduct && allProductsTotal.length) loadNewProduct();
+					if (!loadingProduct && !allProductsTotal.length && !finishedLoadingProducts) allProductsLoaded();
 				}
 			});
 		}
