@@ -8,6 +8,9 @@ body {
   position: relative;
   min-height: 100%; }
 
+@media (min-width: 350px) {
+  font-size: 13px; }
+
 .damoy__container {
   display: flex;
   flex-direction: column;
@@ -140,14 +143,14 @@ body {
       left: 50%;
       transform: translate(-50%, -50%); } }
 
-.pages--store,
-.pages--assistance {
+.pages--assistance,
+.pages--store {
   display: flex;
   flex-direction: column;
   justify-content: center; }
   @media (min-width: 576px) {
-    .pages--store,
-    .pages--assistance {
+    .pages--assistance,
+    .pages--store {
       flex-direction: row;
       position: absolute;
       top: 50%;
@@ -189,7 +192,7 @@ body {
   margin-bottom: 1rem; }
 
 .pages--assistance h1 {
-  letter-spacing: .1em; }
+  letter-spacing: 0.1em; }
 
 .pages--assistance .pages__column {
   width: 180px; }
@@ -207,32 +210,38 @@ body {
   margin-right: -1em; }
   @media (min-width: 576px) {
     .pages--lookbook {
-      margin-left: 0;
+      margin-left: 100px;
       margin-right: 0;
-      margin: 5px 0 75px;
-      max-width: 480px;
+      padding-left: 100px;
+      max-width: 800px;
       flex-direction: row;
       flex-wrap: wrap; } }
   .pages--lookbook div {
     flex: 0 1 auto;
     display: block; }
-  .pages--lookbook div:nth-child(4n), .pages--lookbook div:nth-child(4n-1) {
+  .pages--lookbook div:nth-child(4n),
+  .pages--lookbook div:nth-child(4n-1) {
     width: 37%; }
-  .pages--lookbook div:nth-child(4n-2), .pages--lookbook div:nth-child(4n-3) {
+  .pages--lookbook div:nth-child(4n-2),
+  .pages--lookbook div:nth-child(4n-3) {
     width: 63%;
     margin-left: auto; }
   @media (min-width: 576px) {
-    .pages--lookbook div:nth-child(4n), .pages--lookbook div:nth-child(4n-1) {
+    .pages--lookbook div:nth-child(4n),
+    .pages--lookbook div:nth-child(4n-1) {
       width: 50%; }
-    .pages--lookbook div:nth-child(4n-2), .pages--lookbook div:nth-child(4n-3) {
+    .pages--lookbook div:nth-child(4n-2),
+    .pages--lookbook div:nth-child(4n-3) {
       width: 50%;
       margin-left: 0; }
     .pages--lookbook div {
       margin-top: -3px; }
     .pages--lookbook div:nth-child(odd) {
-      padding-right: .8px; }
+      padding-right: 25px;
+      padding-bottom: 50px; }
     .pages--lookbook div:nth-child(even) {
-      padding-left: .5px; } }
+      padding-left: 25px;
+      padding-bottom: 25px; } }
 
 .menu {
   font-size: .75em;
@@ -277,12 +286,12 @@ body {
 
 .mobile-menu {
   background: white;
-  font-size: 12px;
+  font-size: 10px;
   height: 100%;
   left: 0;
   overflow-y: hidden;
   padding-left: 6.2rem;
-  padding-top: 6.2rem;
+  padding-top: 5rem;
   position: absolute;
   top: -100%;
   transition-property: all;
@@ -350,7 +359,6 @@ body {
 .store__location {
   margin-bottom: 2.5rem; }
   .store__location a {
-    font-weight: bold;
     transition: .2s opacity; }
     .store__location a:hover {
       opacity: .5;
@@ -578,7 +586,7 @@ body .eupopup-style-compact .eupopup-button {
   border-radius: 0;
   color: #303030;
   height: 40px;
-  font-size: 13px;
+  font-size: 12px;
   width: 100%;
   flex: 0 1 auto;
   max-width: 110px; }
@@ -613,7 +621,7 @@ body .eupopup-style-compact .eupopup-button {
   -webkit-flex-wrap: wrap;
   display: flex;
   flex-wrap: wrap;
-  margin: 20px auto;
+  margin-bottom: 20px;
   text-align: center;
   position: relative;
   color: white;
@@ -919,7 +927,7 @@ body.modal-open {
   margin-right: 1.7rem; }
   .pager div {
     display: inline-block;
-    font-size: 10px; }
+    font-size: 11px; }
   .pager a {
     color: black;
     font-size: 10px; }
@@ -1116,6 +1124,7 @@ body.modal-open {
   font-family: inherit;
   font-size: 11px;
   font-weight: normal;
+  letter-spacing: .1em;
   height: 50px;
   line-height: 48px;
   outline: none;
@@ -1144,12 +1153,15 @@ body.modal-open {
     margin-top: -4px;
     pointer-events: none;
     position: absolute;
-    right: 12px;
-    top: 50%;
+    right: 2px;
+    top: 45%;
     transform-origin: 66% 66%;
     transform: rotate(45deg);
     transition: all 0.15s ease-in-out;
     width: 5px; }
+    @media (max-width: 374px) {
+      .nice-select:after {
+        left: 110px; } }
   .nice-select.open:after {
     transform: rotate(-135deg); }
   .nice-select.open .list {
@@ -1178,7 +1190,7 @@ body.modal-open {
     transform: scale(0.75) translateY(-25px);
     transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
     z-index: 9;
-    width: 100%; }
+    width: 120%; }
     .nice-select .list:hover .option:not(:hover) {
       background-color: transparent !important; }
   .nice-select .option {
