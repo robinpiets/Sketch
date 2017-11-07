@@ -152,19 +152,29 @@ $(document).ready(function() {
 			// if (log) console.log('href: ',href);
 			// First Ajax call to get all products
 			// $.ajax({url: href, context: $('.product__columns')})
+			var allProductsFirst = [];
+			var allProductsTotal = [];
 			$.ajax({url: href})
 				.done(function(e) {
 			        // Get all products from current category
-					// if (log) console.log( $(e).find('.product__columns .product-image') );
-					console.log( window.location.pathname );
+					var firstArray = true;
 					$(e).find('.product__columns .product-image').each(function(index, el) {
 						var productHrefOriginal = $(this).attr('href');
 						var productHref = productHrefOriginal.replace( window.location.protocol + '//', '' );
 						productHref = productHref.split( '/' );
 						productHref = '/' + productHref[1];
-						if ( productHref == window.location.pathname ) console.log('SAME:');
-						console.log( productHref );
+						if ( productHref == window.location.pathname ) {
+							if (log) console.log('SAME: ', productHref);
+							firstArray = false;
+						} else {
+							if (log) console.log( productHref );
+							if ( firstArray ) allProductsFirst.push(productHref)
+							else allProductsTotal.push(productHref)
+						}
 					});
+					// Merging both arrays
+					allProductsTotal = $.merge(allProductsTotal, allProductsFirst)
+					if (log) console.log( allProductsTotal );
 		    	})
 				.fail(function() {
 					if (log)
