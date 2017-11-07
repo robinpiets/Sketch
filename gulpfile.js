@@ -96,7 +96,11 @@ gulp.task("sass", function() {
   return gulp
     .src(Paths.sourceAsset + "/scss/style.scss")
     .pipe(flatten())
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass())
+    // .on("error", sass.logError))
+    .on('error', function(err) {
+			browserSync.notify('<div style="position:absolute;left:-100vw;top:0;width:600px;padding:5vw;font-size:100px;background-color:pink;color:red;box-shadow:5px 6px 20px #b67171;">ERROR!! Je gulp staat open!🖕<p style="color:black;font-size:15px;margin-top:20px">+' + err.message + '</div><', 500000);
+		})
     .pipe(gulp.dest(Paths.output + "/assets"))
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
