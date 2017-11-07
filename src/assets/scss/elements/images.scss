@@ -30,8 +30,13 @@
   margin-left: auto;
   margin-right: 1.7rem;
   margin-bottom: .625rem;
-  max-width: 14.7rem;
+  max-width: 235px;
+  height: 350px;
   transition: opacity .2s;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
 
   &.product-image--large {
     max-width: 14.7rem;
@@ -47,18 +52,18 @@
 @media (min-width: $screen-sm) {
   .product-image {
     display: inline-block;
-    margin-left: 0;
+    margin-left: .5px;
     margin-bottom: 1px;
     min-height: 375px;
-    margin-right: 0;
-    max-width: 20rem;
-    padding: .05rem;
-    width: 50%;
+    margin-right: .5px;
+    max-width: 238px;
+    width: 238px;
 
     &.product-image--large {
       margin-bottom: 5rem;
-      max-width: 21rem;
-      width: 100%;
+      max-width: 340px;
+      width: 340px;
+      height: 523px;
     }
 
     img {
