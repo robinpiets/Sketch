@@ -143,13 +143,26 @@ $(document).ready(function() {
 	// 		if (log)
 	// 	    	console.log("fail");
 	// 	})
+
     // $( ".dynamic-content" ).load( "ajax/test.html" );
 	var activeLink = $('.menu.desktop-menu .menu-dropdown .menu-link.active')
 	if ( activeLink.length ) {
 		var href = activeLink.attr('href')
 		if (href) {
 			if (log) console.log('href: ',href);
-			
+			// First Ajax call to get all products
+			// $.ajax({url: href, context: $('.product__columns')})
+			$.ajax({url: href})
+				.done(function(e) {
+			        // Get all products from current category 
+					if (log)
+			            console.log( $(e).find('.product__columns .product-image') );
+
+		    	})
+				.fail(function() {
+					if (log)
+				    	console.log("fail");
+				})
 		}
 
 	}
