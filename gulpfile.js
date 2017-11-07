@@ -70,7 +70,12 @@ gulp.task("php", function() {
         proxy: Config.localUrl,
         port: 3001,
         open: false,
-		logging: false
+    		logging: false,
+    		injectChanges: true,
+        reloadOnRestart: true,
+        files: [
+    			"theme/assets/style.css", "theme/assets/main.js"
+    		]
       });
     }
   );

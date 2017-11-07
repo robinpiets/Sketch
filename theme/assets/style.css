@@ -535,29 +535,29 @@ body .eupopup-style-compact .eupopup-button {
 
 .product__title {
   font-size: 1.25rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   margin-bottom: 1rem;
   text-transform: uppercase; }
   @media (min-width: 576px) {
     .product__title {
       font-size: 16px;
-      letter-spacing: .2em;
-      margin-bottom: .6em; } }
+      letter-spacing: 0.2em;
+      margin-bottom: 0.6em; } }
 
-.product__price,
+.product__cart--btn,
 .product__description,
-.product__cart--btn {
+.product__price {
   font-size: 11px;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   margin-bottom: 1rem; }
   @media (min-width: 576px) {
-    .product__price,
+    .product__cart--btn,
     .product__description,
-    .product__cart--btn {
+    .product__price {
       margin-bottom: 1.4em; } }
 
 .product__price .currency-symbol {
-  padding-right: .4rem; }
+  padding-right: 0.4rem; }
 
 .product__description {
   margin-bottom: 1.2rem;
@@ -602,7 +602,7 @@ body .eupopup-style-compact .eupopup-button {
       height: 25px;
       line-height: 25px;
       font-size: 10px; } }
-  .button.product__cart--btn:hover, .button.product__cart--btn:active, .button.product__cart--btn.nice-select.open, .button.product__cart--btn:focus {
+  .button.product__cart--btn:active, .button.product__cart--btn.nice-select.open, .button.product__cart--btn:focus, .button.product__cart--btn:hover {
     background: white;
     border-color: rgba(0, 0, 0, 0.7);
     color: rgba(0, 0, 0, 0.7); }
@@ -639,8 +639,8 @@ body .eupopup-style-compact .eupopup-button {
   .product__image--carousel img {
     display: block;
     margin: auto; }
-  .product__image--carousel .prev-arrow,
-  .product__image--carousel .next-arrow {
+  .product__image--carousel .next-arrow,
+  .product__image--carousel .prev-arrow {
     color: black;
     position: absolute;
     cursor: pointer;
@@ -669,7 +669,7 @@ body .eupopup-style-compact .eupopup-button {
     display: block; }
   .product__details p {
     line-height: 2;
-    letter-spacing: .1em; }
+    letter-spacing: 0.1em; }
     @media (min-width: 576px) {
       .product__details p {
         line-height: normal;
@@ -697,7 +697,7 @@ body .eupopup-style-compact .eupopup-button {
   color: rgba(48, 48, 48, 0.5);
   flex: 1 1 auto;
   font-size: 12px;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   text-align: center; }
   @media (min-width: 576px) {
     .product-info__menu-item {
@@ -713,6 +713,10 @@ body .eupopup-style-compact .eupopup-button {
     color: #303030; }
   .product-info__menu-item.active {
     color: #303030; }
+
+.product__available {
+  position: relative;
+  width: 100%; }
 
 .modalDialog {
   position: fixed;

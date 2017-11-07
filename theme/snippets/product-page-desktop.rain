@@ -27,7 +27,11 @@
           {% if product.options or product.variants or product.custom %}
             <div class="product-option row">
               <div class="col-md-12">
-                {{ product | html_product_configure | raw }}
+                {% if product | raw  %}
+                  {{ product | raw }}
+                {% elseif html_product_configure %}
+                  {{ html_product_configure }}
+                {% endif %}
               </div>
             </div>
           {% else %}
@@ -122,6 +126,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="product__line">
+    <span class="product__available">also available</span>
   </div>
 </div>
 <!-- {% if product.stock.level==0 %}out of stock{% else %}in stock{% endif %}  -->

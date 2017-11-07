@@ -127,6 +127,9 @@
       </div>
     </div>
   </div>
+  <div class="product__line">
+    <span class="product__available">also available</span>
+  </div>
 </div>
 <!-- {% if product.stock.level==0 %}out of stock{% else %}in stock{% endif %}  -->
 
