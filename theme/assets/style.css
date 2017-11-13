@@ -729,10 +729,12 @@ body .eupopup-style-compact .eupopup-button {
 .product__separator {
   display: flex;
   width: 90vw;
+  height: 1rem;
+  margin-top: -0.75rem;
+  margin-bottom: 2.4rem;
   flex-direction: column;
   flex-direction: row;
   justify-content: flex-end;
-  margin-bottom: 3.5rem;
   line-height: normal; }
   @media (min-width: 576px) {
     .product__separator {
