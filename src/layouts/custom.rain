@@ -44,13 +44,15 @@
 			<div class="main-content">
 				{% include template %}
 
+				{% if (template == 'pages/product.rain') %}
 				<div class="product__separator">
+					<p class="product-loading">loading</p>
+					<!-- <p class="products-loaded">finished loading</p> -->
 					<span class="product__border"></span>
 					<p class="product__available">also available</p>
 				</div>
-				<div class="dynamic-content main-content">
-
-				</div>
+				<div class="dynamic-content main-content"></div>
+				{% endif %}
 			</div>
 		</div>
 		{% include 'snippets/footer.rain' %}

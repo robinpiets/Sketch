@@ -143,9 +143,10 @@ $(document).ready(function() {
     restyleProducts();
 
 	// Load more products on product-page
-	var activeLink = $('.menu.desktop-menu .menu-dropdown .menu-link.active')
-	if ( activeLink.length ) {
-		var href = activeLink.attr('href')
+	var activeLink = $('.menu.desktop-menu .menu-dropdown .menu-link.active'),
+        canLoadNewProducts = false;
+	if ( activeLink.length && $('.product__container').length ) {
+		var href = activeLink.attr('href');
 		if (href) {
 			var allProductsFirst = [],
 				allProductsTotal = [],
@@ -174,7 +175,7 @@ $(document).ready(function() {
 				allProductsTotal = $.merge(allProductsTotal, allProductsFirst)
 				if (allProductsTotal.length) {
 					if (log) console.log( allProductsTotal );
-
+                    canLoadNewProducts = true;
 				}
 	    	})
 			.fail(function() {
@@ -191,7 +192,12 @@ $(document).ready(function() {
 				// Load product info from product url
 				$.ajax({url: newProduct}).done(function(e) {
 					$('.dynamic-content.main-content').html( $('.dynamic-content.main-content').html() + $(e).find('.main-content').not('.dynamic-content').html() )
-                    restyleProducts()
+                    setTimeout(function () {
+                        $('.dynamic-content .product__container.show-on-mobile').last().addClass('new-product')
+                        $('.dynamic-content .product__container.show-on-desktop').last().addClass('new-product')
+                        $('.product__separator').addClass('product-loaded')
+                        restyleProducts()
+                    }, 1);
 				});
 
 
@@ -200,15 +206,19 @@ $(document).ready(function() {
 				}, 1000);
 			}
 			function allProductsLoaded() {
+                if (log) console.log('Finished loading products');
 				finishedLoadingProducts = true;
-				if (log) console.log('Finished loading products');
+                $('.product__separator').last().addClass('all-products-loaded')
 			}
 
 			$(window).scroll(function() {
-				var buffer = 200;
+				var buffer = 300;
 				if ( $(window).scrollTop() >= $(document).height() - $(window).height() - buffer ) {
-					if (!loadingProduct && allProductsTotal.length) loadNewProduct();
-					if (!loadingProduct && !allProductsTotal.length && !finishedLoadingProducts) allProductsLoaded();
+                    // Load new product
+                    if ( canLoadNewProducts ) {
+                        if (!loadingProduct && allProductsTotal.length) loadNewProduct();
+                        if (!loadingProduct && !allProductsTotal.length && !finishedLoadingProducts) allProductsLoaded();
+                    }
 				}
 			});
 		}
