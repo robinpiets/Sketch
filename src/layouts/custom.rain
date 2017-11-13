@@ -45,8 +45,8 @@
 				{% include template %}
 
 				<div class="product__separator">
-					<span class="product__available">also available</span>
 					<span class="product__border"></span>
+					<p class="product__available">also available</p>
 				</div>
 				<div class="dynamic-content main-content">
 

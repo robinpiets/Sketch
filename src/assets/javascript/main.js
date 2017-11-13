@@ -132,17 +132,15 @@ $(document).ready(function() {
         }
     }
 
-    // $.ajax({url: "test.html", context: document.body})
-	// 	.done(function() {
-	//         // $(this).addClass("done");
-	// 		if (log)
-	//             console.log("done");
-    // 	})
-	// 	.fail(function() {
-	// 		if (log)
-	// 	    	console.log("fail");
-	// 	})
 
+    function restyleProducts() {
+        $('.product__container.show-on-desktop').each(function(index, el) {
+            if ( $(this).find('.product__image--container').length <= 3 ) {
+                $(this).addClass('product-small')
+            }
+        });
+    }
+    restyleProducts();
 
 	// Load more products on product-page
 	var activeLink = $('.menu.desktop-menu .menu-dropdown .menu-link.active')
@@ -193,7 +191,9 @@ $(document).ready(function() {
 				// Load product info from product url
 				$.ajax({url: newProduct}).done(function(e) {
 					$('.dynamic-content.main-content').html( $('.dynamic-content.main-content').html() + $(e).find('.main-content').not('.dynamic-content').html() )
+                    restyleProducts()
 				});
+
 
 				setTimeout(function () {
 					loadingProduct = false;
@@ -213,6 +213,20 @@ $(document).ready(function() {
 			});
 		}
 	}
+});
+
+$(window).keyup(function(e) {
+	// console.log( e.keyCode );
+    // For gebugging
+    // if ( e.keyCode == 192 ) {
+    //     $('.product__container.show-on-desktop').each(function(index, el) {
+    //         if ( $(this).find('.product__image--container').length <= 3 ) {
+    //             $(this).addClass('product-small')
+    //         }
+    //
+    //     });
+    //     console.log($('.product__container.show-on-desktop').length + " products");
+    // }
 });
 
 $(window).resize(function() {

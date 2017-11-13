@@ -26,11 +26,13 @@
             "product_configure_form" method="post" class="add-cart-form">
           {% if product.options or product.variants or product.custom %}
             <div class="product-option row">
+              <!-- { product | html_product_configure | raw } -->
+
               <div class="col-md-12">
-                {% if product | raw  %}
-                  {{ product | raw }}
-                {% elseif html_product_configure %}
+                {% if html_product_configure %}
                   {{ html_product_configure }}
+                {% elseif product | raw  %}
+                  {{ product | raw }}
                 {% endif %}
               </div>
             </div>

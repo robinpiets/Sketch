@@ -54,3 +54,11 @@
     color: #303030;
   }
 }
+.main-content p {
+  letter-spacing: .1em;
+  font-size: 12px;
+
+  @media (min-width: $screen-sm) {
+    font-size: 11px;
+  }
+}
