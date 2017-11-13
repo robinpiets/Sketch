@@ -22,6 +22,10 @@
 			display: none;
 		}
 	}
+
+	// &.product-uneven-columns {
+	// 	flex-direction: column-reverse;
+	// }
 }
 // three or less product images
 .product__container.product-small {
@@ -113,9 +117,6 @@
 		max-width: 376px;
 		margin-bottom: 3.3rem;
 		height: 540px;
-	}
-	&.product-uneven-columns {
-		flex-direction: column-reverse;
 	}
 }
 
@@ -382,5 +383,16 @@
 		&.new-product {
 			opacity: 1;
 		}
+	}
+}
+.product-uneven-columns {
+	flex-direction: row-reverse;
+	.product__element:first-of-type {
+		padding-left: 1.8rem;
+		// padding-left: 0;
+		padding-right: 0;
+	}
+	.product__element:last-of-type {
+		padding-right: 1.8rem;
 	}
 }
