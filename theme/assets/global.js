@@ -1,4 +1,4 @@
-$(document).ready(function(){  
+$(document).ready(function(){
   //detect dragging on mobile
   var dragging = false;
   $("a").on("touchmove", function(){
@@ -13,7 +13,7 @@ $(document).ready(function(){
     $(this).removeClass('hover');
     $(this).find('.subnav').hide();
   });
-  
+
 // gg fix for the safari + chrome + android double tap issues (10/03/17)
 var isIphone = /(iPhone)/i.test(navigator.userAgent);
 var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
@@ -23,11 +23,11 @@ var isChrome = navigator.userAgent.match('CriOS');
 
 if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
   //Chrome iOS fix
-      if(isChrome){ 
+      if(isChrome){
   $('nav .item.sub').on('click', function(e){
     if ($(window).width() < 767) {
     var element = $(this).find('.itemLink');
-    var href = element.attr('href');    
+    var href = element.attr('href');
     //element.attr('href', '#');
       $('nav .itemLink').hide();
       element.show();
@@ -38,7 +38,7 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
   }
   });
          }
-  //Safari fix    
+  //Safari fix
 
   $('nav .item.sub').on('click touchend', false, function(e){
          if (dragging){
@@ -46,18 +46,18 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
            e.preventDefault();
            return false;
           } else {
-            
+
     if ($(window).width() < 767) {
     var element = $(this).find('.itemLink');
-      var href = element.attr('href');      
+      var href = element.attr('href');
       var subItems = $(this).find('.subitemLink');
-      
+
       //element.attr('href', '#');
       $('nav .itemLink').hide();
       element.show();
       $(this).addClass('view-subnav');
       var mainItems = $(this).find('.active.itemLink');
-      
+
       subItems.on('click touchend', function(e){
          if (dragging){
            dragging = false;
@@ -66,7 +66,7 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
         window.location.replace($(this).attr("href"));
           }
       });
-      
+
       $('nav .glyphicon-remove').show( 'fade', function(){
         element.attr('href', href);
       });
@@ -74,7 +74,7 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
   }
           }
   });
-// GG fix for sub-category menus 17-07-2017  
+// GG fix for sub-category menus 17-07-2017
   $('nav .item.sub').on('click touchend', false, function(e){
     var mainItems = $(this).find('.itemLink');
       mainItems.on('click touchend', function(e){
@@ -82,14 +82,14 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
       });
 
   });
-            
-  
+
+
 } else {
   $('nav .item.sub').on('click', function(e){
     console.log('isandroid')
   if ($(window).width() < 767) {
     var element = $(this).find('.itemLink');
-      var href = element.attr('href');      
+      var href = element.attr('href');
       element.attr('href', '#');
       $('nav .itemLink').hide();
       element.show();
@@ -98,9 +98,9 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
         element.attr('href', href);
       });
   }
-}); 
+});
 }
-  
+
   // responsive navigation
   $('.burger').click(function() {
     if ($(this).hasClass('open')) {
@@ -113,8 +113,8 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
     if ($('.burger').hasClass('open')) {
       $('.burger').add('header').add('.wrapper').removeClass('open').addClass('close');
     }
-  });     
-  
+  });
+
   // zoombox
   $('.thumbs a').mousedown(function(){
     $('.images a').hide();
@@ -122,7 +122,7 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
     $('.thumbs a').removeClass('active');
     $('.thumbs a[data-image-id="' + $(this).attr('data-image-id') + '"]').addClass('active');
   });
-  
+
   // tabs
   $('.tabs a').click(function(){
     var tabs = $(this).closest('.tabs');
@@ -133,15 +133,15 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
     pages.find('.page.'+$(this).attr('rel')).addClass('active');
     return false;
   });
-  
-  // categories 
+
+  // categories
   $('.categories .category').hover(function(){
     $('.categories .category').addClass('hover');
     $(this).removeClass('hover');
   }, function(){
     $('.categories .category').removeClass('hover');
   });
-  
+
   if(navigator.appVersion.indexOf("MSIE 7.")!=-1) {
     $('body').append('<div class="wsa-demobar">Your browser is out of date. We recommend <a class="link" href="www.google.com/chrome/â€Ž">Google Chrome</a> to download.</div>');
     $('body').css('marginTop', '42px');
@@ -164,7 +164,7 @@ function sizing() {
       var starsHeight = $(this).find('.description .stars').outerHeight();
       var cartHeight = $(this).find('.description .cart').outerHeight();
       var textHeight = descriptionHeight - starsHeight - cartHeight;
-      $(this).find('.description .text').css('height', textHeight-60 + 'px');  
+      $(this).find('.description .text').css('height', textHeight-60 + 'px');
     });
   }
   if ($(window).width() > 992) {
@@ -173,16 +173,16 @@ function sizing() {
     var PriceHeight = $('.product-price').outerHeight();
     var tabsTitle = $('.product-tabs .tabs a').outerHeight();
     var imgHeight = $('.product-img').outerHeight();
-    
-    var tabsHeight =  imgHeight - PriceHeight - OptionHeight - tabsTitle;  
+
+    var tabsHeight =  imgHeight - PriceHeight - OptionHeight - tabsTitle;
     $('.product-tabs .page').css('maxHeight', tabsHeight + 'px');
   }
   if ($(window).width() < 767) {
-    // reponsive 
+    // reponsive
     $('nav.desktop').removeClass('desktop');
     $('nav').addClass('mobile');
 
-      
+
     $('nav .glyphicon-remove').click(function() {
       $('nav .item.sub').removeClass('view-subnav');
       $(this).hide();
@@ -194,7 +194,7 @@ function sizing() {
     $('nav').addClass('desktop');
     $('nav.mobile .item.sub').click(function() {
       var element = $(this).find('.itemLink');
-      var href = element.attr("href");   
+      var href = element.attr("href");
       element.attr("href", href);
     });
   }

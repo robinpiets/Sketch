@@ -30,32 +30,37 @@
 
 <body>
 	{% include 'snippets/mobile-menu.rain' %}
-		{% if template == 'pages/index.rain' %}
-		<div class="damoy__container index-page">
-		{% elseif template == 'pages/cart.rain' %} {% include 'snippets/cart-page.rain' %} {% else %}
-		<div class="damoy__container">
-		{% endif %}
-			<div class="sidebar">
-				{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') or (template == 'pages/textpage.rain') %}
-				<a href="/" class="mobile-brand"><span class="icon-damoy-logo"></span></a>
-				{% endif %}
-				<a href="#" class="cart-icon-link {% if page.cart.products|length > 1 %}visible{% else %}hidden{% endif %}"><span class="icon-cart-icon"></span></a> {% include 'snippets/navigation.rain' %}
-			</div>
-			<div class="main-content">
-				{% include template %}
+	{% include 'snippets/newsletter-modal.rain' %}
 
-				{% if (template == 'pages/product.rain') %}
-				<div class="product__separator">
-					<p class="product-loading">loading</p>
-					<!-- <p class="products-loaded">finished loading</p> -->
-					<span class="product__border"></span>
-					<p class="product__available">also available</p>
-				</div>
-				<div class="dynamic-content main-content"></div>
-				{% endif %}
-			</div>
+	{% if template == 'pages/index.rain' %}
+	<div class="damoy__container index-page">
+	{% elseif template == 'pages/cart.rain' %} {% include 'snippets/cart-page.rain' %} {% else %}
+	<div class="damoy__container">
+	{% endif %}
+		<div class="sidebar">
+			{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') or (template == 'pages/textpage.rain') %}
+			<a href="/" class="mobile-brand"><span class="icon-damoy-logo"></span></a>
+			{% endif %}
+			<a href="#" class="cart-icon-link {% if page.cart.products|length > 1 %}visible{% else %}hidden{% endif %}">
+				<span class="icon-cart-icon"></span>
+			</a>
+			{% include 'snippets/navigation.rain' %}
 		</div>
-		{% include 'snippets/footer.rain' %}
+		<div class="main-content">
+			{% include template %}
+
+			{% if (template == 'pages/product.rain') %}
+			<div class="product__separator">
+				<p class="product-loading">loading</p>
+				<!-- <p class="products-loaded">finished loading</p> -->
+				<span class="product__border"></span>
+				<p class="product__available">also available</p>
+			</div>
+			<div class="dynamic-content main-content"></div>
+			{% endif %}
+		</div>
+	</div>
+	{% include 'snippets/footer.rain' %}
 </body>
 
 </html>
