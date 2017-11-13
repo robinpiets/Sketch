@@ -37,8 +37,7 @@ gulp.task("lq", () => {
 gulp.task("upload", () => {
   return gulp
     .src([Paths.source + "/**/*.rain"])
-    // .pipe(newer(Paths.output))
-    .pipe(Paths.output)
+    .pipe(newer(Paths.output))
     .pipe(
       lightspeedy({
         storeUrl: Config.lightspeedUrl,
