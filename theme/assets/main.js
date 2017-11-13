@@ -157,9 +157,7 @@ $(document).ready(function() {
         $('.product-info__menu-item').not('.smooth-scroll').smoothScroll({offset: -50}).addClass('smooth-scroll');
     }
     restyleProducts();
-
-
-
+    // alert('test')
 	// Load more products on product-page
 	var activeLink = $('.menu.desktop-menu .menu-dropdown .menu-link.active'),
         canLoadNewProducts = false;
@@ -179,7 +177,14 @@ $(document).ready(function() {
 					var productHrefOriginal = $(this).attr('href');
 					var productHref = productHrefOriginal.replace( window.location.protocol + '//', '' );
 					productHref = productHref.split( '/' );
-					productHref = '/' + productHref[1];
+                    if ( productHref[1] == 'us') {
+                        productHref = '/us/' + productHref[2];
+                        console.log( '2: ', productHref );
+                    } else {
+                        productHref = '/' + productHref[1];
+                        console.log( '1: ', productHref );
+                    }
+                    // alert(productHref[1])
 					if ( productHref == window.location.pathname ) {
 						// if (log) console.log('SAME: ', productHref);
 						firstArray = false;

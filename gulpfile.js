@@ -36,8 +36,10 @@ gulp.task("lq", () => {
 
 gulp.task("upload", () => {
   return gulp
+    // .src([".theme/assets/main.js"])
+    // .src([Paths.source + "/assets/main.js", Paths.source + "/assets/style.css", Paths.source + "/**/*.rain"])
+    // .pipe(newer(Paths.output))
     .src([Paths.source + "/**/*.rain"])
-    .pipe(newer(Paths.output))
     .pipe(
       lightspeedy({
         storeUrl: Config.lightspeedUrl,
