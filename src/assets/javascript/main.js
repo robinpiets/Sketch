@@ -197,6 +197,12 @@ $(document).ready(function() {
                         $('.dynamic-content .product__container.show-on-desktop').last().addClass('new-product')
                         $('.product__separator').addClass('product-loaded')
                         restyleProducts()
+                        // Check if new product is uneven >
+                        if ( Math.abs($('.dynamic-content .product__container.show-on-mobile').length % 2) == 1 ) {
+                            console.log('uneven');
+                            $('.dynamic-content .product__container.show-on-desktop').last().addClass('product-uneven-columns')
+                        } else {
+                        }
                     }, 1);
 				});
 
