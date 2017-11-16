@@ -28,15 +28,16 @@ $(document).ready(function() {
         $('body').removeClass("modal-open");
     });
 
+    $('[data-behavior~=trigger-menu-dropdown]').click(function(e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+        var parent = $(this).parent();
+        var dropdown = parent.children('.menu-dropdown');
+        dropdown.slideToggle(500, "swing");
+    });
+
     function setEventListeners() {
         // Product event listeners
-        $('.product__container:not(.hasEventListeners) [data-behavior~=trigger-menu-dropdown]').click(function(e) {
-            e.preventDefault();
-            $(this).toggleClass('active');
-            var parent = $(this).parent();
-            var dropdown = parent.children('.menu-dropdown');
-            dropdown.slideToggle(500, "swing");
-        });
 
         $('.product__container:not(.hasEventListeners) [data-behavior~=toggle-share-dropdown]').click(function(e) {
             e.preventDefault();
@@ -136,10 +137,10 @@ $(document).ready(function() {
 
     if ($(window).width() < 576) {
         if (log)
-            console.log("mobile width");
+            // console.log("mobile width");
         if ($('.product__container.show-on-desktop').length > 0) {
             PRODUCT_CONTENT_DESKTOP = $('.product__container.show-on-desktop').detach();
-            if (log) console.log(PRODUCT_CONTENT_DESKTOP);
+            // if (log) console.log(PRODUCT_CONTENT_DESKTOP);
         }
     }
 
@@ -272,21 +273,16 @@ $(window).keyup(function(e) {
 
 $(window).resize(function() {
     if ($(window).width() < 576) {
-        if (log)
-            console.log("mobile width");
+        // if (log) console.log("mobile width");
         if ($('.product__container.show-on-desktop').length > 0) {
             PRODUCT_CONTENT_DESKTOP = $('.product__container.show-on-desktop').detach();
-            if (log)
-                console.log(PRODUCT_CONTENT_DESKTOP);
-            }
-        } else {
-        if (log)
-            console.log("desktop width");
-        if (log)
-            console.log(PRODUCT_CONTENT_DESKTOP);
+            // if (log) console.log(PRODUCT_CONTENT_DESKTOP);
+        }
+    } else {
+        // if (log) console.log("desktop width");
+        // if (log) console.log(PRODUCT_CONTENT_DESKTOP);
         if (PRODUCT_CONTENT_DESKTOP) {
-            if (log)
-                console.log("append pc");
+            // if (log) console.log("append pc");
             PRODUCT_CONTENT_DESKTOP.appendTo('.main-content');
             PRODUCT_CONTENT_DESKTOP = null;
         }
