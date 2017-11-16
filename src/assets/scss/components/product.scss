@@ -1,3 +1,14 @@
+
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+
+	@media  (min-width: $screen-sm) {
+		position: relative;
+		overflow: auto;
+	}
+}
+
 .product__container {
 	max-width: 67.5rem;
 	transition: all 1s;

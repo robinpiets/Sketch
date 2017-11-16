@@ -34,8 +34,8 @@
 	width: 180px;
 	position: absolute;
 	left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+	top: 50%;
+	transform: translate(-50%, -50%);
 	background: transparent;
 }
 
@@ -88,8 +88,11 @@
 }
 
 body.modal-open {
-  overflow: hidden;
-  position: fixed;
+	overflow: hidden !important;
+	// position: fixed;
+	.cart-modal {
+		// pointer-events: none;
+	}
 
 	@media  (min-width: $screen-sm) {
 		position: relative;
@@ -158,11 +161,11 @@ body.modal-open {
 
 	.close-btn {
 		cursor: pointer;
-	  display: block;
-	  height: 40px;
-	  position: absolute;
-	  width: 40px;
-	  z-index: $burger-nav-layer;
+		display: block;
+		height: 40px;
+		position: absolute;
+		width: 40px;
+		z-index: $burger-nav-layer;
 		top: -84px;
 		right: -44px;
 	}

@@ -496,6 +496,14 @@ body .eupopup-style-compact .eupopup-buttons {
 body .eupopup-style-compact .eupopup-button {
   margin: 0 5px; }
 
+body.modal-open {
+  overflow: hidden;
+  position: fixed; }
+  @media (min-width: 576px) {
+    body.modal-open {
+      position: relative;
+      overflow: auto; } }
+
 .product__container {
   max-width: 67.5rem;
   transition: all 1s; }
@@ -873,8 +881,7 @@ body .eupopup-style-compact .eupopup-button {
       padding-right: 15px; } }
 
 body.modal-open {
-  overflow: hidden;
-  position: fixed; }
+  overflow: hidden !important; }
   @media (min-width: 576px) {
     body.modal-open {
       position: relative;
