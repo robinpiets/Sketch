@@ -1,0 +1,20 @@
+.store__location {
+  margin-bottom: 2.5rem;
+
+  a {
+    transition: .2s opacity;
+
+    &:hover {
+      opacity: .5;
+      transition: .2s opacity;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: $screen-xxl) {
+    margin-bottom: 5rem;
+  }
+}

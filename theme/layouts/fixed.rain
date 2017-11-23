@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="{{ shop.language }}">
+  <head>
+    {% include 'blocks/head.rain' %}
+    <title>{{ page.title }} - {{ shop.name }}</title>
+    <meta name="description" content="{{ shop.description }}" />
+    <meta name="keywords" content="{{ shop.keywords }}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="shortcut icon" href="{{ 'favicon.ico' | url_asset }}" type="image/x-icon" />
+    <link href="//fonts.googleapis.com/css?family={{ theme.body_google_webfonts | url_encode }}:400,300,600" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family={{ theme.headings_google_webfonts | url_encode }}:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="{{ 'favicon.ico' | url_asset }}" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ 'bootstrap.css' | url_asset }}" />
+    <link rel="stylesheet" href="{{ 'fixed-style.css' | url_asset }}" />
+    <link rel="stylesheet" href="{{ 'settings.css' | url_asset }}" />
+    <link rel="stylesheet" href="{{ 'gui-2-0.css' | url_core }}" />
+    <link rel="stylesheet" href="{{ 'gui-responsive-2-0.css' | url_core }}" />
+    <link rel="stylesheet" href="{{ 'custom.css' | url_asset }}" />
+
+    <script src="{{ 'jquery-1-9-1.js' | url_core }}"></script>
+    <script src="{{ 'jquery-ui-1-10-1.js' | url_core }}"></script>
+
+    <script type="text/javascript" src="{{ 'global.js' | url_asset }}"></script>
+    <script type="text/javascript" src="{{ 'jcarousel.js' | url_asset }}"></script>
+    <script type="text/javascript" src="{{ 'gui.js' | url_core }}"></script>
+    <script type="text/javascript" src="{{ 'gui-responsive-2-0.js' | url_core }}"></script>
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="{{ 'style-ie.css' | url_asset }}" />
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+      <div class="topnav">
+        <div class="container">
+          {% if shop.languages | length > 1 or shop.currencies | length > 1 %}
+          <div class="left">
+            {% if shop.languages | length > 1 %}
+            <div class="languages">
+              {% for lang in shop.languages %}
+                    <a href="{{ lang.url}}{% if template == 'pages/collection.rain' %}{% if page.breadcrumbs[0].url == 'collection' %}collection/{% else %}go/category/{{ collection.category_id }}{% endif %}{% elseif template == 'pages/product.rain' %}go/product/{{ product.id }}{% elseif template == 'pages/textpage.rain' %}{{ page.breadcrumbs[0].url }}{% elseif template == 'pages/service.rain' %}service/{% elseif template == 'pages/brands.rain' %}brands/{% elseif template == 'pages/catalog.rain' %}catalog/{% elseif template == 'pages/tags.rain' %}tags/{% endif %}" class="flag {{ lang.code }}" title="{{ lang.title }}" lang="{{ lang.code }}">{{ lang.title }}</a>
+              {% endfor %}
+            </div>
+            {% endif %}
+            {% if shop.currencies | length > 1 %}
+            <div class="currencies">
+              {% for curr in shop.currencies %}
+              <a href="{{ curr.url | url }}" {% if curr.active %}class="active"{% endif %} title="{{ curr.title }}">
+                {{ curr.code }}
+              </a>
+              {% if not loop.last %} / {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+          <div class="right">
+            <a href="{{ 'cart' | url }}" title="{{ 'Cart' | t }}" class="cart">
+              <span class="glyphicon glyphicon-shopping-cart"></span>
+              {{ page.cart.products | length }} {{ 'Items' | t }} - {{ page.cart.total.price | money }}
+            </a>
+            <a href="{{ 'account' | url }}" title="{{ 'My account' | t }}" class="my-account">
+              <span class="glyphicon glyphicon-user"></span>
+              {% if page.account %}
+              {{ 'Welcome, $1!' | t(page.account.firstname) | raw }}
+              {% else %}
+              {{ 'My account' | t }} / {{ 'Register' | t }}
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="navigation container">
+        <div class="align">
+          <ul class="burger">
+            <img src="{{ 'hamburger.png' | url_asset }}" width="32" height="32" alt="Menu">
+          </ul>
+          {% if theme.tutorial and not theme.logo %}
+            <div class="logo tutorial__hover relative inline-block">
+              <h1>{{ shop.title | default('Logo') }}</h1>
+              <div class="hidden-xs absolute top-0 left-0 right-0 bottom-0 tutorial__fade tutorial__fade-center">
+                <div class="text-center tutorial__logo-content nowrap">
+                  <a href="{{ '/admin/auth/login?redirect=themes/' ~ shop.theme_id ~ '/editor/#section-2-logo' }}" class="p1 block hightlight-color tutorial__background border tutorial__border-color tutorial__add-button tutorial__border-radius" target="_blank">
+                    <i class="glyphicon glyphicon-plus-sign tutorial__add-button-icon"></i><span class="bold tutorial__add-button-text">{{ 'Set a Logo' | t }}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% else %}
+            <div class="vertical logo">
+              <a href="{{ '' | url }}" title="{{ shop.title }}">
+                <img src="{{ 'logo.png' | url_asset }}" alt="{{ shop.title }}" />
+              </a>
+            </div>
+          {% endif %}
+          <nav class="desktop vertical">
+            <form action="{{ 'search' | url }}" method="get" id="formSearch">
+              <input type="text" name="q" autocomplete="off"  value="{{ page.search }}"/>
+              <span onclick="$('#formSearch').submit();" title="{{ 'Search' | t }}" class="glyphicon glyphicon-search"></span>
+            </form>
+            <ul>
+              <li class="item home {% if template == 'pages/index.rain' %}active{% endif %}">
+                <a class="itemLink" href="{{ '' | url }}">{{ 'Home' | t }}</a>
+              </li>
+              {% if theme.tutorial and not shop.categories %}
+                <li class="left hidden-xs">
+                  <a href="/admin/auth/login?redirect=categories" class="display-block border hightlight-color tutorial__background tutorial__border-color tutorial__border-radius tutorial__add-button tutorial__nav-item" target="_blank">
+                    <i class="glyphicon glyphicon-plus-sign tutorial__add-button-icon"></i><span class="bold tutorial__add-button-text">{{ 'Add Navigation Items' | t }}</span>
+                  </a>
+                </li>
+              {% endif %}
+              {% for category in shop.categories %}
+              <li class="item{% if category.subs %} sub{% endif %}{% if category.url is active %} active{% endif %}">
+                <a class="itemLink" href="{{ category.url | url }}" title="{{ category.title }}">{{ category.title }}</a>
+                {% if category.subs %}
+                <span class="glyphicon glyphicon-play"></span>
+                <ul class="subnav">
+                  {% for category in category.subs %}
+                  <li class="subitem">
+                    <a class="subitemLink" href="{{ category.url | url }}" title="{{ category.title }}">{{ category.title }}</a>
+                    {% if category.subs %}
+                    <ul class="subnav">
+                      {% for category in category.subs %}
+                      <li class="subitem">
+                        <a class="subitemLink" href="{{ category.url | url }}" title="{{ category.title }}">{{ category.title }}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                    {% endif %}
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+              {% endfor %}
+              {% if shop.blogs %}
+              {% for blog in shop.blogs %}
+              <li class="item sub{% if template == 'pages/blog.rain' %} active{% endif %}"><a class="itemLink" href="{{ blog.url | url }}" title="{{ blog.title }}">{{ blog.title }}</a>
+                <ul class="subnav">
+                  {% for article in blog.articles %}
+                  <li class="subitem"><a class="subitemLink" href="{{ article.url | url }}" title="{{ article.title }}">{{ article.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+              {% endfor %}
+              {% endif %}
+              {% if theme.setting_brands %}
+              {% if shop.brands %}
+              <li class="item{% if template == 'pages/brands.rain' %} active{% endif %}"><a class="itemLink" href="{{ 'brands' | url }}" title="{{ 'Brands' | t }}">{{ 'Brands' | t }}</a></li>
+              {% endif %}
+              {% endif %}
+            </ul>
+            <span class="glyphicon glyphicon-remove"></span>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <div class="container content">
+        {% include template %}
+      </div>
+    </div>
+  </body>
+</html>

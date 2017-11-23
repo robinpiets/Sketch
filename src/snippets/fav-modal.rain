@@ -1,0 +1,10 @@
+<div class="modalDialog favModal {{class}}">
+  <div>
+    <p class="modal__text">
+      This item has been
+      added to your favourites
+    </p>
+    <a href="#close" data-behavior="close-fav-modal" class="button is-primary modal--btn close closeFavModal">continue shopping</a>
+    <a href="{{ ('account/wishlistAdd/' ~ product.id ~ '?variant_id=' ~ product.vid) | url }}" class="button is-primary modal--btn">go to favourites</a>
+  </div>
+</div>

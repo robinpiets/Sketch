@@ -1,0 +1,9 @@
+{% macro ui_button(props) %}
+  {% set url = props.url %}
+  {% set text = props.text %}
+  {% set className = props.className | default('') %}
+  {% set target = props.target %}
+
+  {# Render #}
+  <a href="{{ url }}" class="background-highlight-color inline-block bold px3 py1 text-m{% if className %} {{ className }}{% endif %}"{% if target %} target="{{ target }}"{% endif %} title="{{ text }}">{{ text }}</a>
+{% endmacro %}

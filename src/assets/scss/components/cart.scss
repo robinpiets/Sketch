@@ -1,0 +1,33 @@
+.cart-content {
+  padding-left: 3.2em;
+  padding-right: 3.2em;
+}
+
+// Gui classes are introduced by lightspeed
+// Only used on the cart page.
+.gui-page-title {
+  display: none;
+}
+
+.gui a {
+  margin-right: 15px;
+}
+
+.gui a.gui-button-large.gui-button-action {
+  background: transparent;
+  border-color: transparentize(black, .5);
+  border-radius: 0;
+  color: black;
+  font-size: 12px;
+  height: 40px;
+  line-height: 40px;
+  letter-spacing: .1em;
+}
+
+.gui-table {
+  border: none;
+}
+
+.gui-progressbar ul {
+  background: white;
+}

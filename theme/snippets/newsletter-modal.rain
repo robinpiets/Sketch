@@ -1,0 +1,15 @@
+<div id="newsletterModal" class="modalDialog newsletter-modal">
+  <div>
+    <div class="close-btn" data-behavior="close-newsletter-modal">
+      <span class="close-btn__bar">
+      </span>
+    </div>
+    <h1>Stay up to date</h1>
+    <p>subscribe to our newsletter</p>
+    <form id="formNewsletter" action="{{ 'account/newsletter' | url }}" method="post">
+      <input type="hidden" name="key" value="{{ page.key }}" />
+      <input type="text" name="email" id="formNewsletterEmail" value="" placeholder="{{ 'your email' | t }}"/>
+      <a class="newsletter-submit-btn" href="#" onclick="$('#formNewsletter').submit(); return false;" title="{{ 'Subscribe' | t }}"><span>{{ 'subscribe' | t }}</span></a>
+    </form>
+  </div>
+</div>

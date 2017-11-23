@@ -1,6 +1,0 @@
-<h2>catalog</h2>
-
-
-<pre>
-    {{ dump(catalog) }}
-</pre>

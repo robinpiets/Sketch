@@ -1,0 +1,26 @@
+// @import url("//hello.myfonts.net/count/3466e1");
+//
+// @font-face {
+//   font-family: 'AvenirLTStd-Light';
+//   src: url('webfonts/3466E1_0_0.eot');
+//   src: url('webfonts/3466E1_0_0.eot?#iefix') format('embedded-opentype'),
+//        url('webfonts/3466E1_0_0.woff2') format('woff2'),
+//        url('webfonts/3466E1_0_0.woff') format('woff'),
+//        url('webfonts/3466E1_0_0.ttf') format('truetype');
+// }
+
+ html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  font-family: 'AvenirLTStd-Light', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  position: relative;
+  min-height: 100%;
+}
+
+@media (min-width: 350px) {
+    font-size: 13px;
+}
