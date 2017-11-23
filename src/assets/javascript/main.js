@@ -1,7 +1,8 @@
 // SHAME: terrible global - client wanted project out the door
 var PRODUCT_CONTENT_DESKTOP;
 var log = false;
-if (window.location.href.indexOf("https://1") == 0) {
+console.log(window.location.href);
+if (window.location.href.indexOf("https://1") == 0 || window.location.href.indexOf("http://1") == 0) {
     log = true;
 }
 
@@ -151,25 +152,23 @@ $(document).ready(function() {
             // if (log) console.log(PRODUCT_CONTENT_DESKTOP);
         }
     }
-    // alert('test')
 
     function restyleProducts() {
-        console.log('restyled products')
         $('.product__container.show-on-desktop').each(function(index, el) {
             if ( $(this).find('.product__image--container').length <= 3 ) {
                 $(this).addClass('product-small')
             }
         });
 
-        // $('.product__image--carousel').slick({prevArrow: "<div class='prev-arrow'><span class='arrow'><</span></div>", nextArrow: "<div class='next-arrow'><span class='arrow'>></span></div>"});
-        $('.product__image--carousel.slick-initialized').slick();
+        // Set slick sliders
         $('.product__image--carousel').not('.slick-initialized').slick({prevArrow: "<div class='prev-arrow'><span class='arrow'><</span></div>", nextArrow: "<div class='next-arrow'><span class='arrow'>></span></div>"});
 
+        // Set product specific buttons
         $('select').not('.nice-selected').niceSelect().addClass('nice-selected');
         $('.product-info__menu-item').not('.smooth-scroll').smoothScroll({offset: -50}).addClass('smooth-scroll');
     }
     restyleProducts();
-    // alert('test')
+
 	// Load more products on product-page
 	var activeLink = $('.menu.desktop-menu .menu-dropdown .menu-link.active'),
         canLoadNewProducts = false;
@@ -225,7 +224,12 @@ $(document).ready(function() {
 				if (log) console.log("Loading new product: ", newProduct);
 				// Load product info from product url
 				$.ajax({url: newProduct}).done(function(e) {
-					$('.dynamic-content.main-content').html( $('.dynamic-content.main-content').html() + $(e).find('.main-content').not('.dynamic-content').html() )
+
+                    // Get new content
+                    var $newContent = $(e).find('.main-content').not('.dynamic-content');
+                    $newContent.find('.dynamic-content').remove();
+					$('.dynamic-content.main-content').append( $newContent.html() )
+
                     setTimeout(function () {
                         $('.dynamic-content .product__container.show-on-mobile').last().addClass('new-product')
                         $('.dynamic-content .product__container.show-on-desktop').last().addClass('new-product')
@@ -234,7 +238,7 @@ $(document).ready(function() {
 
                         // Check if new product is uneven >
                         if ( Math.abs($('.dynamic-content .product__container.show-on-mobile').length % 2) == 1 ) {
-                            console.log('uneven');
+                            // console.log('uneven');
                             $('.dynamic-content .product__container.show-on-desktop').last().addClass('product-uneven-columns')
                         }
 
@@ -265,20 +269,6 @@ $(document).ready(function() {
 			});
 		}
 	}
-});
-
-$(window).keyup(function(e) {
-	// console.log( e.keyCode );
-    // For gebugging
-    // if ( e.keyCode == 192 ) {
-    //     $('.product__container.show-on-desktop').each(function(index, el) {
-    //         if ( $(this).find('.product__image--container').length <= 3 ) {
-    //             $(this).addClass('product-small')
-    //         }
-    //
-    //     });
-    //     console.log($('.product__container.show-on-desktop').length + " products");
-    // }
 });
 
 $(window).resize(function() {
