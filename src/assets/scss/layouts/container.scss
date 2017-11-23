@@ -1,0 +1,20 @@
+// Prefixing due to nameclash with bulma
+.damoy__container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 7.4em;
+  padding-top: 2.1em;
+  // height: 100%;
+
+  &.index-page {
+    overflow-y: hidden;
+    height: 100vh
+  }
+
+  @media (min-width: $screen-sm) {
+    flex-direction: row;
+    padding-top: 4.7em;
+    padding-bottom: 0;
+    height: 100%;
+  }
+}

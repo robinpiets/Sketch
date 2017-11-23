@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ldir="ltr" lang="{{ shop.language }}" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="{{ shop.description }}" />
+	<meta name="keywords" content="{{ shop.keywords }}" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>{{ page.title }} - {{ shop.name }}</title>
+
+	<!-- <link rel="stylesheet" href="{{'avernir-la-collection.css' | url_asset }}" /> -->
+	<link rel="stylesheet" href="{{ 'bulma.css' | url_asset }}" />
+	<link rel="stylesheet" href="{{ 'icons.css' | url_asset }}" />
+	<link rel="stylesheet" href="{{ 'slick.css' | url_asset }}" />
+	<!-- <link rel="stylesheet" href="{{ 'slick-theme.css' | url_asset }}"/> -->
+	<link rel="stylesheet" href="{{ 'style.css' | url_asset }}" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{{ 'main.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'jquery-eu-cookie-law-popup-min.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'slick-min.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'jquery-smooth-scroll.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'jquery-nice-select.js' | url_asset }}"></script>
+	<script type="text/javascript" src="{{ 'gui.js' | url_core }}"></script>
+	<script type="text/javascript" src="{{ 'gui-responsive-2-0.js' | url_core }}"></script>
+</head>
+
+<body>
+	{% include 'snippets/mobile-menu.rain' %}
+	{% include 'snippets/newsletter-modal.rain' %}
+
+	{% if template == 'pages/index.rain' %}
+	<div class="damoy__container index-page">
+	{% elseif template == 'pages/cart.rain' %} {% include 'snippets/cart-page.rain' %} {% else %}
+	<div class="damoy__container">
+	{% endif %}
+		<div class="sidebar">
+			{% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') or (template == 'pages/textpage.rain') %}
+			<a href="/" class="mobile-brand"><span class="icon-damoy-logo"></span></a>
+			{% endif %}
+			<a href="#" class="cart-icon-link {% if page.cart.products|length > 1 %}visible{% else %}hidden{% endif %}">
+				<span class="icon-cart-icon"></span>
+			</a>
+			{% include 'snippets/navigation.rain' %}
+		</div>
+		<div class="main-content">
+			{% include template %}
+
+			{% if (template == 'pages/product.rain') %}
+			<div class="product__separator">
+				<p class="product-loading">loading</p>
+				<!-- <p class="products-loaded">finished loading</p> -->
+				<span class="product__border"></span>
+				<p class="product__available">also available</p>
+			</div>
+			<div class="dynamic-content main-content"></div>
+			{% endif %}
+		</div>
+	</div>
+	{% include 'snippets/footer.rain' %}
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+.share-dropdown-container {
+  display: inline-block;
+  margin-left: 22px;
+  position: relative;
+
+  @media (min-width: $screen-sm) {
+    font-size: 10px;
+  }
+}
+
+.share-dropdown {
+  position: absolute;
+  display: none;
+
+  a {
+    color: transparentize(#303030, .5);
+    letter-spacing: .1em;
+    transition: color .2s;
+
+    &:hover {
+      color: black;
+      transition: color .2s;
+    }
+  }
+}

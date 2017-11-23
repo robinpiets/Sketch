@@ -1,0 +1,23 @@
+<div class="category col-sm-4 col-md-4">
+  <a href="{{ category.url | url }}">
+    {% if category.image %}
+      {% if theme.category_image_fit %}
+      <img src="{{ category.image | url_image('380x275x1', category.title) }}" width="380" height="275" alt="{{ category.title }}" title="{{ category.title }}" />
+      {% else %}
+      <img src="{{ category.image | url_image('380x275x2', category.title) }}" width="380" height="275" alt="{{ category.title }}" title="{{ category.title }}" />
+      {% endif %}
+    {% else %}
+    <img src="{{ 'cat-icon.png' | url_asset }}" width="380" height="275" alt="{{ category.title }}" title="{{ category.title }}"/>
+    {% endif %}
+    <div>
+      <span class="title">
+        {{ category.title }}
+      </span>
+      {% if theme.settingshow_amount_of_product_in_category %}
+      <span class="amount">
+        <span class="glyphicon glyphicon-tag"></span> {{ category.count }}
+      </span>
+      {% endif %}
+    </div>
+  </a>
+</div>

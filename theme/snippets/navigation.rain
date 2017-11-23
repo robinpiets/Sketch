@@ -1,0 +1,85 @@
+<div class="burger-nav" data-behavior="open-mobile-menu">
+  <span class="burger-nav__bar">
+  </span>
+</div>
+<div class="menu desktop-menu">
+  <div class="menu-group brand">
+    <a href="/" class="menu-link brand-link"><span class="icon-damoy-logo"></span></a>
+  </div>
+
+  <div class="menu-group">
+    <div class="menu-item">
+      <a href="#" class="menu-link {% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') %}active{% endif %}" data-behavior="trigger-menu-dropdown">Categories</a>
+      <div class="menu-dropdown {% if (template != 'pages/collection.rain') and (template != 'pages/product.rain') %}is-collapsed{% endif %}">
+        {% for category in shop.categories %}
+          <div class="menu-item">
+            <a href="{{ category.url | url }}" class="menu-link">{{ category.title }}</a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="menu-item">
+      <a href="#" class="menu-link {% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') %}active{% endif %}" data-behavior="trigger-menu-dropdown">Brands</a>
+      <div class="menu-dropdown {% if (template != 'pages/collection.rain') and (template != 'pages/product.rain') %}is-collapsed{% endif %}">
+        {% for brand in shop.brands %}
+          <div class="menu-item">
+            <a href="{{ brand.url | url }}" class="menu-link {% if (page.title == brand.title) or (product.brand.title == brand.title) %}active{% endif %}">{{ brand.title }}</a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="menu-group">
+    <div class="menu-item">
+      <a href="{{ 'service/about' | url }}" class="menu-link">About</a>
+    </div>
+    <div class="menu-item">
+    <a href="#" class="menu-link"  data-behavior="trigger-menu-dropdown">Social</a>
+
+      <div class="menu-dropdown is-collapsed">
+        <div class="menu-item">
+          <a href="https://www.facebook.com/Damoy-Antwerp-105483366241984/" target="_blank" class="menu-link">Facebook</a>
+        </div>
+        <div class="menu-item">
+          <a href="https://www.instagram.com/damoyantwerp/" target="_blank" class="menu-link">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <a href="{{ 'service/contact' | url }}" class="menu-link">Contact</a>
+    </div>
+        <div class="menu-item">
+      <a href="#" class="menu-link" data-behavior="open-newsletter-modal">Mailing List</a>
+    </div>
+    <div class="menu-item">
+    <a href="#" class="menu-link"  data-behavior="trigger-menu-dropdown">Assistance</a>
+
+      <div class="menu-dropdown is-collapsed">
+        <div class="menu-item">
+          <a href="{{ 'service/orders-and-fees' | url }}" class="menu-link">Orders & Fees</a>
+        </div>
+        <div class="menu-item">
+          <a href="{{ 'service/returns' | url }}" class="menu-link">Returns</a>
+        </div>
+        <div class="menu-item">
+          <a href="{{ 'service/shipping' | url }}" class="menu-link">Shipping</a>
+        </div>
+        <div class="menu-item">
+          <a href="{{ 'service/warranty-and-complaints' | url }}" class="menu-link">Warranty & Complaints</a>
+        </div>
+        <div class="menu-item">
+          <a href="{{ 'service/terms-and-conditions' | url }}" class="menu-link">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-group">
+    <div class="menu-item">
+      <a href="{{ 'cart' | url }}" class="menu-link">Cart (<span id="numCartItems" data-num-items="{{page.cart.products|length}}">{{page.cart.products|length}}</span>)</a>
+    </div>
+    <div class="menu-item">
+      <a href="{{ 'account' | url }}" class="menu-link">Login</a>
+    </div>
+  </div>
+</div>

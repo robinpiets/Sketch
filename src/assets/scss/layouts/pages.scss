@@ -1,0 +1,150 @@
+.pages__column {
+	flex: 0 1 auto;
+	margin: 0 auto 1rem;
+	@media (min-width: $screen-sm) {
+		margin: 0;
+	}
+}
+
+.pages--about {
+	margin: 5px auto;
+	max-width: 180px;
+	width: 100%;
+	@media (min-width: $screen-sm) {
+		margin-top: 0;
+		max-width: 48.5em;
+		padding-left: 1.5rem;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.pages--assistance,
+.pages--store {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	@media (min-width: $screen-sm) {
+		flex-direction: row;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.pages--store {
+	.pages__column {
+		width: 180px;
+		margin: 0 auto;
+		@media (min-width: $screen-sm) {
+			width: initial;
+		}
+	}
+
+	.pages__column:first-of-type {
+		@media (min-width: $screen-md) {
+			margin-right: 2rem;
+		}
+		@media (min-width: $screen-lg) {
+			margin-right: 5rem;
+		}
+		@media (min-width: $screen-xxl) {
+			margin-right: 11.25rem;
+		}
+	}
+
+	.pages__column:last-of-type {
+		@media (min-width: $screen-md ) {
+			margin-left: 2rem;
+		}
+		@media (min-width: $screen-lg) {
+			margin-left: 5rem;
+		}
+		@media (min-width: $screen-xxl) {
+			margin-left: 11.25rem;
+		}
+	}
+}
+
+.pages--assistance {
+	p {
+		margin-bottom: 1rem;
+	}
+
+	h1 {
+		letter-spacing: 0.1em;
+	}
+
+	.pages__column {
+		width: 180px;
+		@media (min-width: $screen-sm) {
+			width: 15em;
+			margin-left: 3em;
+			margin-right: 3em;
+			padding: 0;
+		}
+	}
+}
+
+.pages--lookbook {
+	display: flex;
+	flex-direction: column;
+	margin-left: -1em;
+	margin-right: -1em;
+	@media (min-width: $screen-sm) {
+		// margin-left: 0;
+		margin-left: 100px;
+		margin-right: 0;
+		padding-left: 100px;
+		// margin: 5px 0 75px;
+		max-width: 800px;
+		// max-width: 480px;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	div {
+		flex: 0 1 auto;
+		display: block;
+	}
+
+	div:nth-child(4n),
+	div:nth-child(4n-1) {
+		width: 37%;
+	}
+
+	div:nth-child(4n-2),
+	div:nth-child(4n-3) {
+		width: 63%;
+		margin-left: auto;
+	}
+	@media (min-width: $screen-sm) {
+		div:nth-child(4n),
+		div:nth-child(4n-1) {
+			width: 50%;
+		}
+
+		div:nth-child(4n-2),
+		div:nth-child(4n-3) {
+			width: 50%;
+			margin-left: 0;
+		}
+
+		div {
+			margin-top: -3px;
+		}
+
+		div:nth-child(odd) {
+			padding-right: 25px;
+			padding-bottom: 50px;
+		}
+
+		div:nth-child(even) {
+			padding-left: 25px;
+        	padding-bottom: 25px;
+		}
+	}
+}
