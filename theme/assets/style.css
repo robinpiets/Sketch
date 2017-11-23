@@ -794,11 +794,13 @@ body.modal-open {
 
 .dynamic-content.main-content {
   max-width: 100%;
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  padding-top: 0; }
   @media (min-width: 576px) {
     .dynamic-content.main-content {
       padding-right: 0; } }
   .dynamic-content.main-content .product__container {
+    margin-top: 2rem;
     opacity: 0; }
     .dynamic-content.main-content .product__container.new-product {
       opacity: 1; }
