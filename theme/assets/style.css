@@ -496,13 +496,10 @@ body .eupopup-style-compact .eupopup-buttons {
 body .eupopup-style-compact .eupopup-button {
   margin: 0 5px; }
 
-body.modal-open {
-  overflow: hidden;
-  position: fixed; }
-  @media (min-width: 576px) {
-    body.modal-open {
-      position: relative;
-      overflow: auto; } }
+@media (min-width: 576px) {
+  body.modal-open {
+    position: relative;
+    overflow: auto; } }
 
 .product__container {
   transition: all 1s; }
@@ -890,12 +887,10 @@ body.modal-open {
       padding-left: 15px;
       padding-right: 15px; } }
 
-body.modal-open {
-  overflow: hidden !important; }
-  @media (min-width: 576px) {
-    body.modal-open {
-      position: relative;
-      overflow: auto; } }
+@media (min-width: 576px) {
+  body.modal-open {
+    position: relative;
+    overflow: auto; } }
 
 .newsletter-modal div {
   text-align: center;
