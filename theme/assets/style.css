@@ -505,10 +505,13 @@ body.modal-open {
       overflow: auto; } }
 
 .product__container {
-  max-width: 67.5rem;
   transition: all 1s; }
+  @media (max-width: 576px) {
+    .product__container {
+      max-width: 100%; } }
   @media (min-width: 576px) {
     .product__container {
+      max-width: 67.5rem;
       margin: 0 0 0 auto; } }
   .product__container.show-on-desktop {
     display: none; }
@@ -790,6 +793,7 @@ body.modal-open {
     margin-bottom: 0; }
 
 .dynamic-content.main-content {
+  max-width: 100%;
   margin-bottom: 3rem; }
   @media (min-width: 576px) {
     .dynamic-content.main-content {
