@@ -255,6 +255,7 @@ $(document).ready(function() {
                 if (log) console.log('Finished loading products');
 				finishedLoadingProducts = true;
                 $('.product__separator').last().addClass('all-products-loaded')
+                // $('.product__separator').last().remove()
 			}
 
 			$(window).scroll(function() {
