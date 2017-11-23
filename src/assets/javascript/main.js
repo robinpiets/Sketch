@@ -213,7 +213,7 @@ $(document).ready(function() {
 				}
 	    	})
 			.fail(function() {
-				// if (log) console.log("fail");
+				if (log) console.log("fail");
 			});
 
 			function loadNewProduct() {
