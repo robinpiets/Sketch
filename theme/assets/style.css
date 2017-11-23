@@ -552,6 +552,8 @@ body .eupopup-style-compact .eupopup-button {
       position: relative; }
       .product__info.product__info--extra-info {
         padding-top: 0; } }
+  .product__info.product__info--desktop > .product__extra-info {
+    display: none; }
 
 .product__title {
   font-size: 1.25rem;

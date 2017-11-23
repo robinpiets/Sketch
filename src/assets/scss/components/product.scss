@@ -79,6 +79,9 @@ body.modal-open {
 			padding-top: 0;
 		}
 	}
+	&.product__info--desktop > .product__extra-info {
+		display: none;
+	}
 }
 
 .product__title {
