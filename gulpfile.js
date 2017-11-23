@@ -17,7 +17,7 @@ const csslint = require("gulp-csslint");
 const jshint = require("gulp-jshint");
 const url = require("url");
 const newer = require("gulp-newer");
-const lightspeedy = require("lightspeedy");
+// const lightspeedy = require("lightspeedy");
 const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 
