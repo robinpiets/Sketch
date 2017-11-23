@@ -72,12 +72,12 @@ gulp.task("php", function() {
         proxy: Config.localUrl,
         port: 3001,
         open: false,
-    		logging: false,
-    		injectChanges: true,
+		logging: false,
+		injectChanges: true,
         reloadOnRestart: true,
         files: [
-    			"theme/assets/style.css", "theme/assets/main.js"
-    		]
+			"theme/assets/style.css", "theme/assets/main.js"
+		]
       });
     }
   );
@@ -149,6 +149,6 @@ gulp.task("jshint", function() {
     .pipe(jshint.reporter("default"));
 });
 
-gulp.task("default", ["php", "watch"]);
+gulp.task("default", ["php", "scripts", "sass", "watch"]);
 
 gulp.task("sync", ["default", "lq"]);
