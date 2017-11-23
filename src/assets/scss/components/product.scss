@@ -335,7 +335,8 @@ body.modal-open {
 	.product-loading {
 		@media (min-width: $screen-sm) {
 			position: absolute;
-			margin-left: -378px;
+			margin-left: -335px;
+			margin-top: -6px;
 		}
 	}
 
@@ -385,16 +386,19 @@ body.modal-open {
 
 .dynamic-content.main-content {
 	max-width: 100%;
-	margin-bottom: 3rem;
 	padding-top: 0;
 
 	@media (min-width: $screen-sm) {
+		margin-bottom: 3rem;
 		padding-right: 0;
 	}
 
 	.product__container {
-		margin-top: 2rem;
+		margin-top: 0rem;
 		opacity: 0;
+		@media (max-width: $screen-sm) {
+			margin-top: 2rem;
+		}
 
 		&.new-product {
 			opacity: 1;
