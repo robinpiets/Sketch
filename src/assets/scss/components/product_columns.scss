@@ -2,7 +2,7 @@
   flex: 0 1 auto;
   font-size: 0;
   padding-left: 1rem;
-  max-width: 40rem;
+  justify-content: flex-end;
 
   @media (min-width: $screen-sm) {
     position: relative;
@@ -14,11 +14,13 @@
 
     &.grid-layout {
       display: flex;
-      max-width: 30rem;
+      max-width: 100%;
+      max-width: 70rem;
       flex-wrap: wrap;
     }
   }
 }
+
 
 .product__columns--featured {
   @media (min-width: $screen-sm) {

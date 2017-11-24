@@ -154,6 +154,24 @@ $(document).ready(function() {
     }
 
     function restyleProducts() {
+
+		console.log( $('form[id^="product_configure_form"]') )
+
+        // Nice select form update
+        $('.product__container').not('.updated').each(function(index, el) {
+            var productID = $(this).attr('data-product-id')
+            var fullID = 'product_configure_option_size' + '_' + productID;
+            // var selectEvent = $(this).find('select').attr('onchange').replace('')
+            var selectEvent = "document.getElementById('product_configure_form').action = 'http://damoy.webshopapp.com/us/product/matrix/53641553/'; document.getElementById('product_configure_form').submit();"
+            $(this).find('#product_configure_option_size').attr('id', fullID )
+            $(this).find('label').attr('for', fullID )
+            $(this).addClass('updated')
+            // document.getElementById('product_configure_form').action = 'http://damoy.webshopapp.com/us/product/matrix/53641553/'; document.getElementById('product_configure_form').submit();
+            // $(this).find('select').attr('onchange', )
+            console.log( selectEvent );
+            console.log( selectEvent.replace('product_configure_form', 'poep') );
+        });
+
         $('.product__container.show-on-desktop').each(function(index, el) {
             if ( $(this).find('.product__image--container').length <= 3 ) {
                 $(this).addClass('product-small')

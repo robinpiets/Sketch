@@ -1,4 +1,4 @@
-<div class="product__container columns {{class}}">
+<div class="product__container columns {{class}}" data-product-id="{{product.id}}">
   <div class="product__element column">
     {% if product.images | length > 1 %}
       <div class="product__image--container" style="background-image: url({{ product.image | url_image }})">
@@ -26,7 +26,6 @@
           {% if product.options or product.variants or product.custom %}
             <div class="product-option row">
               <div class="col-md-12">
-                  {{ product | raw }}
                   { product | html_product_configure | raw }}
               </div>
             </div>

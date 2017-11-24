@@ -1,4 +1,4 @@
-<div class="product__container {{class}}">
+<div class="product__container {{class}}" data-product-id="{{product.id}}">
     {#{% for image in product.images %}#}
     {#  <div>#}
     {#    <img src="{{ image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />#}
@@ -22,11 +22,7 @@
     <div>
       <form action="{{ ('cart/add/' ~ product.vid) | url }}" id="product_configure_form_{{product.id}}" method="post" class="add-cart-form">
         {% if product.options or product.variants or product.custom %}
-          {% if product | raw  %}
-            {{ product | raw }}
-          {% elseif html_product_configure %}
-            {{ html_product_configure }}
-          {% endif %}
+          { product | html_product_configure | raw }}
         {% else %}
           <input type="hidden" name="bundle_id" id="product_configure_bundle_id" value="">
         {% endif %}

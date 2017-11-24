@@ -1,7 +1,7 @@
 
 <div class="product__columns grid-layout">
   {% for product in collection.products %}
-  {{ loop.index }}
+    {# loop.index #}
     {% include 'snippets/product-item.rain' %}
   {% endfor %}
 </div>

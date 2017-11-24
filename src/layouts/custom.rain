@@ -46,7 +46,7 @@
 			</a>
 			{% include 'snippets/navigation.rain' %}
 		</div>
-		<div class="main-content">
+		<div class="main-content {% if (template == 'pages/collection.rain') %}category{% endif %}">
 			{% include template %}
 
 			{% if (template == 'pages/product.rain') %}
@@ -60,6 +60,8 @@
 			{% endif %}
 		</div>
 	</div>
+	{#dump(page.breadcrumbs[0].url)#}
+	{#dump(template == 'pages/collection.rain')#}
 	{% include 'snippets/footer.rain' %}
 </body>
 
