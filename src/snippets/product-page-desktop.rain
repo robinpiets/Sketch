@@ -1,4 +1,4 @@
-<div class="product__container columns {{class}}">
+<div class="product__container columns {{class}}" data-product-id="{{product.id}}">
   <div class="product__element column">
     {% if product.images | length > 1 %}
       <div class="product__image--container" style="background-image: url({{ product.image | url_image }})">

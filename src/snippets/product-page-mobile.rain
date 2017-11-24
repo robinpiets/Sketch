@@ -1,4 +1,4 @@
-<div class="product__container {{class}}">
+<div class="product__container {{class}}" data-product-id="{{product.id}}">
     {#{% for image in product.images %}#}
     {#  <div>#}
     {#    <img src="{{ image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />#}
