@@ -11,7 +11,7 @@
     right: 0;
     top: 0;
     text-align: right;
-    max-width: 100%;
+    max-width: none;
   }
 
   img {
@@ -21,6 +21,7 @@
     @media (min-width: $screen-sm) {
       height: 100%;
       width: auto;
+      max-width: none;
     }
   }
 }

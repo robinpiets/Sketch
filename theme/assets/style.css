@@ -1111,14 +1111,15 @@ body .eupopup-style-compact .eupopup-button {
       right: 0;
       top: 0;
       text-align: right;
-      max-width: 100%; } }
+      max-width: none; } }
   .homepage-image img {
     height: auto;
     width: 100%; }
     @media (min-width: 576px) {
       .homepage-image img {
         height: 100%;
-        width: auto; } }
+        width: auto;
+        max-width: none; } }
 
 .product-image {
   display: block;
