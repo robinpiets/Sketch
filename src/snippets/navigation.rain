@@ -13,7 +13,7 @@
       <div class="menu-dropdown {% if (template != 'pages/collection.rain') and (template != 'pages/product.rain') %}is-collapsed{% endif %}">
         {% for category in shop.categories %}
           <div class="menu-item">
-            <a href="{{ category.url | url }}" class="menu-link">{{ category.title }}</a>
+            <a href="{{ category.url | url }}" class="menu-link {% if (page.title == category.title) %}active{% endif %}">{{ category.title }}</a>
           </div>
         {% endfor %}
       </div>
