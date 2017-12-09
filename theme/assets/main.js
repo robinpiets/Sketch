@@ -155,21 +155,26 @@ $(document).ready(function() {
 
     function restyleProducts() {
 
-		console.log( $('form[id^="product_configure_form"]') )
+		// console.log( $('form[id^="product_configure_form"]') )
 
-        // Nice select form update
+        var formType = 0
         $('.product__container').not('.updated').each(function(index, el) {
+            // We're updating the id's and events to work with the Continuous scroll
             var productID = $(this).attr('data-product-id')
-            var fullID = 'product_configure_option_size' + '_' + productID;
-            // var selectEvent = $(this).find('select').attr('onchange').replace('')
-            var selectEvent = "document.getElementById('product_configure_form').action = 'http://damoy.webshopapp.com/us/product/matrix/53641553/'; document.getElementById('product_configure_form').submit();"
-            $(this).find('#product_configure_option_size').attr('id', fullID )
-            $(this).find('label').attr('for', fullID )
+            var fullFormID = 'product_configure_form_' + productID;
+
+            $(this).find('select').each(function(index, el) {
+                // Update the HTML onchange Event to work with multiple id's
+                var selectChangeEvent = $(this).attr('onchange')
+                    selectChangeEvent = selectChangeEvent.replace('product_configure_form', $(this).parents('form').attr('id') )
+                    selectChangeEvent = selectChangeEvent.replace("product_configure_form'", $(this).parents('form').attr('id') + "'" )
+                $(this).attr('onchange', selectChangeEvent)
+
+                // Update the id of the select button
+                var fullSelectId = $(this).attr('id') + '_' + productID
+                $(this).attr('id', fullSelectId)
+            });
             $(this).addClass('updated')
-            // document.getElementById('product_configure_form').action = 'http://damoy.webshopapp.com/us/product/matrix/53641553/'; document.getElementById('product_configure_form').submit();
-            // $(this).find('select').attr('onchange', )
-            console.log( selectEvent );
-            console.log( selectEvent.replace('product_configure_form', 'poep') );
         });
 
         $('.product__container.show-on-desktop').each(function(index, el) {
@@ -185,6 +190,7 @@ $(document).ready(function() {
         $('select').not('.nice-selected').niceSelect().addClass('nice-selected');
         $('.product-info__menu-item').not('.smooth-scroll').smoothScroll({offset: -50}).addClass('smooth-scroll');
     }
+
     restyleProducts();
 
 	// Load more products on product-page
@@ -252,6 +258,7 @@ $(document).ready(function() {
                         $('.dynamic-content .product__container.show-on-mobile').last().addClass('new-product')
                         $('.dynamic-content .product__container.show-on-desktop').last().addClass('new-product')
                         $('.product__separator').addClass('product-loaded')
+
                         restyleProducts()
 
                         // Check if new product is uneven >
