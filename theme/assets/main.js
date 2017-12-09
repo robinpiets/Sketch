@@ -16,7 +16,9 @@ $(document).ready(function() {
     });
 
     $('.lookbook-link').click(function() {
-        if (log) console.log("Lookbook link clicked");
+        if (log) {
+            console.log("Lookbook link clicked");
+        }
     });
 
     $('[data-behavior~=open-newsletter-modal]').click(function(e) {
@@ -59,8 +61,9 @@ $(document).ready(function() {
         });
 
         $('[data-behavior~=openFitAndSize]').click(function(e) {
-            if (log)
+            if (log) {
                 console.log("open fit and size");
+            }
             e.preventDefault();
             var parent = $(this).parents('.product__extra-info')
             parent.find('.product-info__menu-item').removeClass('active');
@@ -102,7 +105,8 @@ $(document).ready(function() {
             $.ajax({
                 url: postUrl,
                 success: function() {
-                    if (log) console.log("product successfully added");
+                    if (log)
+                        console.log("product successfully added");
                     var numItems = $('#numCartItems').data("num-items");
                     numItems = numItems + 1;
                     $('#numCartItems').text(numItems);
@@ -121,7 +125,8 @@ $(document).ready(function() {
 
         // $('[data-behavior~=open-fav-modal]').off()
         $('[data-behavior~=open-fav-modal]').click(function(e) {
-            if (log) console.log("open fav modal");
+            if (log)
+                console.log("open fav modal");
             e.preventDefault();
             var parent = $(this).parents('.product__container')
             parent.find('.favModal.show-on-desktop').css({"opacity": "1", "z-index": "99999"});
@@ -135,13 +140,31 @@ $(document).ready(function() {
             $('body').removeClass("modal-open");
         });
 
+        $('.product__container.show-on-desktop:not(.updated) .product__image--container')
 
-		$('[data-behavior]').each(function(index, el) {
-            // console.log(index);
-		});
+            .on('mouseover', function() {
+                $(this).children('.photo').css({
+                    'transform': 'scale(' + 2 + ')'
+                });
+            })
+            .on('mouseout', function() {
+                $(this).children('.photo').css({'transform': 'scale(1)'});
+            })
+            .on('mousemove', function(e) {
+                $(this).children('.photo').css({
+                    'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * 100 + '% ' + (
+                    (e.pageY - $(this).offset().top) / $(this).height()) * 100 + '%'
+                });
+            })
 
-        console.log('added eventlisterners')
-        // $('.product__container').addClass('hasEventListeners');
+            .each(function() {
+                $(this)
+                    .append('<div class="photo"></div>')
+                    .children('.photo').css({'background-image': $(this).css('background-image') })
+
+            })
+            .css('background-image','')
+
     }
     setEventListeners()
 
@@ -154,7 +177,7 @@ $(document).ready(function() {
     }
 
     function restyleProducts() {
-		// console.log( $('form[id^="product_configure_form"]') )
+        // console.log( $('form[id^="product_configure_form"]') )
 
         var formType = 0
         $('.product__container').not('.updated').each(function(index, el) {
@@ -165,8 +188,8 @@ $(document).ready(function() {
             $(this).find('select').each(function(index, el) {
                 // Update the HTML onchange Event to work with multiple id's
                 var selectChangeEvent = $(this).attr('onchange')
-                    selectChangeEvent = selectChangeEvent.replace('product_configure_form', $(this).parents('form').attr('id') )
-                    selectChangeEvent = selectChangeEvent.replace("product_configure_form'", $(this).parents('form').attr('id') + "'" )
+                selectChangeEvent = selectChangeEvent.replace('product_configure_form', $(this).parents('form').attr('id'))
+                selectChangeEvent = selectChangeEvent.replace("product_configure_form'", $(this).parents('form').attr('id') + "'")
                 $(this).attr('onchange', selectChangeEvent)
 
                 // Update the id of the select button
@@ -177,7 +200,7 @@ $(document).ready(function() {
         });
 
         $('.product__container.show-on-desktop').each(function(index, el) {
-            if ( $(this).find('.product__image--container').length <= 3 ) {
+            if ($(this).find('.product__image--container').length <= 3) {
                 $(this).addClass('product-small')
             }
         });
@@ -192,26 +215,26 @@ $(document).ready(function() {
 
     restyleProducts();
 
-	// Load more products on product-page
-	var activeLink = $('.menu.desktop-menu .menu-dropdown .menu-link.active'),
+    // Load more products on product-page
+    var activeLink = $('.menu.desktop-menu .menu-dropdown .menu-link.active'),
         canLoadNewProducts = false;
-	if ( activeLink.length && $('.product__container').length ) {
-		var href = activeLink.attr('href');
-		if (href) {
-			var allProductsFirst = [],
-				allProductsTotal = [],
-				loadingProduct = false,
-				finishedLoadingProducts = false;
+    if (activeLink.length && $('.product__container').length) {
+        var href = activeLink.attr('href');
+        if (href) {
+            var allProductsFirst = [],
+                allProductsTotal = [],
+                loadingProduct = false,
+                finishedLoadingProducts = false;
 
-			// First Ajax call to get all products
-			$.ajax({url: href}).done(function(e) {
-		        // Get all products from current category
-				var firstArray = true;
-				$(e).find('.product__columns .product-image').each(function(index, el) {
-					var productHrefOriginal = $(this).attr('href');
-					var productHref = productHrefOriginal.replace( window.location.protocol + '//', '' );
-					productHref = productHref.split( '/' );
-                    if ( productHref[1] == 'us') {
+            // First Ajax call to get all products
+            $.ajax({url: href}).done(function(e) {
+                // Get all products from current category
+                var firstArray = true;
+                $(e).find('.product__columns .product-image').each(function(index, el) {
+                    var productHrefOriginal = $(this).attr('href');
+                    var productHref = productHrefOriginal.replace(window.location.protocol + '//', '');
+                    productHref = productHref.split('/');
+                    if (productHref[1] == 'us') {
                         productHref = '/us/' + productHref[2];
                         // console.log( '2: ', productHref );
                     } else {
@@ -219,92 +242,102 @@ $(document).ready(function() {
                         // console.log( '1: ', productHref );
                     }
                     // alert(productHref[1])
-					if ( productHref == window.location.pathname ) {
-						// if (log) console.log('SAME: ', productHref);
-						firstArray = false;
-					} else {
-						// if (log) console.log( productHref );
-						if ( firstArray ) allProductsFirst.push(productHref)
-						else allProductsTotal.push(productHref)
-					}
-				});
-				// Merging both arrays
-				allProductsTotal = $.merge(allProductsTotal, allProductsFirst)
-				if (allProductsTotal.length) {
-					// if (log) console.log( allProductsTotal );
+                    if (productHref == window.location.pathname) {
+                        // if (log) console.log('SAME: ', productHref);
+                        firstArray = false;
+                    } else {
+                        // if (log) console.log( productHref );
+                        if (firstArray)
+                            allProductsFirst.push(productHref)
+                        else
+                            allProductsTotal.push(productHref)
+                    }
+                });
+                // Merging both arrays
+                allProductsTotal = $.merge(allProductsTotal, allProductsFirst)
+                if (allProductsTotal.length) {
+                    // if (log) console.log( allProductsTotal );
                     canLoadNewProducts = true;
-				}
-	    	})
-			.fail(function() {
-				if (log) console.log("fail");
-			});
+                }
+            }).fail(function() {
+                if (log)
+                    console.log("fail");
+                }
+            );
 
-			function loadNewProduct() {
-				loadingProduct = true;
-				var newProduct = allProductsTotal[0];
-				allProductsTotal.splice(0, 1);
+            function loadNewProduct() {
+                loadingProduct = true;
+                var newProduct = allProductsTotal[0];
+                allProductsTotal.splice(0, 1);
 
-				if (log) console.log("Loading new product: ", newProduct);
-				// Load product info from product url
-				$.ajax({url: newProduct}).done(function(e) {
+                if (log)
+                    console.log("Loading new product: ", newProduct);
+
+                // Load product info from product url
+                $.ajax({url: newProduct}).done(function(e) {
 
                     // Get new content
                     var $newContent = $(e).find('.main-content').not('.dynamic-content');
                     $newContent.find('.dynamic-content').remove();
-					$('.dynamic-content.main-content').append( $newContent.html() )
+                    $('.dynamic-content.main-content').append($newContent.html())
 
-                    setTimeout(function () {
+                    setTimeout(function() {
                         $('.dynamic-content .product__container.show-on-mobile').last().addClass('new-product')
                         $('.dynamic-content .product__container.show-on-desktop').last().addClass('new-product')
                         $('.product__separator').addClass('product-loaded')
 
-                        restyleProducts()
-
                         // Check if new product is uneven >
-                        if ( Math.abs($('.dynamic-content .product__container.show-on-mobile').length % 2) == 1 ) {
+                        if (Math.abs($('.dynamic-content .product__container.show-on-mobile').length % 2) == 1) {
                             // console.log('uneven');
                             $('.dynamic-content .product__container.show-on-desktop').last().addClass('product-uneven-columns')
                         }
 
                         setEventListeners()
+
+                        restyleProducts()
                     }, 10);
-				});
+                });
 
-
-				setTimeout(function () {
-					loadingProduct = false;
-				}, 1000);
-			}
-			function allProductsLoaded() {
-                if (log) console.log('Finished loading products');
-				finishedLoadingProducts = true;
+                setTimeout(function() {
+                    loadingProduct = false;
+                }, 1000);
+            }
+            function allProductsLoaded() {
+                if (log)
+                    console.log('Finished loading products');
+                finishedLoadingProducts = true;
                 $('.product__separator').last().addClass('all-products-loaded')
                 // $('.product__separator').last().remove()
-			}
+            }
 
-			$(window).scroll(function() {
-				var buffer = 300;
-				if ( $(window).scrollTop() >= $(document).height() - $(window).height() - buffer ) {
+            $(window).scroll(function() {
+                var buffer = 300;
+                if ($(window).scrollTop() >= $(document).height() - $(window).height() - buffer) {
                     // Load new product
-                    if ( canLoadNewProducts ) {
-                        if (!loadingProduct && allProductsTotal.length) loadNewProduct();
-                        if (!loadingProduct && !allProductsTotal.length && !finishedLoadingProducts) allProductsLoaded();
+                    if (canLoadNewProducts) {
+                        if (!loadingProduct && allProductsTotal.length)
+                            loadNewProduct();
+                        if (!loadingProduct && !allProductsTotal.length && !finishedLoadingProducts)
+                            allProductsLoaded();
+                        }
                     }
-				}
-			});
-		}
-	}
+            });
+        }
+    }
 });
 
 $(window).resize(function() {
     if ($(window).width() < 576) {
-        if (log) console.log("mobile width");
+        if (log)
+            console.log("mobile width");
         if ($('.product__container.show-on-desktop').length > 0) {
             PRODUCT_CONTENT_DESKTOP = $('.product__container.show-on-desktop').detach();
             // if (log) console.log(PRODUCT_CONTENT_DESKTOP);
         }
     } else {
-        if (log) console.log("desktop width");
+        if (log)
+            console.log("desktop width");
+
         // if (log) console.log(PRODUCT_CONTENT_DESKTOP);
         if (PRODUCT_CONTENT_DESKTOP) {
             // if (log) console.log("append pc");
