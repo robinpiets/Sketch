@@ -27,6 +27,21 @@
             <div class="product-option row">
               <div class="col-md-12">
                   { product | html_product_configure | raw }}
+                  {#
+        				  <!--
+        				  	<div>
+                      {% for variant in product.variants %}
+                      {{variant.title}}
+                      <div>
+                        <!-- {{dump(variant)}} <br /><br /><br /><br /><br /><br /> -->
+                      </div>
+
+
+                    </br/>
+                      {% endfor %}
+                    </div>
+        				  -->
+                  #}
               </div>
             </div>
           {% else %}
