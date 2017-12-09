@@ -154,7 +154,6 @@ $(document).ready(function() {
     }
 
     function restyleProducts() {
-
 		// console.log( $('form[id^="product_configure_form"]') )
 
         var formType = 0
