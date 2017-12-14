@@ -70,14 +70,14 @@ gulp.task("php", function() {
     () => {
       browserSync.init({
         proxy: Config.localUrl,
-        port: 3003,
+        port: 3005,
         open: false,
-		logging: false,
-		injectChanges: true,
+		    logging: false,
+		    injectChanges: true,
         reloadOnRestart: true,
         files: [
-			"theme/assets/style.css", "theme/assets/main.js"
-		]
+    			"theme/assets/style.css", "theme/assets/main.js"
+    		]
       });
     }
   );
