@@ -8,9 +8,7 @@
   </div>
 
   <div class="menu-group">
-    PAge: {{ dump(product) }}
     {% for category in shop.categories %}
-	{{ page.title }} AND {{ category.title }}
     <div class="menu-item">
         <a href="{{ category.url | url }}" class="menu-link {% if (page['breadcrumbs'][0]['title'] == category.title) %}active{% endif %}">{{ category.title }}</a>
       </div>
