@@ -144,11 +144,12 @@ $(document).ready(function() {
 
             .on('mouseover', function() {
                 $(this).children('.photo').css({
-                    'transform': 'scale(' + 2 + ')'
+                    // 'transform': 'scale(' + 1.75 + ')'
+                    'transform': 'scale(' + 1.8962766 + ')'
                 });
             })
             .on('mouseout', function() {
-                $(this).children('.photo').css({'transform': 'scale(1)'});
+                $(this).children('.photo').css({'transform': 'scale(1)', 'width': ''});
             })
             .on('mousemove', function(e) {
                 $(this).children('.photo').css({
@@ -234,8 +235,8 @@ $(document).ready(function() {
                     var productHrefOriginal = $(this).attr('href');
                     var productHref = productHrefOriginal.replace(window.location.protocol + '//', '');
                     productHref = productHref.split('/');
-                    if (productHref[1] == 'us') {
-                        productHref = '/us/' + productHref[2];
+                    if (productHref[1].length == 2) {
+                        productHref = '/' + productHref[1] + '/' + productHref[2];
                         // console.log( '2: ', productHref );
                     } else {
                         productHref = '/' + productHref[1];
