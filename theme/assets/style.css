@@ -1178,9 +1178,9 @@ body .eupopup-style-compact .eupopup-button {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  -webkit-transition: transform .5s ease-out;
-  -moz-transition: transform .5s ease-out;
-  transition: transform .5s ease-out; }
+  -webkit-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  transition: all .5s ease-out; }
 
 .brand-name {
   color: black;
