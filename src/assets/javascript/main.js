@@ -144,8 +144,8 @@ $(document).ready(function() {
 
             .on('mouseover', function() {
                 $(this).children('.photo').css({
-                    // 'transform': 'scale(' + 1.75 + ')'
-                    'transform': 'scale(' + 1.8962766 + ')'
+                    'transform': 'scale(' + 1.75 + ')'
+                    // 'transform': 'scale(' + 1.8962766 + ')'
                 });
             })
             .on('mouseout', function() {
