@@ -1,4 +1,4 @@
-<div class="product__container {{class}}" data-product-id="{{product.id}}">
+<div class="product__container {{class}}">
     {#{% for image in product.images %}#}
     {#  <div>#}
     {#    <img src="{{ image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />#}
@@ -20,9 +20,10 @@
     </p>
 
     <div>
-      <form action="{{ ('cart/add/' ~ product.vid) | url }}" id="product_configure_form_{{product.id}}" method="post" class="add-cart-form">
+      <form action="{{ ('cart/add/' ~ product.vid) | url }}" id=
+          "product_configure_form" method="post" class="add-cart-form">
         {% if product.options or product.variants or product.custom %}
-          { product | html_product_configure | raw }}
+          {{ product | html_product_configure | raw }}
         {% else %}
           <input type="hidden" name="bundle_id" id="product_configure_bundle_id" value="">
         {% endif %}
@@ -32,11 +33,11 @@
               <span>{{ 'out of stock' | t }}</span>
             </a>
             {% else %}
-            <a href="javascript:;" onclick="$('#product_configure_form_{{product.id}}').submit();" class="openCartModal button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}">
+            <a href="javascript:;" onclick="$('#product_configure_form').submit();" id="openCartModal" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}">
               <span>{{ 'add to cart' | t }}</span>
             </a>
             {% endif %}
-          <a href="#" data-behavior="open-fav-modal" class="openFavModal button is-primary product__cart--btn" title="{{ 'Add to fav' | t }}">
+          <a href="#" id="openFavModal" data-behavior="open-fav-modal" class="button is-primary product__cart--btn" title="{{ 'Add to fav' | t }}">
             <span>{{ 'add to fav' | t }}</span>
           </a>
         </div>
@@ -50,20 +51,18 @@
         <a href="#" class="product-info__menu-item" data-behavior="openShipping">shipping</a>
         <a href="#" class="product-info__menu-item" data-behavior="openShare">share</a>
       </div>
-      <div class="product__details show info-productDetails">
+      <div class="product__details show" id="productDetails">
         {{ product.content | raw }}
       </div>
-      <div class="product__details info-fitAndSize">
+      <div class="product__details" id="fitAndSize">
         <p>Feel free to contact us if you want to know more about the size and fit of this garment.</p>
         <p></p>
       </div>
-      <div class="product__details info-shipping">
+      <div class="product__details" id="shipping">
         <p>For more information about shipping, go to:
-          <a href="{{ 'service/shipping' | url }}" class="menu-link">shipping.</a>
-          <!-- </p> -->
-        </p>
+            <a href="{{ 'service/shipping' | url }}" class="menu-link">shipping.</a></p></p>
       </div>
-      <div class="product__details info-share">
+      <div class="product__details" id="share">
         <p><a href="https://www.facebook.com/dialog/share?app_id=1569021213137213&display=popup&href={{product.url | url}}"
                  onclick="javascript:window.open(this.href,
                  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"

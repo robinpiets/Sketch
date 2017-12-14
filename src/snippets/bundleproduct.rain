@@ -1,6 +1,5 @@
 {# snippet 'snippets/bundleproduct.rain' #}
 {% if product.bundles %}
-
   {% for bundle in product.bundles %}
   <form id="bundle_configure_form_{{ bundle.id }}">
   <input name="main_product_variant" value="{{ product.vid }}" type="hidden">

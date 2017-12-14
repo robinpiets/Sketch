@@ -1,4 +1,5 @@
-<a href="{{ product.url | url }}" title="{{ product.fulltitle }}"  class="product-image image {{class}}">
-  <img src="{{ product.image | url_image }}" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
-  <p class="product-info">{{ product.title }} {{shop.currency2.symbol}} {{ product.price.price }}</p>
+<a href="{{ product.url | url }}"
+   title="{{ product.fulltitle }}"
+   class="product-image image {{class}}"
+   style="background-image:url({{ product.image | url_image }})">
 </a>

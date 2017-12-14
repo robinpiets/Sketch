@@ -1,0 +1,115 @@
+.tutorial__background { background-color: #fafafa; }
+.tutorial__border-color { border-color: #eceeef; }
+.tutorial__border-radius { border-radius: 3px; }
+
+.tutorial__header { padding: 7%; }
+.tutorial__title { font-size: 3em; }
+.tutorial__subtitle { line-height: 1.7; }
+
+.tutorial__dismiss {
+  background-color: #575757;
+  top: 15px;
+  right: 15px;
+  text-decoration: none;
+}
+.tutorial__dismiss:hover,
+.tutorial__dismiss:focus {
+  background-color: {{ theme.footer | color_mix('#000000', 0.1) }};
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a.tutorial__dismiss,
+a.tutorial__action {
+  color: #ffffff !important;
+}
+a.tutorial__action:hover,
+a.tutorial__action:focus {
+  background-color: {{ theme.highlight_color | color_mix('#000000', 0.1) }};
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.tutorial__logo-content { padding-top: 7px; }
+
+.tutorial__add-button {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.tutorial__add-button:hover,
+.tutorial__add-button:focus {
+  color: {{ theme.highlight_color | color_mix('#000000', 0.1) }} !important;
+  background-color: #f3f3f3;
+  border-color: #dedede;
+  text-decoration: none;
+}
+
+.tutorial__add-button-icon { vertical-align: -1px; }
+.tutorial__add-button-text { padding-left: 5px; }
+
+.tutorial__row { padding-top: 0; }
+
+.tutorial__fade {
+  -moz-transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tutorial__hover:hover .tutorial__fade {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tutorial__fade-center {
+  background-color: rgba({{ theme.background_color }}, .9);
+  margin: -1px; /* Fix overlap with border */
+}
+.tutorial__fade-to-left {
+  background-image: linear-gradient(90deg, rgba({{ theme.background_color }}, 0.09) 25%, {{ theme.background_color }} 75%);
+  margin-right: -1px; /* Fix overlap with border */
+  margin-bottom: -1px;  /* Fix overlap with border */
+}
+.tutorial__fade-to-right {
+  background-image: linear-gradient(90deg, {{ theme.background_color }} 25%, rgba({{ theme.background_color }}, 0.09) 75%);
+  margin-left: -1px; /* Fix overlap with border */
+  margin-bottom: -1px;  /* Fix overlap with border */
+}
+.tutorial__fade-center--dark {
+  background: rgba({{ theme.footer }}, .9);
+}
+
+.tutorial__fade-content { width: 50%; }
+.tutorial__product-image { width: 80%; }
+.tutorial__social { padding-top: 10px; }
+
+@media (max-width: 992px) {
+  .tutorial__header { padding: 3em; }
+  .tutorial__title { font-size: 2.3em; }
+  .tutorial__product-image { width: 70%; }
+  .tutorial__fade-content { width: 100%; }
+  .tutorial__subtitle,
+  .text-m {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 767px) {
+  .tutorial__fade {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .tutorial__fade-to-left,
+  .tutorial__fade-to-right {
+    background-image: none;
+    background-color: rgba({{ theme.background_color }}, 0.9);
+    text-align: center;
+  }
+  .tutorial__subtitle,
+  .text-m {
+    font-size: 1em;
+  }
+}

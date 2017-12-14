@@ -1,0 +1,94 @@
+<div class="product col-xs-6 col-sm-3 col-md-3">
+  <div class="image-wrap">
+    <a href="{{ product.url | url }}" title="{{ product.fulltitle }}">
+    {% if theme.show_new_and_sale_icons %}
+     {% if template == 'pages/index.rain' and not product.price.price_old %}
+        {% for id in newest %}
+        {% if product.id == id.id %}
+        <div class="sale-new new-label">
+          {{ 'New' | t }}
+        </div>
+        {% elseif product.price.price_old %}
+        <div class="sale-new">
+          {{ 'Sale' | t }}
+        </div>
+        {% endif %}
+        {% endfor %}
+      {% elseif product.price.price_old %}
+      <div class="sale-new">
+        {{ 'Sale' | t }}
+      </div>
+      {% endif %}
+   {% endif %}
+      {% if product.image %}
+      {% if theme.product_image_fit %}
+      <img src="{{ product.image | url_image('262x276x1', product.fulltitle) }}" width="262" height="276" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+      {% else %}
+      <img src="{{ product.image | url_image('262x276x2', product.fulltitle) }}" width="262" height="276" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}" />
+      {% endif %}
+      {% else %}
+      <img src="{{ 'pro-icon.png' | url_asset }}" alt="{{ product.title }}" title="{{ product.title }}"/>
+      {% endif %}
+    </a>
+
+    <div class="description text-center">
+      <a href="{{ product.url | url }}" title="{{ product.fulltitle }}">
+        {% if theme.setting_reviews and product.score %}
+        {% set productScore = product.score * 5 | number_format(0) %}
+        <div class="stars">
+          {% for i in 1..productScore %}
+          <span class="glyphicon glyphicon-star"></span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <div class="text">
+          {% if product.description %}
+          {{ product.description }}
+          {% elseif product.fulltitle %}
+          {{ product.fulltitle }}
+          {% else %}
+          {{ product.title }}
+          {% endif %}
+        </div>
+      </a>
+      <a href="{{ ('cart/add/' ~ product.vid ) | url }}" class="cart">{{ 'Add to cart' | t }}</a>
+    </div>
+  </div>
+
+  <div class="info{% if shop.settings.legal.mode == 'strict' %} strict{% endif %}">
+    <a href="{{ product.url | url }}" title="{{ product.fulltitle }}" class="title">
+  {% if theme.show_fulltitle and product.fulltitle %} {{ product.fulltitle }} {% else %}
+      {{ product.title }} {% endif %}
+    </a>
+
+    <div class="left">
+    {% if product.price.price_old %}
+      <span class="old-price">{{ product.price.price_old | money }}</span>
+      {% if shop.settings.legal.mode == 'strict' %}
+      <small class="srp">{{ 'SRP' | t }}</small>
+      {% endif %}
+    </div>
+        <div class="right">
+    {% endif %}
+
+    {{ product.price.price | money }}
+
+   </div>
+  {% if shop.settings.price_per_unit == 'enabled' and product.unit %}
+    <br /><span style="font-size: 0.8em;">{{ 'Unit price' | t }} : {{ product.unit.price | money }} / {{ product.unit.unit }}</span>
+  {% endif %}
+  {% if shop.settings.legal.mode == 'strict' %}
+    <br /><span style="font-size: 0.8em;">* {% if shop.b2b %}{{ 'Excl. VAT' | t }}{% else %}{{ 'Incl. VAT' | t }}{% endif %} {{ 'Excl. $1' | t('<a href="' ~ 'service/shipping-returns' | url ~ '" style="color: inherit;">' ~ 'Shipping costs' | t ~ '</a>') | raw }}</span></p>
+  {% endif %}
+     </div>
+</div>
+
+{% if loop.index is divisibleby(4) and template != 'pages/product.rain' %}
+<div class="clearfix"></div>
+{% endif %}
+{% if loop.index is divisibleby(4) and template == 'pages/product.rain' %}
+<div class="clearfix visible-xs"></div>
+{% endif %}
+{% if loop.index is divisibleby(2) and not loop.index is divisibleby(4) %}
+<div class="clearfix visible-xs"></div>
+{% endif %}

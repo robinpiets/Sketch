@@ -1,4 +1,4 @@
-<div class="product__container columns {{class}}" data-product-id="{{product.id}}">
+<div class="product__container columns {{class}}">
   <div class="product__element column">
     {% if product.images | length > 1 %}
       <div class="product__image--container" style="background-image: url({{ product.image | url_image }})">
@@ -22,26 +22,12 @@
         {{product.description}}
       </p>
       <div>
-        <form action="{{ ('cart/add/' ~ product.vid) | url }}" id="product_configure_form_{{product.id}}" method="post" class="add-cart-form">
+        <form action="{{ ('cart/add/' ~ product.vid) | url }}" id=
+            "product_configure_form" method="post" class="add-cart-form">
           {% if product.options or product.variants or product.custom %}
             <div class="product-option row">
               <div class="col-md-12">
-                  { product | html_product_configure | raw }}
-                  {#
-        				  <!--
-        				  	<div>
-                      {% for variant in product.variants %}
-                      {{variant.title}}
-                      <div>
-                        <!-- {{dump(variant)}} <br /><br /><br /><br /><br /><br /> -->
-                      </div>
-
-
-                    </br/>
-                      {% endfor %}
-                    </div>
-        				  -->
-                  #}
+                {{ product | html_product_configure | raw }}
               </div>
             </div>
           {% else %}
@@ -53,11 +39,11 @@
               <span>{{ 'out of stock' | t }}</span>
             </a>
             {% else %}
-            <a href="javascript:;" onclick="$('#product_configure_form_{{product.id}}').submit();" class="button is-primary product__cart--btn openCartModal" title="{{ 'Add to cart' | t }}">
+            <a href="javascript:;" onclick="$('#product_configure_form').submit();" id="openCartModal" class="button is-primary product__cart--btn" title="{{ 'Add to cart' | t }}">
               <span>{{ 'add to cart' | t }}</span>
             </a>
             {% endif %}
-            <a href="#" data-behavior="open-fav-modal" class="button is-primary product__cart--btn openFavModal" title="{{ 'Add to fav' | t }}">
+            <a href="#" id="openFavModal" data-behavior="open-fav-modal" class="button is-primary product__cart--btn" title="{{ 'Add to fav' | t }}">
               <span>{{ 'add to fav' | t }}</span>
             </a>
           </div>
@@ -65,9 +51,9 @@
       </div>
       <div class="product__extra-info">
         <div class="product-info__menu">
-          <a href="#productExtraInfo_{{product.id}}" class="product-info__menu-item">details</a>
-          <a href="#productExtraInfo_{{product.id}}" class="product-info__menu-item">shipping</a>
-          <a href="#productExtraInfo_{{product.id}}" class="product-info__menu-item">fit & size</a>
+          <a href="#productExtraInfo" class="product-info__menu-item">details</a>
+          <a href="#productExtraInfo" class="product-info__menu-item">shipping</a>
+          <a href="#productExtraInfo" class="product-info__menu-item">fit & size</a>
           <div class="share-dropdown-container">
             <a href="#" class="product-info__menu-item" data-behavior="toggle-share-dropdown">share</a>
             <div class="share-dropdown">
@@ -90,7 +76,7 @@
     <div class="product__image--container" style="background-image: url({{ product.images|last | url_image }})">
     </div>
     <div class="product__info product__info--extra-info">
-      <div class="product__extra-info" id="productExtraInfo_{{product.id}}">
+      <div class="product__extra-info" id="productExtraInfo">
         <div class="product-info__menu">
           <a href="#" class="product-info__menu-item active" data-behavior="openProductDetails">details</a>
           <a href="#" class="product-info__menu-item" data-behavior="openFitAndSize">fit & size</a>
@@ -112,17 +98,17 @@
             </div>
           </div>
         </div>
-        <div class="product__details show info-productDetails">
+        <div class="product__details show" id="productDetails">
           {{ product.content | raw }}
         </div>
-        <div class="product__details info-fitAndSize">
+        <div class="product__details" id="fitAndSize">
           <p>Feel free to contact us if you want to know more about the size and fit of this garment.</p>
         </div>
-        <div class="product__details info-shipping">
+        <div class="product__details" id="shipping">
           <p>For more information about shipping, go to:
             <a href="{{ 'service/shipping' | url }}" class="menu-link">shipping.</a></p>
         </div>
-        <div class="product__details info-share">
+        <div class="product__details" id="share">
           <p><a href="https://www.facebook.com/dialog/share?app_id=1569021213137213&display=popup&href=http:{{product.url | url}}"
                  onclick="javascript:window.open(this.href,
                  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"

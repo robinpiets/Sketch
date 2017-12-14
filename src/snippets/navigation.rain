@@ -4,51 +4,52 @@
 </div>
 <div class="menu desktop-menu">
   <div class="menu-group brand">
-    <a href="/" class="menu-link brand-link"><span class="icon-damoy-logo"></span></a>
+    <a href="/" class="menu-link brand-link"><span class="icon-la-collection-logo"></span></a>
   </div>
 
   <div class="menu-group">
+    {% for category in shop.categories %}
     <div class="menu-item">
-      <a href="#" class="menu-link {% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') %}active{% endif %}" data-behavior="trigger-menu-dropdown">Categories</a>
-      <div class="menu-dropdown {% if (template != 'pages/collection.rain') and (template != 'pages/product.rain') %}is-collapsed{% endif %}">
-        {% for category in shop.categories %}
-          <div class="menu-item">
-            <a href="{{ category.url | url }}" class="menu-link {% if (page.title == category.title) %}active{% endif %}">{{ category.title }}</a>
-          </div>
-        {% endfor %}
+        <a href="{{ category.url | url }}" class="menu-link">{{ category.title }}</a>
       </div>
-    </div>
-    <div class="menu-item">
-      <a href="#" class="menu-link {% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') %}active{% endif %}" data-behavior="trigger-menu-dropdown">Brands</a>
-      <div class="menu-dropdown {% if (template != 'pages/collection.rain') and (template != 'pages/product.rain') %}is-collapsed{% endif %}">
-        {% for brand in shop.brands %}
-          <div class="menu-item">
-            <a href="{{ brand.url | url }}" class="menu-link {% if (page.title == brand.title) or (product.brand.title == brand.title) %}active{% endif %}">{{ brand.title }}</a>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
+    {% endfor %}
   </div>
   <div class="menu-group">
     <div class="menu-item">
       <a href="{{ 'service/about' | url }}" class="menu-link">About</a>
     </div>
     <div class="menu-item">
+      <a href="#" class="menu-link" data-behavior="trigger-menu-dropdown">Lookbook</a>
+      <div class="menu-dropdown is-collapsed">
+        {% for link in shop.links.lookbooks %}
+          <div class="menu-item">
+            <a href="{{ link.url | url }}" title="{{ link.title }}" class="menu-link lookbook-link">
+              {{ link.title }}
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="menu-item">
+      <a href="{{ 'service/stores' | url }}" class="menu-link">Stores</a>
+    </div>
+
+    <div class="menu-item">
     <a href="#" class="menu-link"  data-behavior="trigger-menu-dropdown">Social</a>
 
       <div class="menu-dropdown is-collapsed">
         <div class="menu-item">
-          <a href="https://www.facebook.com/Damoy-Antwerp-105483366241984/" target="_blank" class="menu-link">Facebook</a>
+          <a href="https://www.facebook.com/La_Collection_-621561371367141" target="_blank" class="menu-link">Facebook</a>
         </div>
         <div class="menu-item">
-          <a href="https://www.instagram.com/damoyantwerp/" target="_blank" class="menu-link">Instagram</a>
+          <a href="https://www.instagram.com/_la_collection_/" target="_blank" class="menu-link">Instagram</a>
         </div>
       </div>
     </div>
     <div class="menu-item">
       <a href="{{ 'service/contact' | url }}" class="menu-link">Contact</a>
     </div>
-        <div class="menu-item">
+    <div class="menu-item">
       <a href="#" class="menu-link" data-behavior="open-newsletter-modal">Mailing List</a>
     </div>
     <div class="menu-item">
@@ -63,9 +64,6 @@
         </div>
         <div class="menu-item">
           <a href="{{ 'service/shipping' | url }}" class="menu-link">Shipping</a>
-        </div>
-        <div class="menu-item">
-          <a href="{{ 'service/warranty-and-complaints' | url }}" class="menu-link">Warranty & Complaints</a>
         </div>
         <div class="menu-item">
           <a href="{{ 'service/terms-and-conditions' | url }}" class="menu-link">Terms & Conditions</a>

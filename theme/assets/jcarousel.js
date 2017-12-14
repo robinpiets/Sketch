@@ -10,10 +10,10 @@
             })
             .jcarousel({
                 wrap: 'circular'
-            });   
-              
+            });
+
       var jcarouselInterval = parseInt('4000');
-  
+
       if (jcarouselInterval > 0) {
           $('.slider').jcarouselAutoscroll({
               interval: jcarouselInterval
@@ -29,7 +29,7 @@
         .jcarouselControl({
             target: '+=1'
         });
-      
+
       $(document).on('mouseenter mouseleave', '.slider', function(e) {
           if (e.type == 'mouseenter') {
               $(this).jcarouselAutoscroll('stop');

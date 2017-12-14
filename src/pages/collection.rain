@@ -1,8 +1,21 @@
-
-<div class="product__columns grid-layout">
+<div class="product__columns product__columns--featured">
   {% for product in collection.products %}
-    {# loop.index #}
-    {% include 'snippets/product-item.rain' %}
+    {% set index = loop.index %}
+    {% if (index < 3) %}
+      {% include 'snippets/product-item.rain' with {'class': 'product-image--large'} %}
+    {% endif %}
+  {% endfor %}
+</div>
+{% if collection.products | length > 2 %}
+<div class="product__columns grid-layout">
+{% else %}
+<div class="product__columns grid-layout" style="margin-left: 0">
+{% endif %}
+  {% for product in collection.products %}
+    {% set index = loop.index %}
+    {% if (index > 2) %}
+      {% include 'snippets/product-item.rain' %}
+    {% endif %}
   {% endfor %}
 </div>
 

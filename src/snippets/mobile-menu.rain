@@ -1,26 +1,10 @@
 <div class="mobile-menu">
-    <div class="menu-group">
-    <div class="menu-item">
-      <a href="#" class="menu-link {% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') %}active{% endif %}" data-behavior="trigger-menu-dropdown">Categories</a>
-      <div class="menu-dropdown {% if (template != 'pages/collection.rain') and (template != 'pages/product.rain') %}is-collapsed{% endif %}">
-        {% for category in shop.categories %}
-          <div class="menu-item">
-            <a href="{{ category.url | url }}" class="menu-link">{{ category.title }}</a>
-          </div>
-        {% endfor %}
+  <div class="menu-group">
+    {% for category in shop.categories %}
+      <div class="menu-item">
+        <a href="{{ category.url | url }}" class="menu-link">{{ category.title }}</a>
       </div>
-    </div>
-
-    <div class="menu-item">
-      <a href="#" class="menu-link {% if (template == 'pages/collection.rain') or (template == 'pages/product.rain') %}active{% endif %}" data-behavior="trigger-menu-dropdown">Brands</a>
-      <div class="menu-dropdown {% if (template != 'pages/collection.rain') and (template != 'pages/product.rain') %}is-collapsed{% endif %}">
-        {% for brand in shop.brands %}
-          <div class="menu-item">
-            <a href="{{ brand.url | url }}" class="menu-link {% if (page.title == brand.title) or (product.brand.title == brand.title) %}active{% endif %}">{{ brand.title }}</a>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
+    {% endfor %}
   </div>
 
   <div class="menu-group">
@@ -38,6 +22,9 @@
           </div>
         {% endfor %}
       </div>
+    </div>
+    <div class="menu-item">
+      <a href="{{ 'service/stores' | url }}" class="menu-link">Stores</a>
     </div>
 
     <div class="menu-item">
