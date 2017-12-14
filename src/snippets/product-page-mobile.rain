@@ -23,7 +23,7 @@
       <form action="{{ ('cart/add/' ~ product.vid) | url }}" id=
           "product_configure_form" method="post" class="add-cart-form">
         {% if product.options or product.variants or product.custom %}
-          {{ product | html_product_configure | raw }}
+          { product | html_product_configure | raw }}
         {% else %}
           <input type="hidden" name="bundle_id" id="product_configure_bundle_id" value="">
         {% endif %}
