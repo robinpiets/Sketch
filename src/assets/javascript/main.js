@@ -1,7 +1,7 @@
 // SHAME: terrible global - client wanted project out the door
 var PRODUCT_CONTENT_DESKTOP;
 var log = false;
-console.log(window.location.href);
+// console.log(window.location.href);
 if (window.location.href.indexOf("https://1") == 0 || window.location.href.indexOf("http://1") == 0) {
     log = true;
 }
